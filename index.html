@@ -1,0 +1,457 @@
+
+<html>
+  <head>
+  <title>Applied Machine Learning & Data Science | E&ICT Academy IIT Guwahati</title>
+<style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f6fa;
+      color: #222;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(135deg, #002147, #0078d4);
+      color: white;
+      text-align: center;
+      padding: 50px 20px 80px;
+    }
+    header h1 {
+      margin: 5px 0;
+      font-size: 2.2em;
+    }
+    header p {
+      font-size: 1.1em;
+      color: #e0e0e0;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: block;
+      font-weight: 500;
+    }
+    nav a:hover {
+      background-color: #0078d4;
+    }
+
+    /* Dropdown Menu Styling */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropbtn {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: block;
+      font-weight: 500;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #001f3f;
+      min-width: 220px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1000;
+      border-radius: 0 0 8px 8px;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #0078d4;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown:hover .dropbtn {
+      background-color: #0078d4;
+    }
+
+    .btn {
+      background-color: #ffb400;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #ffc94b;
+    }
+
+    section {
+      padding: 50px 15%;
+      background: white;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #003366;
+      border-left: 6px solid #0078d4;
+      padding-left: 10px;
+    }
+    ul {
+      margin-top: 10px;
+      list-style: disc;
+      padding-left: 25px;
+    }
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+    }
+    footer a {
+      color: #ffb400;
+      text-decoration: none;
+    }
+  </style> 
+</head>
+<body>
+
+
+<!-- -------------- IMAGE SLIDER END ---------------- -->
+  <!---<header id="home">
+    <h1>Electronic & ICT Academy</h1>
+    <p>12 Months Online Professional Certification Course</p>
+    <a class="btn" href="https://eict.iitg.ac.in" target="_blank">Enroll Now</a>
+  </header> --->
+
+ <nav>
+  <!-- Dropdown 1 -->
+  <div class="dropdown">
+    <a href="#home" class="dropbtn">Home �</a>
+    <div class="dropdown-content">
+      <a href="about.html">About E&ICT</a>
+      <a href="history1.html">History</a>
+      <a href="future.html">Future Plans</a>
+      <a href="Proffessional.html">Professional Courses & Specialized Training</a>
+      <a href="other.html">Other Activities</a>
+    </div>
+  </div>
+
+  <!-- Dropdown 2 -->
+  <div class="dropdown">
+    <a href="#about-course" class="dropbtn">About Course �</a>
+    <div class="dropdown-content">
+      <!-- Submenu for Courses -->
+      <div class="sub-dropdown">
+        <a href="course.html" class="sub-dropbtn">Courses �</a>
+        <div class="sub-dropdown-content">
+         <a href="AI%20&%20ML.html">AI & ML</a>
+            <a href="cyber.html">Cybersecurity</a>
+            <a href="professional_certification_landing_page(1)%20(1).html">VLSI</a>
+        </div>
+      </div>
+         <a href="fee.html">Fees</a>
+      <a href="admission.html">Admission</a>
+      <a href="why.html">Why to Enroll</a>
+      <a href="resources.html">Resources</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="news.html">News & Events</a>
+  <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
+  <a href="address.html">Contact Us</a>
+</nav>
+
+<style>
+  /* Basic styling */
+  nav {
+    background-color: #001f3f;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    background-color: #0078d4;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropbtn {
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #001f3f;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #0078d4;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Submenu styling */
+  .sub-dropdown {
+    position: relative;
+  }
+
+  .sub-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #001f3f;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .sub-dropdown-content a {
+    padding: 10px 16px;
+  }
+
+  .sub-dropdown:hover .sub-dropdown-content {
+    display: block;
+  }
+
+  .sub-dropbtn::after {
+    content: " �";
+    float: right;
+  }
+</style>
+
+
+  <!-- -------------- IMAGE SLIDER START ---------------- -->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+  }
+
+  /* ---------- SLIDER CONTAINER ---------- */
+  .slider-container {
+    max-width: 900px;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  /* ---------- SLIDES ---------- */
+  .slides {
+    display: none;
+  }
+
+  /* ---------- REDUCED IMAGE SIZE ---------- */
+ .slides img {
+    width: 90%;        /* wider */
+    height: 450px;     /* taller */
+    object-fit: cover; /* keeps image looking good */
+    margin: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+  /* ---------- BUTTONS ---------- */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    user-select: none;
+    transition: 0.3s;
+  }
+
+  .next { right: 0; }
+
+  .prev:hover, .next:hover {
+    color: #ffb400;
+  }
+
+  /* ---------- DOTS ---------- */
+  .dot {
+    height: 14px;
+    width: 14px;
+    margin: 0 3px;
+    background-color: #bbb;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .active, .dot:hover {
+    background-color: #0078d4;
+  }
+
+  /* Fade effect */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.2s;
+  }
+
+  @keyframes fade {
+    from { opacity: .4 }
+    to { opacity: 1 }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- -------------- IMAGE SLIDER ---------------- -->
+<div class="slider-container">
+
+  <div class="slides fade">
+    <img src="1.jpg">
+  </div>
+
+  <div class="slides fade">
+    <img src="2.jpg">
+  </div>
+
+  <div class="slides fade">
+    <img src="4.jpg">
+  </div>
+
+  <div class="slides fade">
+    <img src="5.jpg">
+  </div>
+
+  <div class="slides fade">
+    <img src="6.jpg">
+  </div>
+
+  <div class="slides fade">
+    <img src="7.jpg">
+  </div>
+
+  <div class="slides fade">
+    <img src="8.jpg">
+  </div>
+
+  <div class="slides fade">
+    <img src="9.jpg">
+  </div>
+
+  <div class="slides fade">
+    <img src="10.jpg">
+  </div>
+
+  <!-- Buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<!-- Dots -->
+<div style="text-align:center; margin-top: 10px;">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+</div>
+
+<!-- -------------- JAVASCRIPT ---------------- -->
+<script>
+let slideIndex = 0;
+showSlides();
+
+// AUTO-SLIDE EVERY 3 SECONDS
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  let dots = document.getElementsByClassName("dot");
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+
+  setTimeout(showSlides, 3000); // CHANGE IMAGE EVERY 3 SECONDS
+}
+
+// Manual buttons
+function plusSlides(n) {
+  slideIndex += n - 1;
+  showSlides();
+}
+
+// Dots click
+function currentSlide(n) {
+  slideIndex = n - 1;
+  showSlides();
+}
+</script>
+
+</body>
+</html>
+  <section id="about-eict">
+    <h2>About Electronics & ICT Academy, IIT Guwahati</h2>
+    <p>The Electronics & ICT Academy (E&ICT Academy) at the Indian Institute of Technology Guwahati (IIT Guwahati) was established under the Ministry of Electronics & Information Technology (MeitY) scheme, "Financial Assistance for setting up Electronics and ICT Academies."</p>
+    <p>The project officially began on March 26, 2015, and the Academy was formally inaugurated by Prime Minister Shri Narendra Modi on January 19, 2016.</p>
+
+    <h3><� Core Objectives and Impact</h3>
+    <p>The primary objective of the Academy is to provide specialized training in emerging areas of electronics and ICT. This training targets:</p>
+    <ol type="1">
+      <li>Engineering college faculty in advanced ICT topics.</li>
+      <li>Faculty from Arts, Commerce, and Science colleges, Polytechnics, etc., focusing on IT tools to enhance productivity in their domains.</li>
+    </ol>
+    <p>To achieve this, the Academy has developed state-of-the-art facilities. Over the past 10 years, it has conducted 400+ programs, both in-person and online, benefiting over 25,000 participants, primarily from the North Eastern States.</p>
+    <p>The Academy has signed MoUs with various Institutes and Universities for hosting programs and collaborates with Industries as Training/Industry Partners for hands-on sessions.</p>
+  </section>
+
+  
+</body>
+</html>
