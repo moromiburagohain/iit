@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Professional Certification Course  ProCert</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root{
+      --brand-dark: #312c0a; /* deep olive/brown */
+      --brand-accent: #cca300; /* golden accent */
+      --muted: #6c6c6c;
+      --glass: rgba(255,255,255,0.9);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111; background:linear-gradient(180deg,#fff 0%, #fbfaf6 100%);}
+
+    /* ====== Header (frozen) ====== */
+    .site-header{background:var(--brand-accent); position:fixed; top:0; left:0; right:0; z-index:1050; box-shadow:0 6px 24px rgba(49,44,10,.12);}
+    .site-header .container{display:flex;align-items:center;gap:1rem;padding:.6rem 1rem}
+    .brand{display:flex;align-items:center;gap:.6rem}
+    .brand .logo{width:44px;height:44px;place-items:center;color:var(--brand-accent);font-weight:700}
+    /* Navigation menu pills: white background with #cca300 bold text */
+    .nav-pills .nav-link{background:#312c0a;color:var(--brand-accent);font-weight:700;border-radius:999px;margin-right:.4rem;padding:.45rem .9rem;border:0}
+    .nav-pills .nav-link.active{box-shadow:0 6px 18px rgba(49,44,10,.08)}
+    .ms-auto .btn-enroll{background:var(--brand-dark);color:var(--brand-accent);border-radius:12px;padding:.45rem .9rem;font-weight:700}
+
+    /* give page top padding to account for fixed header */
+    main{padding-top:84px}
+
+    /* ====== Hero ====== */
+    .hero{min-height:72vh;display:grid;align-items:center;background-image:linear-gradient(180deg, rgba(49,44,10,0.06), rgba(204,163,0,0.06)), url('https://media.glassdoor.com/l/2a/d1/e1/ff/main-gate.jpg?signature=e026158e053ce68cae02b13426a9ffc32df3d76b065b3a0276c293c345178bf7');background-size:cover;background-position:center;position:relative;overflow:hidden}
+    .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(600px 200px at 10% 10%, rgba(204,163,0,.12), transparent 20%), radial-gradient(500px 180px at 90% 80%, rgba(49,44,10,.06), transparent 20%);pointer-events:none}
+    .hero .glass{backdrop-filter:blur(6px);background:linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.35));border-radius:16px;padding:2rem;box-shadow:0 20px 60px rgba(16,24,40,.12)}
+    .hero h1{color:var(--brand-dark);font-weight:800}
+    .hero .lead{color:#333}
+    .hero .accent{color:var(--brand-accent)}
+    .cta-group .btn{transition:transform .25s ease, box-shadow .25s ease}
+    .cta-group .btn:hover{transform:translateY(-4px);box-shadow:0 18px 30px rgba(49,44,10,.12)}
+
+    /* subtle floating shapes */
+    .shape{position:absolute;border-radius:50%;opacity:.12;pointer-events:none;filter:blur(40px);}
+    .shape.s1{width:320px;height:320px;left:-60px;top:-40px;background:var(--brand-accent)}
+    .shape.s2{width:260px;height:260px;right:-40px;bottom:-60px;background:var(--brand-dark)}
+
+    /* ====== Premium About section ====== */
+    .about-premium{background:linear-gradient(180deg, #fff 0%, #fffbf2 100%);padding:3rem;border-radius:18px;box-shadow:0 20px 50px rgba(16,24,40,.06)}
+    .about-premium h2{color:var(--brand-dark);font-weight:800}
+    .mirror-card{position:relative}
+    .mirror-card .mirror{transform:scaleY(-1);opacity:.18;filter:blur(2px);transform-origin:top}
+
+    /* ====== Features */
+    .features .card{border-radius:14px;overflow:hidden;transition:transform .35s cubic-bezier(.2,.9,.3,1), box-shadow .35s}
+    .features .card:hover{transform:translateY(-10px);box-shadow:0 30px 60px rgba(16,24,40,.12)}
+    .feature-1{background:linear-gradient(135deg,#f8f1e0,#fff)}
+    .feature-2{background:linear-gradient(135deg,#e9f7f6,#ffffff)}
+    .feature-3{background:linear-gradient(135deg,#f6eefb,#ffffff)}
+    .feature-4{background:linear-gradient(135deg,#fff7ed,#ffffff)}
+
+    /* ====== Learning path visualization (timeline) ====== */
+    .timeline{position:relative;padding:2rem 1rem}
+    .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--brand-accent),var(--brand-dark));transform:translateX(-50%);border-radius:4px}
+    .timeline-item{width:45%;padding:1.2rem;background:#fff;border-radius:12px;box-shadow:0 18px 40px rgba(16,24,40,.06);position:relative;transition:transform .35s}
+    .timeline-item:nth-child(odd){left:0}
+    .timeline-item:nth-child(even){left:55%}
+    .timeline-item .dot{position:absolute;top:1.4rem;right:-34px;width:24px;height:24px;border-radius:50%;background:var(--brand-accent);box-shadow:0 8px 20px rgba(204,163,0,.12)}
+    .timeline-item:nth-child(even) .dot{left:-34px;right:auto;background:var(--brand-dark)}
+
+    /* Responsive timeline stacking */
+    @media (max-width:991px){
+      .timeline::before{left:8px}
+      .timeline-item{width:100%;left:0;margin-left:36px}
+      .timeline-item .dot{left:-50px}
+    }
+
+    /* ====== Syllabus advanced dropdown (accordion with advanced style) ====== */
+    .syllabus .accordion-button{background:linear-gradient(90deg, rgba(204,163,0,.06), rgba(49,44,10,.02));}
+    .syllabus .topic{display:flex;justify-content:space-between;align-items:center}
+
+    /* ====== Eligibility banner ====== */
+    .eligibility{background:linear-gradient(90deg, rgba(204,163,0,.08), rgba(49,44,10,.02));padding:2rem;border-radius:12px;display:flex;gap:1rem;align-items:center}
+
+    /* ====== Mentors ====== */
+    .mentor-card{border-radius:12px;overflow:hidden;transition:transform .35s}
+    .mentor-card:hover{transform:translateY(-8px)}
+
+    /* ====== Contact form ====== */
+    .contact-form .form-control:invalid{border-color:#e55353}
+    .contact-form .form-control:valid{border-color:var(--brand-accent)}
+    .contact-card{background:linear-gradient(180deg,#fff, #fffbf7);border-radius:14px;box-shadow:0 20px 50px rgba(16,24,40,.06);padding:1.4rem}
+
+    /* ====== Footer ====== */
+    footer{background:#0f1724;color:#e6e9ef;padding:3rem 0}
+
+    /* small animations */
+    @keyframes floatY{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+    .float{animation:floatY 6s ease-in-out infinite}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo"><img src="EICT short logo.jpg"></div>
+        <div>
+          <div style="font-weight:800;color:var(--brand-dark);">E&ICT Academy IIT Guwahati</div>
+          <small style="color:rgba(49,44,10,.7)">12 Months Professional Certification Program</small>
+        </div>
+      </div>
+
+      <ul class="nav nav-pills ms-4 d-none d-md-flex">
+        <li class="nav-item"><a class="nav-link" href="#about">About the Course</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#eligibility">Eligibility</a></li>
+        <li class="nav-item"><a class="nav-link" href="#learning">Learning Path</a></li>
+        <li class="nav-item"><a class="nav-link" href="#syllabus">Syllabus</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mentors">Mentors</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <button class="btn btn-sm btn-light d-md-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">Menu</button>
+        <a class="btn btn-enroll" href="#signup">Enroll</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-unstyled">
+        <li><a class="d-block py-2" href="#about">About the course</a></li>
+        <li><a class="d-block py-2" href="#features">Features</a></li>
+        <li><a class="d-block py-2" href="#eligibility">Eligibility</a></li>
+        <li><a class="d-block py-2" href="#learning">Learning Path</a></li>
+        <li><a class="d-block py-2" href="#syllabus">Syllabus</a></li>
+        <li><a class="d-block py-2" href="#mentors">Mentors</a></li>
+        <li><a class="d-block py-2" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="shape s1 float"></div>
+      <div class="shape s2 float" style="animation-delay:1s"></div>
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <div class="glass">
+              <small class="text-uppercase" style="letter-spacing:1px;color:var(--brand-accent);font-weight:700">E&ICT Academy IIT Guwahati Presents <br>12 Months Online Professional Certification Program on</small>
+              <h1 class="mt-2 display-5">Applied Machine Learning and Data Science</h1>
+              <p class="lead">An employer-driven professional certification with live mentorship, explicit Hands-on Training, real projects and a portfolio-grade capstone.</p>
+
+              <div class="cta-group d-flex gap-3 mt-3">
+                <a class="btn btn-lg btn-dark" href="#signup">Reserve Seat</a>
+             
+                <a class="btn btn-sm btn-link align-self-center" href="#contact">Have questions?</a>
+              </div>
+
+              <ul class="list-unstyled d-flex gap-4 mt-4 text-muted">
+                <li><i class="bi bi-clock-fill me-2"></i>12 Months</li>
+                <li><i class="bi bi-laptop me-2"></i>Live + On-demand</li>
+                <li><i class="bi bi-award me-2"></i>Industry certificate</li>
+              </ul>
+            </div>
+          </div>
+
+         <div class="col-lg-6 mt-4 mt-lg-0">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+            <h5 class="mb-3">Book a free live webinar to know more</h5>
+            <form id="quickApply" class="row g-2" onsubmit="return handleQuickApply(event)">
+              <div class="col-12">
+                <input required class="form-control form-control-lg" placeholder="Full name" name="name">
+              </div>
+              <div class="col-12 col-md-6">
+                <input required type="email" class="form-control" placeholder="Email" name="email">
+              </div>
+              <div class="col-12 col-md-6">
+                <input class="form-control" placeholder="Phone (optional)" name="phone">
+              </div>
+              <div class="col-12">
+                <select class="form-select" name="level">
+                  <option selected>Choose experience level</option>
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+              <div class="col-12 d-grid">
+                <button class="btn btn-lg btn-dark">Apply Now</button>
+              </div>
+            </form>
+            <small class="text-muted">No payment required to apply. Scholarships available.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </section>
+
+    <!-- About the course (premium) -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <div class="about-premium">
+              <h2>About the Course</h2>
+              <p class="text-muted">A premium, compact certification crafted by IIT Guwahati Professor/ Research Scholars/ Staff. You'll build portfolio-grade deliverables, receive 1:1 mentor feedback and participate in mock interviews curated to fast-track your hiring readiness. Research paper writing under the guidance of IIT Guwahati veteran.</p>
+
+              <ul class="mt-3">
+                <li><strong>Flexible learning</strong>  recordings + weekly live sessions.</li>
+                <li><strong>Practical projects</strong>  real company briefs, mentor reviews.</li>
+                <li><strong>Career support</strong>  portfolio & interview coaching.</li>
+                <li><strong>Research</strong>  Research paper writing assistance for further studies.</li>
+              </ul>
+
+              <div class="mt-4">
+                <a class="btn btn-lg btn-dark btn-enroll me-2" href="#signup">Apply Now</a>
+                <a class="btn btn-outline-dark" href="#features">See features</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="card p-3 feature-1">
+                  <h6>Duration</h6>
+                  <p class="small text-muted mb-0">7-8 hours Weekly engagement through live, querys and hands-on sessions. Total 4 semesters of three months each.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card p-3 feature-3">
+                  <h6>Tools</h6>
+                  <p class="small text-muted mb-0">Training on Industrial tools like MAGIC, SPICE, Xilinx Vivado, Quartus Prime, Questa Sim, Synopsys, Cadence and many more. </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card p-3 feature-3">
+                  <h6>Career Prep</h6>
+                  <p class="small text-muted mb-0">Resume, portfolio, mock interviews and important Interview facing tips and tricks.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card p-3 feature-4">
+                  <h6>Community</h6>
+                  <p class="small text-muted mb-0">Active cohort groups with E&ICT Academy IIT Guwahati alumni network.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card p-3 feature-1">
+                  <h6>Activities</h6>
+                  <p class="small text-muted mb-0">On Campus Orientation and Immersion at the begining and completion of the program.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card p-3 feature-3">
+                  <h6>Capstone and Research</h6>
+                  <p class="small text-muted mb-0">Showcase-ready project reviewed by mentors and Research Paper writing guidance from IIT Guwahtai veterans.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+    <section id="why-choose" class="py-5 bg-light">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Why Choose Our Applied Machine Learning & Data Science Certification?</h2>
+      <p class="text-muted">A program built to give you practical skills, industry relevance, and career growth.</p>
+    </div>
+
+    <!-- Introduction -->
+    <div class="mb-5 text-center">
+      <h4 class="fw-semibold">Introduction to the Field</h4>
+      <p>
+        The world is driven by data. Industries across the globe are rapidly adopting Artificial Intelligence and 
+        Machine Learning to revolutionize operations, create new products, and drive strategic decisions. This rapid 
+        adoption has created a significant skills gapoffering immense career opportunities for those with the right expertise.
+      </p>
+    </div>
+
+    <!-- Key Benefits -->
+    <h4 class="fw-semibold mb-3 text-center">Key Benefits of This Certification</h4>
+    
+    <!-- Centering the cards -->
+    <div class="row g-4 justify-content-center">
+      
+      <!-- Benefit 1 -->
+      <div class="col-md-5">
+        <div class="p-4 bg-white border rounded shadow-sm h-100">
+          <h5 class="fw-bold"><i class="bi bi-gear-wide-connected me-2"></i>Practical & Applied Focus</h5>
+          <p class="mb-0">
+            Unlike theoretical programs, our certification emphasizes hands-on application, enabling you to build, deploy, 
+            and manage real-world AI/ML solutions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefit 2 -->
+      <div class="col-md-5">
+        <div class="p-4 bg-white border rounded shadow-sm h-100">
+          <h5 class="fw-bold"><i class="bi bi-layers me-2"></i>Comprehensive Curriculum</h5>
+          <p class="mb-0">
+            From foundational mathematics and programming to advanced Deep Learning, NLP, Computer Vision, and Cloud Deployment  
+            gain a complete end-to-end skill set.
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefit 3 -->
+      <div class="col-md-5">
+        <div class="p-4 bg-white border rounded shadow-sm h-100">
+          <h5 class="fw-bold"><i class="bi bi-person-check me-2"></i>Expert-Led Training</h5>
+          <p class="mb-0">
+            Learn from industry practitioners and seasoned academics who bring real-world insights into the classroom.
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefit 4 -->
+      <div class="col-md-5">
+        <div class="p-4 bg-white border rounded shadow-sm h-100">
+          <h5 class="fw-bold"><i class="bi bi-briefcase me-2"></i>Career-Centric Approach</h5>
+          <p class="mb-0">
+            We provide career counseling, interview preparation, and a capstone project to strengthen your job readiness.
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefit 5 -->
+      <div class="col-md-5">
+        <div class="p-4 bg-white border rounded shadow-sm h-100">
+          <h5 class="fw-bold"><i class="bi bi-award me-2"></i>Four-Level Certification</h5>
+          <p class="mb-0">
+            Receive individual certificates after completing each semester to track your progress and achievements.
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefit 6 -->
+      <div class="col-md-5">
+        <div class="p-4 bg-white border rounded shadow-sm h-100">
+          <h5 class="fw-bold"><i class="bi bi-folder-check me-2"></i>Portfolio Building</h5>
+          <p class="mb-0">
+            Build a strong project portfolio, ending with a Capstone Project that highlights your expertise to potential employers.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Features colored cards -->
+    <section id="features" class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h3 class="fw-bold">Key features</h3>
+          <p class="text-muted">Designed to make you employer-ready and future studies.</p>
+        </div>
+
+        <div class="row g-4 features">
+          <div class="col-md-3">
+            <div class="card p-4 feature-1">
+              <i class="bi bi-tools fs-2" style="color:var(--brand-accent)"></i>
+              <h5 class="mt-3">Hands-on</h5>
+              <p class="small text-muted">Project-based learning with real deliverables.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card p-4 feature-2">
+              <i class="bi bi-people fs-2" style="color:var(--brand-dark)"></i>
+              <h5 class="mt-3">Mentors</h5>
+              <p class="small text-muted">1:1 mentor reviews and query assistance just an Email away .</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card p-4 feature-3">
+              <i class="bi bi-laptop fs-2" style="color:var(--brand-accent)"></i>
+              <h5 class="mt-3">Live sessions</h5>
+              <p class="small text-muted">Weekly interactive sessions and Master Classes from eminent experts of the area.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card p-4 feature-4">
+              <i class="bi bi-award fs-2" style="color:var(--brand-dark)"></i>
+              <h5 class="mt-3">Certification</h5>
+              <p class="small text-muted">Industry-recognized certificate on completion of every Semesters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility banner -->
+    <section id="eligibility" class="py-5">
+      <div class="container">
+        <div class="eligibility">
+          <div>
+            <h5 class="mb-1">Eligibility</h5>
+            <p class="mb-0 text-muted">Open to professionals with 0+ years experience  applicants with demonstrable project work preferred. Need-based scholarships available.</p>
+          </div>
+          <div class="ms-auto text-end">
+            <strong>Next cohort:</strong>
+            <div class="mt-1">Jan 12, 2026</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Path Visualization -->
+    <section id="learning" class="py-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h3 class="fw-bold">Learning Path Visualization</h3>
+          <p class="text-muted">Step-by-step path from fundamentals to capstone and research covering 15 detailed Modules.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item mb-4">
+            <h5>Foundations</h5>
+            <p class="small text-muted">Initial 2 Modules of 90 Hours duration forming Semester I of the course.</p>
+            <div class="dot"></div>
+          </div>
+
+          <div class="timeline-item mb-4">
+            <h5>Core Machine Learning</h5>
+            <p class="small text-muted">Intermdiate 2 Modules of 90 Hours duration forming the Semester II of the course.</p>
+            <div class="dot"></div>
+          </div>
+
+          <div class="timeline-item mb-4">
+            <h5>Advanced ML & Deep Learning</h5>
+            <p class="small text-muted">Advanced 2 Modules of 90 Hours duration forming Semester III of the course.</p>
+            <div class="dot"></div>
+          </div>
+
+          <div class="timeline-item mb-4">
+            <h5> NLP, Cloud & Final Project</h5>
+            <p class="small text-muted">Portfolio-grade final capstone project + mock interviews + Research Paper Writing.</p>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Syllabus (Advanced dropdown layout) -->
+    <section id="syllabus" class="py-5 bg-light syllabus">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h3 class="fw-bold">Syllabus</h3>
+          <p class="text-muted">Detailed module breakdown  expand to view topics and resources.</p>
+        </div>
+
+         <div class="accordion" id="syllabusAcc">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s11">
+<!-- First Semester -->
+<div class="accordion" id="syllabusAcc1">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="sem1Head">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sem1Body" aria-expanded="false">
+        <b>First Semester</b>
+      </button>
+    </h2>
+    <div id="sem1Body" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc1">
+      <div class="accordion-body">
+        <div class="topic">
+          <div><b>Module 101 Mathematics and Statistics:</b> Delve into Linear Algebra, Multivariate Calculus, Statistics, and Probability. Learn Linear Regression, Outlier Rejection, and both Unconstrained and Constrained Optimization, including Stochastic Search with GA and PSO.
+
+  </div>
+        </div>
+        <hr>
+        <div class="topic">
+          <div><b>Module 102 Python Programming:</b> Master Python Fundamentals, String Objects and Collections (Tuples, Set, Dictionaries, Functions). Get a thorough introduction to Pandas, covering basics, Series, Dataframes, text data, indexing, selecting, visualization, and critical data manipulation and cleansing techniques like handling missing values and skewness.
+
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Second Semester -->
+<div class="accordion" id="syllabusAcc2">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="sem2Head">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sem2Body" aria-expanded="false">
+        <b>Second Semester</b>
+      </button>
+    </h2>
+    <div id="sem2Body" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc2">
+      <div class="accordion-body">
+        <div class="topic">
+          <div><b>Module 201 Feature Space and Dimensionality Reduction, Unsupervised Learning, Generative Models, Pattern Mining:</b> Gain proficiency with NumPy, SciPy, Scikit- learn, Seaborn, and Matplotlib. Understand the Machine Learning Task Workflow, Feature Space transformations, and separability. Explore Hashing Techniques for Feature Space Partition, Feature Subset Selection, Principal Component Analysis (PCA), Linear Discriminant Analysis (LDA), and Exploratory Factor Analysis (EFA).
+</div>
+        </div>
+        <hr>
+        <div class="topic">
+          <div><b>Module 202 Unsupervised Learning, Generative Models, Pattern Mining:</b> Explore various Unsupervised Learning techniques including Adaptive Thresholding, K-Means (and its variants), Hierarchical Agglomerative Clustering, DBSCAN, Nonparametric Estimation, and Mean-Shift Clustering. Learn Performance Analysis of Clustering Algorithms, Parametric Estimation (Bias, Variance, MLE), Learning Mixture Models, Unsupervised Representation Learning, Probabilistic Latent Semantic Model (PLSA), Association Rule Mining, Suffix Tree and Sequence Mining, Markov Process, Hidden Markov Model (HMM), and Prediction with Autoregressive Process Models.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Third Semester -->
+<div class="accordion" id="syllabusAcc3">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="sem3Head">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sem3Body" aria-expanded="false">
+        <b>Third Semester</b>
+      </button>
+    </h2>
+    <div id="sem3Body" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc3">
+      <div class="accordion-body">
+        <div class="topic">
+          <div><b>Module 301 Supervised Learning- Classification and Regression</b> Dive into Supervised Learning with Bayesian Classification, Discriminant Functions, Logistic Regression, Perceptron (Binary and Multicategory), and Multilayer Perceptron (Architecture, Backpropagation, Training Issues).
+Master K-NN, Radial Basis Function ANN, Data Balancing Techniques, Classification and Regression Trees, Neural Trees, Ensemble Methods (Bagging - Random Forest, Boosting - AdaBoost), and Support Vector Machines (SVM).</div>
+        </div>
+        <hr>
+        <div class="topic">
+          <div><b>Module 302 Deep Learning and Computer Vision:</b> Get a comprehensive Introduction to Deep Learning, covering Convolutional Neural Networks (Popular Architectures, Learning Algorithms, Training Issues), Recurrent Neural Networks (RNN) and LSTM, Encoder-Decoder Networks, and Generative Adversarial Networks. Gain practical Computer Vision skills using the OpenCV Library for Feature Extraction, Object Detection, Face Detection/ Recognition/Search, Object Tracking, and Image Segmentation in DL Frameworks.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fourth Semester -->
+<div class="accordion" id="syllabusAcc4">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="sem4Head">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sem4Body" aria-expanded="false">
+        <b>Fourth Semester</b>
+      </button>
+    </h2>
+    <div id="sem4Body" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc4">
+      <div class="accordion-body">
+        <div class="topic">
+          <div><b>Module 401 Natural Language Processing, Speech and Audio Processing:</b> Explore Natural Language Processing with the NLTK Library, including Text Normalization (Tokenization, Lemmatization, Morphology), n- gram Language Models, Vector Semantics (Word2Vec, GloVE), Neural Models, Neural Language Models, and Sequence Labeling Tasks (CNN and RNN Models for NLP). Learn Speech and Audio Processing using LibRosa for basic operations, feature extraction for classification/synthesis, and building Speech Recognition and Synthesis Systems.</div>
+        </div>
+        <hr>
+        <div class="topic">
+          <div><b>Module 402 Machine Learning on Cloud, Counselling and Final Project:</b> Understand Cloud fundamentals and ML tools on leading platforms (AWS, Azure, GCP), including how to deploy ML projects on the cloud. Benefit from Career Counselling and Interview Facing Tips & Tricks, culminating in a Capstone Project and Final Project Presentation to showcase your acquired skills.
+
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      </div>
+    </section>
+
+<!-- Mentors -->
+<section id="mentors" class="py-5 bg-light">
+  <div class="container">
+    
+    <div class="text-center mb-4">
+      <h3 class="fw-bold">Course Mentors</h3>
+      <p class="text-muted">Experienced practitioners from IIT Guwahati in this field.</p>
+    </div>
+
+    <!-- Row Wrapper Added -->
+    <div class="row g-4">
+
+      <!-- Mentor 1 -->
+      <div class="col-md-4">
+        <div class="card p-3 mentor-card">
+          <img src="gt.jpg" class="img-fluid rounded-3" alt="mentor">
+          <div class="mt-3">
+            <h6 class="mb-0">
+              <a href="https://iitg.ac.in/iitg_faculty_details?fac=dEFUdXJDZVB3dnc4OUFHRUZnVDh6QT09"
+                 target="_blank"
+                 style="text-decoration:none; color:#000;">
+                Prof. Gaurav Trivedi
+              </a>
+            </h6>
+            <small class="text-muted">Professor, EEE, IIT Guwahati</small>
+            <p class="mt-2 text-muted small">
+              Research Areas: Circuit Simulation (Analog, RF & Digital), VLSI CAD, Electronics System Design,
+              Computer Architecture, Semiconductor Devices, Hardware Security, Embedded Systems & IoT,
+              High Performance Computing, Optimization & Machine Learning.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mentor 2 -->
+      <div class="col-md-4">
+        <div class="card p-3 mentor-card">
+          <img src="Prithwijit Guha.jpeg" class="img-fluid rounded-3" alt="mentor">
+          <div class="mt-3">
+            <h6 class="mb-0">
+              <a href="https://iitg.ac.in/iitg_faculty_details?fac=ZWd5K0tydVNSWGtHcDFwdzZnSjY0Zz09"
+                 target="_blank"
+                 style="text-decoration:none; color:#000;">
+                Prof. Prithwijit Guha
+              </a>
+            </h6>
+            <small class="text-muted">Professor, EEE, IIT Guwahati</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>       
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact form with validation -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <h3 class="fw-bold">Get in touch</h3>
+            <p class="text-muted">Questions about the course or eligibility? Drop us a message and we'll respond within 48 hours.</p>
+
+            <div class="contact-card">
+              <form id="contactForm" class="contact-form needs-validation" novalidate>
+                <div class="mb-3">
+                  <label class="form-label">Full name</label>
+                  <input type="text" class="form-control" id="cname" required>
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" id="cemail" required>
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-control" id="cmessage" rows="4" required></textarea>
+                  <div class="invalid-feedback">Please enter a message.</div>
+                </div>
+                <div class="d-grid">
+                  <button class="btn btn-enroll" type="submit">Send message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="p-4 rounded-3" style="background:linear-gradient(180deg,#fff, #fffbf7);box-shadow:0 20px 50px rgba(16,24,40,.04)">
+              <h5>Quick facts</h5>
+              <ul class="text-muted">
+                <li>8 weeks " Live + on-demand</li>
+                <li>1:1 mentor reviews</li>
+                <li>Capstone & portfolio review</li>
+                <li>Scholarships available</li>
+              </ul>
+
+              <div class="mt-3">
+                <a href="#signup" class="btn btn-outline-dark">Apply now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+  </main>
+
+  <footer>
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <strong style="color:var(--brand-accent)">ProCert</strong>
+        <div class="text-muted small">© ProCert  All rights reserved</div>
+      </div>
+      <div class="d-flex gap-3">
+        <a class="text-muted" href="#"><i class="bi bi-twitter"></i></a>
+        <a class="text-muted" href="#"><i class="bi bi-linkedin"></i></a>
+        <a class="text-muted" href="#"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(ev){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){
+          ev.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      })
+    })
+
+    // Contact form validation (Bootstrap custom)
+    (function(){
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if(!form.checkValidity()){
+          form.classList.add('was-validated');
+          return;
+        }
+        // Simulate submit
+        alert('Thanks! Your message has been sent.');
+        form.reset();
+        form.classList.remove('was-validated');
+      })
+    })();
+  </script>
+</body>
+</html>

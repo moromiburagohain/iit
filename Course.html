@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applied Machine Learning & Data Science | E&ICT Academy IIT Guwahati</title>
+  <style>
+    :root {
+      --accent: #0f6cff;
+      --muted: #6b7280;
+      --bg: #f7fafc;
+      --card: #ffffff;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f6fa;
+      color: #222;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header.main-header {
+      background: linear-gradient(135deg, #002147, #0078d4);
+      color: white;
+      text-align: center;
+      padding: 50px 20px 80px;
+    }
+    header.main-header h1 {
+      margin: 5px 0;
+      font-size: 2.2em;
+    }
+    header.main-header p {
+      font-size: 1.1em;
+      color: #e0e0e0;
+    }
+    .btn {
+      background-color: #ffb400;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #ffc94b;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: block;
+      font-weight: 500;
+    }
+    nav a:hover {
+      background-color: #0078d4;
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #002147;
+      min-width: 220px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 101;
+    }
+    .dropdown-content a {
+      padding: 12px 16px;
+      display: block;
+      color: white;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background-color: #0078d4;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Section and Cards */
+    .wrap {
+      max-width: 980px;
+      margin: 36px auto;
+      padding: 24px;
+    }
+    .courses-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .courses-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #003366;
+    }
+    p.lead {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    @media (min-width: 820px) {
+      .grid {
+        grid-template-columns: 1fr 320px;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    ul.bullets {
+      margin: 10px 0 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+    ul.bullets li {
+      padding-left: 12px;
+      position: relative;
+    }
+    ul.bullets li::before {
+      content: """;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .stat {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .stat .item {
+      flex: 1 1 140px;
+      background: linear-gradient(180deg, rgba(15, 108, 255, 0.06), transparent);
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .small {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .cta:hover {
+      background: #005ad6;
+    }
+
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffb400;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Fixes */
+    @media (max-width: 768px) {
+      header.main-header {
+        padding: 30px 15px 50px;
+      }
+      nav a {
+        padding: 10px;
+        font-size: 0.9em;
+      }
+      .wrap {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header" id="home">
+    <h1>Applied Machine Learning & Data Science</h1>
+    <p>Professional Certification Course by E&ICT Academy, IIT Guwahati</p>
+    <a class="btn" href="https://eict.iitg.ac.in" target="_blank" rel="noopener">Enroll Now</a>
+  </header>
+
+ <nav>
+  <!-- Dropdown 1 -->
+  <div class="dropdown">
+    <a href="#home" class="dropbtn">Home ¾</a>
+    <div class="dropdown-content">
+      <a href="about.html">About E&ICT</a>
+      <a href="history1.html">History</a>
+      <a href="future.html">Future Plans</a>
+      <a href="Proffessional.html">Professional Courses & Specialized Training</a>
+      <a href="other.html">Other Activities</a>
+    </div>
+  </div>
+
+  <!-- Dropdown 2 -->
+  <div class="dropdown">
+    <a href="#about-course" class="dropbtn">About Course ¾</a>
+    <div class="dropdown-content">
+      <!-- Submenu for Courses -->
+      <div class="sub-dropdown">
+        <a href="course.html" class="sub-dropbtn">Courses ¸</a>
+        <div class="sub-dropdown-content">
+             <a href="file:///C:/Users/Moromi/Desktop/webpage/AI%20&%20ML.html">AI & ML</a>
+            <a href="cyber.html">Cybersecurity</a>
+            <a href="file:///C:/Users/Moromi/Desktop/webpage/professional_certification_landing_page(1)%20(1).html">VLSI</a>
+        </div>
+      </div>
+        <a href="fee.html">Fees</a>
+      <a href="admission.html">Admission</a>
+      <a href="why.html">Why to Enroll</a>
+      <a href="resources.html">Resources</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="news.html">News & Events</a>
+  <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
+  <a href="address.html">Contact Us</a>
+</nav>
+
+<style>
+  /* Basic styling */
+  nav {
+    background-color: #001f3f;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    background-color: #0078d4;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropbtn {
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #001f3f;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #0078d4;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Submenu styling */
+  .sub-dropdown {
+    position: relative;
+  }
+
+  .sub-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #001f3f;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .sub-dropdown-content a {
+    padding: 10px 16px;
+  }
+
+  .sub-dropdown:hover .sub-dropdown-content {
+    display: block;
+  }
+
+  .sub-dropbtn::after {
+    content: " ¸";
+    float: right;
+  }
+</style>
+
+
+
+<section id="about" style="text-align:center; background:white; margin:50px auto; padding:40px 10%; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); width:80%;">
+  <h2 style="color:#003366; border-bottom:3px solid #0078d4; display:inline-block; padding-bottom:5px;">About the Course</h2>
+  
+  <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+    <tbody>
+      <tr style="background-color:#f5f6fa;">
+        <td style="padding:15px; border:1px solid #ccc; text-align:left;">
+          The <strong>Applied Machine Learning & Data Science Certification</strong> by 
+          <strong>E&ICT Academy, IIT Guwahati</strong> is a comprehensive program designed 
+          to bridge academic learning with industry applications in Artificial Intelligence 
+          and Machine Learning.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="benefits" style="text-align:center; background:white; margin:50px auto; padding:40px 10%; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); width:80%;">
+  <h2 style="color:#003366; border-bottom:3px solid #0078d4; display:inline-block; padding-bottom:5px;">Why Choose This Course?</h2>
+
+  <div style="overflow-x:auto;">
+    <table style="width:100%; border-collapse:collapse; margin-top:20px; border:1px solid #ccc;">
+      <thead>
+        <tr style="background-color:#002147; color:white;">
+         <th style="padding:12px; border:1px solid #ccc; text-align:center;">Feature</th>
+          <th style="padding:12px; border:1px solid #ccc; text-align:center;">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background-color:#ffffff;">
+          <td style="padding:12px; border:1px solid #ccc;"><strong>Hands-on Focus</strong></td>
+          <td style="padding:12px; border:1px solid #ccc;">Learn to build, deploy, and manage real-world AI/ML solutions.</td>
+        </tr>
+        <tr style="background-color:#f5f6fa;">
+          <td style="padding:12px; border:1px solid #ccc;"><strong>Comprehensive Curriculum</strong></td>
+          <td style="padding:12px; border:1px solid #ccc;">Covers Python, Deep Learning, NLP, and Cloud ML tools.</td>
+        </tr>
+        <tr style="background-color:#ffffff;">
+          <td style="padding:12px; border:1px solid #ccc;"><strong>Expert-Led</strong></td>
+          <td style="padding:12px; border:1px solid #ccc;">Delivered by IIT faculty and industry professionals.</td>
+        </tr>
+        <tr style="background-color:#f5f6fa;">
+          <td style="padding:12px; border:1px solid #ccc;"><strong>Career Support</strong></td>
+          <td style="padding:12px; border:1px solid #ccc;">Includes resume-building, mock interviews, and career counseling.</td>
+        </tr>
+        <tr style="background-color:#ffffff;">
+          <td style="padding:12px; border:1px solid #ccc;"><strong>Portfolio Development</strong></td>
+          <td style="padding:12px; border:1px solid #ccc;">Capstone project to showcase your expertise.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

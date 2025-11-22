@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applied Machine Learning & Data Science | E&ICT Academy IIT Guwahati</title>
+  <style>
+    :root {
+      --accent: #0f6cff;
+      --muted: #6b7280;
+      --bg: #f7fafc;
+      --card: #ffffff;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f6fa;
+      color: #222;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header.main-header {
+      background: linear-gradient(135deg, #002147, #0078d4);
+      color: white;
+      text-align: center;
+      padding: 50px 20px 80px;
+    }
+    header.main-header h1 {
+      margin: 5px 0;
+      font-size: 2.2em;
+    }
+    header.main-header p {
+      font-size: 1.1em;
+      color: #e0e0e0;
+    }
+    .btn {
+      background-color: #ffb400;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #ffc94b;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: block;
+      font-weight: 500;
+    }
+    nav a:hover {
+      background-color: #0078d4;
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #002147;
+      min-width: 220px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 101;
+    }
+    .dropdown-content a {
+      padding: 12px 16px;
+      display: block;
+      color: white;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background-color: #0078d4;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Section and Cards */
+    .wrap {
+      max-width: 980px;
+      margin: 36px auto;
+      padding: 24px;
+    }
+    .courses-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .courses-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #003366;
+    }
+    p.lead {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    @media (min-width: 820px) {
+      .grid {
+        grid-template-columns: 1fr 320px;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    ul.bullets {
+      margin: 10px 0 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+    ul.bullets li {
+      padding-left: 12px;
+      position: relative;
+    }
+    ul.bullets li::before {
+      content: """;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .stat {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .stat .item {
+      flex: 1 1 140px;
+      background: linear-gradient(180deg, rgba(15, 108, 255, 0.06), transparent);
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .small {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .cta:hover {
+      background: #005ad6;
+    }
+
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffb400;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Fixes */
+    @media (max-width: 768px) {
+      header.main-header {
+        padding: 30px 15px 50px;
+      }
+      nav a {
+        padding: 10px;
+        font-size: 0.9em;
+      }
+      .wrap {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header" id="home">
+    <h1>Applied Machine Learning & Data Science</h1>
+    <p>Professional Certification Course by E&ICT Academy, IIT Guwahati</p>
+    <a class="btn" href="https://eict.iitg.ac.in" target="_blank" rel="noopener">Enroll Now</a>
+  </header>
+
+ <nav>
+  <!-- Dropdown 1 -->
+  <div class="dropdown">
+    <a href="#home" class="dropbtn">Home ¾</a>
+    <div class="dropdown-content">
+      <a href="about.html">About E&ICT</a>
+      <a href="history1.html">History</a>
+      <a href="future.html">Future Plans</a>
+      <a href="Proffessional.html">Professional Courses & Specialized Training</a>
+      <a href="other.html">Other Activities</a>
+    </div>
+  </div>
+
+  <!-- Dropdown 2 -->
+  <div class="dropdown">
+    <a href="#about-course" class="dropbtn">About Course ¾</a>
+    <div class="dropdown-content">
+      <!-- Submenu for Courses -->
+      <div class="sub-dropdown">
+        <a href="course.html" class="sub-dropbtn">Courses ¸</a>
+        <div class="sub-dropdown-content">
+       <a href="file:///C:/Users/Morami/Desktop/webpage/AI%20&%20ML.html">AI & ML</a>
+            <a href="cyber.html">Cybersecurity</a>
+            <a href="file:///C:/Users/Morami/Desktop/webpage/professional_certification_landing_page(1).html">VLSI</a>
+        </div>
+      </div>
+        <a href="fee.html">Fees</a>
+      <a href="admission.html">Admission</a>
+      <a href="why.html">Why to Enroll</a>
+      <a href="resources.html">Resources</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="news.html">News & Events</a>
+  <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
+  <a href="address.html">Contact Us</a>
+</nav>
+
+<style>
+  /* Basic styling */
+  nav {
+    background-color: #001f3f;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    background-color: #0078d4;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropbtn {
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #001f3f;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #0078d4;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Submenu styling */
+  .sub-dropdown {
+    position: relative;
+  }
+
+  .sub-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #001f3f;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .sub-dropdown-content a {
+    padding: 10px 16px;
+  }
+
+  .sub-dropdown:hover .sub-dropdown-content {
+    display: block;
+  }
+
+  .sub-dropbtn::after {
+    content: " ¸";
+    float: right;
+  }
+</style>
+
+
+  <div class="wrap">
+    <section class="courses-header">
+      <div>
+        <h2>Professional Courses & Specialized Training</h2>
+        <p class="lead">
+          Online advanced certification courses for graduates and working professionals  designed to be industry-relevant, career-focused, and self-sustaining.
+        </p>
+      </div>
+    </section>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <div class="section-title">Popular Advanced Certification Courses</div>
+          <p class="small">
+            These programs are delivered online and tailored for graduates and working professionals in high-demand domains.
+          </p>
+          <ul class="bullets" aria-label="Courses offered">
+            <li>Data Science</li>
+            <li>Artificial Intelligence & Machine Learning</li>
+            <li>Big Data</li>
+            <li>Cloud Computing</li>
+            <li>Full Stack Development</li>
+            <li>UI/UX Design</li>
+            <li>VLSI Design</li>
+          </ul>
+
+          <div class="stat" role="list">
+            <div class="item" role="listitem">
+              <div class="num">2,000+</div>
+              <div class="small">Graduates & professionals trained</div>
+            </div>
+            <div class="item" role="listitem">
+              <div class="num">Online</div>
+              <div class="small">Self-paced & instructor-led options</div>
+            </div>
+          </div>
+
+          <a class="cta" href="#contact">Learn More / Enroll</a>
+        </section>
+
+        <section class="card" style="margin-top:14px">
+          <div class="section-title">Specialized Training for Government & Defense</div>
+          <p class="small">
+            The Academy delivers custom training programs for public sector and defense organizations  combining domain expertise with practical, hands-on labs.
+          </p>
+          <ul class="bullets">
+            <li>Trained 140+ Assam Police and Indian Navy officials on Cybercrime & Data Science</li>
+            <li>Delivered Cyber Security and Project Management training to NIC officials</li>
+          </ul>
+        </section>
+      </main>
+
+      <aside>
+        <div class="card">
+          <div class="section-title">Quick Facts</div>
+          <p class="small">
+            Programs designed for immediate workplace impact with certificate recognition.
+          </p>
+          <div style="margin-top:12px">
+            <strong>Delivery:</strong>
+            <div class="small">100% online with optional hands-on labs</div>
+          </div>
+
+          <div style="margin-top:12px">
+            <strong>Target Audience:</strong>
+            <div class="small">Graduates, professionals, and government employees</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <strong>Contact:</strong>
+            <div class="small">training@academy.example | +91 98765 43210</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title">Get Started</div>
+          <p class="small">
+            Interested organizations can request customized training packages or bulk enrollments for staff.
+          </p>
+          <a class="cta" href="#contact">Request a Proposal</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    &copy; <span id="year"></span> E&ICT Academy IIT Guwahati  All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

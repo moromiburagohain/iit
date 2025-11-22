@@ -1,0 +1,641 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Certification in Cybersecurity  Landing Page</title>
+
+  <!-- Bootstrap 5 -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#074dce;
+      --bg:#f7f7f7; /* lighter background as requested */
+      --card:#83a8ee6b;
+      --text:#000000; /* black text */
+      --muted:#0A1A3F;
+
+
+      /* Custom Send Button Color */
+    .btn-send {
+      background-color: #0A1A3F;
+      border-color: #0A1A3F;
+      color: #fff;
+    }
+
+    .btn-send:hover {
+      background-color: #0C224F;
+      border-color: #0C224F;
+      color: #fff;
+    }
+    html,body{height:100%;}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* HEADER SECTION  Professionally Bright Background */
+.custom-header {
+  background: linear-gradient(90deg, #0A1A3F 0%, #cfcfcfc9 100%);
+  color: #000000 !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.custom-header .navbar-brand,
+.custom-header .nav-link {
+  color: #000000 !important;
+  font-weight: 500;
+}
+
+.custom-header .nav-link:hover {
+  color: #004aad !important;
+}
+
+    }
+    .hero .lead{color:var(--muted); font-size:1.05rem;}
+    .btn-primary{
+      background: linear-gradient(90deg,var(--accent), #d3c2ce);
+      border: none;
+      box-shadow: 0 6px 28px rgba(13,110,253,0.08);
+      padding: .6rem 1.1rem;
+    }
+
+    /* Features bold block */
+    .features-block{
+      background: linear-gradient(180deg,#f0f0f0,#6a7d91);
+      border-radius:18px;
+      padding:1.25rem;
+      box-shadow: 0 8px 30px rgba(16,24,40,0.04);
+      border: 1px solid rgba(13,110,253,0.06);
+    }
+    .feature-item{min-height:90px;}
+
+    /* Cards */
+    /* Cards */
+.course-card {
+  background: #eaeaec; /* Deep professional bold color */
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0);
+  box-shadow: 0 6px 16px rgba(248, 242, 242, 0.87);
+}
+
+    }
+
+    /* Learning path timeline */
+    .timeline{
+      position:relative;
+      margin-left: 1rem;
+      padding-left: 1.25rem;
+      border-left: 3px dashed rgba(216, 211, 211, 0.842);
+    }
+    .timeline .step{position:relative; padding: 1rem 0;}
+    .timeline .step::before{
+      content:'';
+      position:absolute;
+      left:-1.15rem;
+      top:1rem;
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:var(--card);
+      border: 3px solid var(--accent);
+      box-shadow: 0 4px 10px rgba(13,110,253,0.06);
+    }
+
+    /* Mentors */
+    .mentor-card img{width:72px;height:72px;object-fit:cover;border-radius:12px;}
+
+    /* Footer */
+    footer{padding:2.5rem 0; color:var(--muted);}
+    .muted{color:var(--muted);}
+
+    @media (max-width:767px){
+      .hero{padding:3rem 0;}
+      .features-grid .feature-item{min-height: auto;}
+    }
+  </style>
+</head>
+<body>
+
+ <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg custom-header py-2 shadow-sm">
+  <div class="container">
+    <!-- Replace this image src with your actual logo file -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="data:image/png;base64,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
+           alt="E&ICT Academy IIT Guwahati height="70"class="me-2">
+     
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#learning">Learning Path</a></li>
+        <li class="nav-item"><a class="nav-link" href="#syllabus">Syllabus</a></li>
+        <li class="nav-item"><a class="nav-link" href="#eligibility">Eligibility</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mentors">Mentors</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- HERO -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Content -->
+      <div class="col-lg-7">
+        <h1 class="display-6 fw-bold">Professional Certification Programme in Cybersecurity</h1>
+        <p class="lead mb-3">
+          A 12-month industry-aligned certificate with hands-on labs, capstone project, and certification prep  for career-ready cybersecurity professionals.
+        </p>
+
+        <!-- Apply Button (fixed) -->
+        <div class="d-flex gap-2">
+          <a href="https://eict.iitg.ac.in/" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn btn-lg"
+             style="background:#0A1A3F; color:#ffffff; border:none;">
+            Apply Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Course Card -->
+      <div class="col-lg-5">
+        <div class="course-card" style="background:#9f9fa0; border-radius:12px; padding:1.25rem;">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>
+              <h5 class="mb-0">Duration</h5>
+              <p class="mb-0 muted small">12 Months</p>
+            </div>
+            <div class="text-end">
+              <h5 class="mb-0">Mode</h5>
+              <p class="mb-0 muted small">Online</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <ul class="list-unstyled mb-0">
+            <li><i class="bi bi-check2-circle me-2 text-success"></i>Hands-on labs & assignments</li>
+            <li><i class="bi bi-check2-circle me-2 text-success"></i>Capstone simulated attack & defense</li>
+            <li><i class="bi bi-check2-circle me-2 text-success"></i>Certification prep (CEH, Security+)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</section>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <h2 class="fw-bold">About the Course</h2>
+          <p class="muted">
+            This Professional Certification Programme in Cyber Security covers foundational to advanced topics such as network security, ethical hacking, cloud security, cryptography, incident response and forensics. It combines instructor-led sessions, self-paced materials, and practical labs to make learners job-ready. 
+          </p>
+          <div class="row g-3 mt-3">
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 border course-card">
+                <h6 class="mb-1">Who should apply?</h6>
+                <p class="mb-0 muted">Graduates, IT professionals, aspiring security engineers.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 border course-card">
+                <h6 class="mb-1">Outcome</h6>
+                <p class="mb-0 muted">Industry-ready skills, capstone project, career guidance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+     <div class="col-lg-5">
+  <div class="features-block" style="background:#b1b1b3; border-radius:12px; padding:1.25rem;">
+    <h5 class="fw-bold">Program Highlights</h5>
+    <ul class="list-unstyled mt-3">
+      <li class="mb-2"><strong>Real-world labs & capstone</strong>  simulated attack and defense project.</li>
+      <li class="mb-2"><strong>Tools-focused</strong>  Kali, Metasploit, Burp, Nmap, Wireshark, Splunk, ELK.</li>
+      <li class="mb-2"><strong>Career support</strong>  resume, interview prep, certification guidance.</li>
+    </ul>
+
+    <div class="mt-3 d-flex gap-2">
+      <a href="#learning" class="btn btn-sm btn-outline-dark">See Learning Path</a>
+      <a href="#enquire" class="btn btn-sm btn-outline-dark">Enquire</a>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- FEATURES (Bold block) -->
+  <section id="features" class="py-5 bg-transparent">
+    <div class="container">
+      <h3 class="fw-bold mb-4">Features</h3>
+      <div class="row features-grid g-3">
+        <div class="col-md-4">
+          <div class="p-3 course-card feature-item h-100">
+            <h6 class="fw-bold">Hands-On Labs</h6>
+            <p class="muted small mb-0">Practical exercises using real tools and environments.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 course-card feature-item">
+            <h6 class="fw-bold">Mentored Projects</h6>
+            <p class="muted small mb-0">Faculty and industry mentors guide capstone research and projects.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 course-card feature-item">
+            <h6 class="fw-bold">Certification Prep</h6>
+            <p class="muted small mb-0">Modules aligned with CEH, Security+, and SOC fundamentals.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-3 course-card feature-item">
+            <h6 class="fw-bold">Tools & Platforms</h6>
+            <p class="muted small mb-0">Kali Linux, Wireshark, Metasploit, Burp Suite, Splunk, ELK, cloud tools.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 course-card feature-item">
+            <h6 class="fw-bold">Community</h6>
+            <p class="muted small mb-0">Peer forums, study groups, simulated SOC exercises.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 course-card feature-item">
+            <h6 class="fw-bold">Project Research</h6>
+            <p class="muted small mb-0">Research-led assignments and guided publications for interested learners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNING PATH -->
+  <section id="learning" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h3 class="fw-bold">Learning Path  12 Months</h3>
+          <p class="muted">A progressive journey from foundations to advanced operations, aligned to industry needs. Summary adapted from the course brochure. 
+
+          <div class="timeline mt-4">
+            <div class="step">
+              <h6 class="mb-1">Months 12  Foundation</h6>
+              <p class="muted small mb-0">Intro to security, networks, OS basics, Python/scripting fundamentals.</p>
+            </div>
+
+            <div class="step">
+              <h6 class="mb-1">Months 34  Core Concepts</h6>
+              <p class="muted small mb-0">Network security, cryptography, web application and secure coding basics.</p>
+            </div>
+
+            <div class="step">
+              <h6 class="mb-1">Months 56  Offensive Security</h6>
+              <p class="muted small mb-0">Ethical hacking, penetration testing, vulnerability assessment (Nmap, Metasploit).</p>
+            </div>
+
+            <div class="step">
+              <h6 class="mb-1">Months 78  Defensive Security</h6>
+              <p class="muted small mb-0">SIEM & SOC fundamentals (Splunk/ELK), malware analysis, endpoint defenses.</p>
+            </div>
+
+            <div class="step">
+              <h6 class="mb-1">Months 910  Advanced Modules</h6>
+              <p class="muted small mb-0">Cloud security, governance, IAM, risk & compliance.</p>
+            </div>
+
+            <div class="step">
+              <h6 class="mb-1">Month 1112  Incident Response & Capstone</h6>
+              <p class="muted small mb-0">Digital forensics, incident response, capstone simulation, career prep.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+  <div class="course-card" style="background:#9f9fa0; border-radius:12px; padding:1.25rem;">
+    <h6 class="fw-bold">Hands-On & Tools</h6>
+    <p class="muted small">
+      Extensive practical exposure  Kali Linux, Burp Suite, Nmap, Metasploit, Wireshark, Splunk, ELK; 
+      plus cloud security tooling (AWS/Azure/GCP best practices).
+    </p>
+
+    <hr>
+
+    <h6 class="fw-bold">Activities</h6>
+    <ul class="muted small">
+      <li>Live red-team / blue-team exercises</li>
+      <li>Capture The Flag (CTF) events</li>
+      <li>Weekly lab assignments & code reviews</li>
+      <li>Group projects and peer code audits</li>
+    </ul>
+  </div>
+</div>
+
+  </section>
+
+  <!-- SYLLABUS -->
+  <section id="syllabus" class="py-5 bg-transparent">
+    <div class="container">
+      <h3 class="fw-bold mb-4">Syllabus  Overview</h3>
+
+      <div class="accordion" id="syllAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              Foundation (Months 12)
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#syllAccordion">
+            <div class="accordion-body">
+              <ul>
+                <li>Introduction to Cybersecurity & Threat Landscape</li>
+                <li>Computer Networks, OS, Security Basics</li>
+                <li>Basics of Programming & Scripting (Python)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+              Core & Offensive (Months 36)
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#syllAccordion">
+            <div class="accordion-body">
+              <ul>
+                <li>Network Security & Secure Design</li>
+                <li>Cryptography & Data Security</li>
+                <li>Web App Security, Secure Coding</li>
+                <li>Ethical Hacking, Vulnerability Assessment & Exploitation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+              Defensive & Advanced (Months 710)
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#syllAccordion">
+            <div class="accordion-body">
+              <ul>
+                <li>SIEM, SOC Operations (Splunk/ELK)</li>
+                <li>Malware Analysis, IDS/IPS</li>
+                <li>Cloud Security, IAM, Governance & Risk</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+              Capstone & Certification (Months 1112)
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#syllAccordion">
+            <div class="accordion-body">
+              <ul>
+                <li>Incident Response & Digital Forensics</li>
+                <li>Capstone: Simulated Cyber Attack & Defense</li>
+                <li>Resume & Interview Preparation; Certification Prep</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </section>
+
+  <!-- ELIGIBILITY -->
+  <section id="eligibility" class="py-5">
+    <div class="container">
+      <h3 class="fw-bold">Eligibility & Pre-requisites</h3>
+      <div class="row g-3 mt-3">
+        <div class="col-md-6">
+          <div class="course-card">
+            <h6>Eligibility</h6>
+            <ul class="muted small mb-0">
+              <li>Graduate degree (any discipline; CS/IT/Engineering preferred).</li>
+              <li>Basic knowledge of computer networks and operating systems.</li>
+              <li>Familiarity with programming fundamentals (Python, C, Java  helpful but not mandatory).</li>
+              <li>Working professionals with 12 years experience recommended but not mandatory.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="course-card">
+            <h6>Pre-requisites</h6>
+            <p class="muted small mb-0">No prior cyber security experience required  course starts with fundamentals and progresses to advanced topics. 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENTORS -->
+<section id="mentors" class="py-5 bg-transparent">
+  <div class="container">
+    <h3 class="fw-bold mb-4">Mentors & Faculty</h3>
+
+    <div class="row g-4">
+
+      <!-- Mentor Card 1 -->
+      <div class="col-sm-6 col-md-4">
+        <div class="p-3 mentor-card d-flex gap-3"
+             style="background: #9f9fa0; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+
+          <img src="https://www.iitg.ac.in/trivedi/img/GauravTrivedi.jpg"
+               alt="Prof. Gaurav Trivedi"
+               class="rounded"
+               style="width: 80px; height: 80px; object-fit: cover;">
+
+          <div>
+            <h6 class="mb-0">Prof. Gaurav Trivedi</h6>
+            <p class="small mb-1">Professor  Dept. of EEE, IIT Guwahati</p>
+
+            <p class="muted small mb-1">Expert in secure systems & network defenses.</p>
+
+            <p class="small mb-0">
+              <strong>Contact:</strong><br>
+              trivedi@iitg.ac.in
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mentor Card 2 -->
+      <div class="col-sm-6 col-md-4">
+        <div class="p-3 mentor-card d-flex gap-3"
+             style="background: #9f9fa0; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+
+          <img src="https://www.iitg.ac.in/eee/faculty/7dbd1bf2fcc597056d76ee2aec0a2b50.jpg"
+               alt="Dr. Srinivasan Krishnaswamy"
+               class="rounded"
+               style="width: 80px; height: 80px; object-fit: cover;">
+
+          <div>
+            <h6 class="mb-0">Dr. Srinivasan Krishnaswamy</h6>
+            <p class="small mb-1">Associate Professor  EEE, IIT Guwahati</p>
+
+            <p class="muted small">Focus: digital forensics, incident response.</p>
+
+            <p class="small mb-0">
+              <strong>Contact:</strong><br>
+              srinikris@iitg.ac.in
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</section>
+
+
+        
+  </section>
+
+  <!-- CONTACT / QUERIES -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h3 class="fw-bold">Have Questions? Get In Touch</h3>
+          <p class="muted">For course-specific queries, admissions, or collaborations, fill the form or contact program coordinators listed below. Contact details adapted from the brochure. 
+
+          <div class="course-card mt-3">
+            <h6 class="fw-bold">Program Contacts</h6>
+            <p class="small muted mb-1"><strong>feroza Haque </strong><br>feroza.haque@iisi.iitg.ac.in · +91-361-258-3182</p>
+            <p class="small muted mb-0"><strong>Manash Baishya</strong><br>manashbaishya@iisi.iitg.ac.in· +91-361-258-3199</p>
+          </div>
+        </div>
+
+       <div class="col-lg-6">
+  <form id="contactForm" class="course-card" novalidate>
+    <h6 class="fw-bold mb-3">Send an enquiry</h6>
+
+    <div class="mb-2">
+      <label class="form-label small">Full name</label>
+      <input required type="text" class="form-control" id="name">
+    </div>
+
+    <div class="mb-2">
+      <label class="form-label small">Email</label>
+      <input required type="email" class="form-control" id="email">
+    </div>
+
+    <div class="mb-2">
+      <label class="form-label small">Message</label>
+      <textarea required class="form-control" id="message" rows="3"></textarea>
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <button type="submit" class="btn btn-send">Send</button>
+    </div>
+
+    <div id="formAlert" class="mt-2" style="display:none;"></div>
+  </form>
+</div>
+
+  </section>
+
+  <!-- FOOTER -->
+<footer class="py-3 bg-transparent border-top">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <div class="col-md-8">
+        <small class="text-muted">
+          © 2025 Electronics & ICT Academy, IIT Guwahati  All Rights Reserved
+        </small>
+      </div>
+
+      <div class="col-md-4 text-md-end">
+        <small class="text-dark fw-semibold">
+          Indian Institute of Technology Guwahati
+        </small>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Bootstrap JS + small custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a.nav-link, a[href^="#"]').forEach(el=>{
+      el.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href && href.startsWith('#')){
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+          // collapse navbar on mobile
+          const bsCollapse = document.querySelector('.navbar-collapse');
+          if(bsCollapse && bsCollapse.classList.contains('show')){
+            new bootstrap.Collapse(bsCollapse).toggle();
+          }
+        }
+      });
+    });
+
+    // Simple contact form handling (client-side only)
+    const form = document.getElementById('contactForm');
+    const alertBox = document.getElementById('formAlert');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      // validate
+      if(!form.checkValidity()){
+        form.classList.add('was-validated');
+        alertBox.style.display='block';
+        alertBox.className='text-danger small mt-2';
+        alertBox.textContent='Please fill required fields.';
+        return;
+      }
+      // show success (no backend here)
+      alertBox.style.display='block';
+      alertBox.className='text-success small mt-2';
+      alertBox.textContent='Thanks  your enquiry has been noted. We will contact you shortly.';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
