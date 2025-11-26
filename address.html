@@ -1,295 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- inside index.html -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Applied Machine Learning & Data Science | E&ICT Academy IIT Guwahati</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0;
-      background-color: #f5f6fa;
-      color: #222;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: linear-gradient(135deg, #002147, #0078d4);
-      color: white;
-      text-align: center;
-      padding: 50px 20px 80px;
-    }
-    header h1 {
-      margin: 5px 0;
-      font-size: 2.2em;
-    }
-    header p {
-      font-size: 1.1em;
-      color: #e0e0e0;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: #001f3f;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 14px 20px;
-      display: block;
-      font-weight: 500;
-    }
-    nav a:hover {
-      background-color: #0078d4;
-    }
-
-    /* Dropdown Menu Styling */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropbtn {
-      color: white;
-      text-decoration: none;
-      padding: 14px 20px;
-      display: block;
-      font-weight: 500;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #001f3f;
-      min-width: 220px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      z-index: 1000;
-      border-radius: 0 0 8px 8px;
-    }
-    .dropdown-content a {
-      color: white;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #0078d4;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .dropdown:hover .dropbtn {
-      background-color: #0078d4;
-    }
-
-    .btn {
-      background-color: #ffb400;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .btn:hover {
-      background-color: #ffc94b;
-    }
-
-    section {
-      padding: 50px 15%;
-      background: white;
-      margin: 30px auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #003366;
-      border-left: 6px solid #0078d4;
-      padding-left: 10px;
-    }
-    ul {
-      margin-top: 10px;
-      list-style: disc;
-      padding-left: 25px;
-    }
-    footer {
-      background-color: #002147;
-      color: white;
-      text-align: center;
-      padding: 30px 10px;
-    }
-    footer a {
-      color: #ffb400;
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <header id="home">
-    <h1>Applied Machine Learning & Data Science</h1>
-    <p>Professional Certification Course by E&ICT Academy, IIT Guwahati</p>
-    <a class="btn" href="https://eict.iitg.ac.in" target="_blank">Enroll Now</a>
-  </header>
-
-  <nav>
-  <!-- Dropdown 1 -->
-  <div class="dropdown">
-    <a href="#home" class="dropbtn">Home ¾</a>
-    <div class="dropdown-content">
-      <a href="about.html">About E&ICT</a>
-      <a href="history1.html">History</a>
-      <a href="future.html">Future Plans</a>
-      <a href="Proffessional.html">Professional Courses & Specialized Training</a>
-      <a href="other.html">Other Activities</a>
-    </div>
-  </div>
-
-  <!-- Dropdown 2 -->
-  <div class="dropdown">
-    <a href="#about-course" class="dropbtn">About Course ¾</a>
-    <div class="dropdown-content">
-      <!-- Submenu for Courses -->
-      <div class="sub-dropdown">
-        <a href="course.html" class="sub-dropbtn">Courses ¸</a>
-        <div class="sub-dropdown-content">
-           <a href="file:///C:/Users/Moromi/Desktop/webpage/AI%20&%20ML.html">AI & ML</a>
-            <a href="cyber.html">Cybersecurity</a>
-            <a href="file:///C:/Users/Moromi/Desktop/webpage/professional_certification_landing_page(1)%20(1).html">VLSI</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Machine Learning & Data Science | E&ICT Academy IIT Guwahati</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slider.css">
+  </head>
+  <body>
+    <nav>
+      <!-- Dropdown 1 -->
+      <div class="dropdown">
+        <a href="index.html" class="dropbtn">Home</a>
+        <div class="dropdown-content">
+          <a href="about.html">About E&ICT</a>
+          <a href="history.html">History</a>
+          <a href="future.html">Future Plans</a>
+          <a href="Professional.html">Professional Courses & Specialized Training</a>
+          <a href="other.html">Other Activities</a>
         </div>
       </div>
-       <a href="fee.html">Fees</a>
-      <a href="admission.html">Admission</a>
-      <a href="why.html">Why to Enroll</a>
-      <a href="resources.html">Resources</a>
+
+      <!-- Dropdown 2 -->
+      <div class="dropdown">
+        <a href="#about-course" class="dropbtn">About Course</a>
+        <div class="dropdown-content">
+          <!-- Submenu for Courses -->
+          <div class="sub-dropdown">
+            <a href="course.html" class="sub-dropbtn">Courses</a>
+            <div class="sub-dropdown-content">
+              <a href="AI_ML.html">AI & ML</a>
+              <a href="cyber.html">Cybersecurity</a>
+              <a href="professional_certification_landing_page.html">VLSI</a>
+            </div>
+          </div>
+          <a href="fee.html">Fees</a>
+          <a href="admission.html">Admission</a>
+          <a href="why.html">Why to Enroll</a>
+          <a href="resources.html">Resources</a>
+        </div>
       </div>
+
+      <a href="news.html">News & Events</a>
+      <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
+      <a href="address.html">Contact Us</a>
+    </nav>
+
+    <div class="slider-container">
+      <div class="slide fade">
+        <img src="1.jpg" alt="Slide 1">
+      </div>
+      <div class="slide fade">
+        <img src="2.jpg" alt="Slide 2">
+      </div>
+      <div class="slide fade">
+        <img src="4.jpg" alt="Slide 4">
+      </div>
+      <div class="slide fade">
+        <img src="5.jpg" alt="Slide 5">
+      </div>
+      <div class="slide fade">
+        <img src="6.jpg" alt="Slide 6">
+      </div>
+      <div class="slide fade">
+        <img src="7.jpg" alt="Slide 7">
+      </div>
+      <div class="slide fade">
+        <img src="8.jpg" alt="Slide 8">
+      </div>
+      <div class="slide fade">
+        <img src="9.jpg" alt="Slide 9">
+      </div>
+      <div class="slide fade">
+        <img src="10.jpg" alt="Slide 10">
+      </div>
+
+      <a class="prev" role="button">&#10094;</a>
+      <a class="next" role="button">&#10095;</a>
     </div>
-  </div>
 
-  <a href="news.html">News & Events</a>
-  <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
-  <a href="address.html">Contact Us</a>
-</nav>
+    <div class="dots"></div>
 
-<style>
-  /* Basic styling */
-  nav {
-    background-color: #001f3f;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <p>If you have any queries or require further information, please reach out to us using the details below.</p>
 
-  nav a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    display: block;
-    font-weight: 500;
-  }
-
-  nav a:hover {
-    background-color: #0078d4;
-  }
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-  .dropbtn {
-    cursor: pointer;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #001f3f;
-    min-width: 220px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1000;
-    border-radius: 0 0 8px 8px;
-  }
-
-  .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #0078d4;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  /* Submenu styling */
-  .sub-dropdown {
-    position: relative;
-  }
-
-  .sub-dropdown-content {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    background-color: #001f3f;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  }
-
-  .sub-dropdown-content a {
-    padding: 10px 16px;
-  }
-
-  .sub-dropdown:hover .sub-dropdown-content {
-    display: block;
-  }
-
-  .sub-dropbtn::after {
-    content: " ¸";
-    float: right;
-  }
-</style>
-
-<section id="contact">
-  <h2>Contact Information</h2>
-  <p>If you have any queries or require further information, please reach out to us using the details below.</p>
-
-  <div style="overflow-x:auto;">
-    <table style="width:100%; border-collapse:collapse; margin-top:20px; border:1px solid #ccc;">
-      <thead>
-        <tr style="background-color:#002147; color:white;">
-          <th style="padding:10px; text-align:left; border:1px solid #ccc;">Category</th>
-          <th style="padding:10px; text-align:left; border:1px solid #ccc;">Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background-color:#f5f6fa;">
-          <td style="padding:10px; border:1px solid #ccc;">Address</td>
-          <td style="padding:10px; border:1px solid #ccc;">
-            Technology Complex,<br>
-            Indian Institute of Technology Guwahati,<br>
-            Guwahati  781039, Assam, India
-          </td>
-        </tr>
-        <tr style="background-color:#ffffff;">
-          <td style="padding:10px; border:1px solid #ccc;">Phone Number</td>
-          <td style="padding:10px; border:1px solid #ccc;">
-            +91-361-2583182 (Office)<br>
-            +91-7086502139 (Mobile)
-          </td>
-        </tr>
-        <tr style="background-color:#f5f6fa;">
-          <td style="padding:10px; border:1px solid #ccc;">Email Address</td>
-          <td style="padding:10px; border:1px solid #ccc;">
-            eictacad@iitg.ac.in, eictacad@gmail.com<br>
-            <strong>For Advanced Certifications:</strong> eict.info@iitg.ac.in
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; margin-top:20px; border:1px solid #ccc;">
+            <thead>
+              <tr style="background-color:#002147; color:white;">
+                <th style="padding:10px; text-align:left; border:1px solid #ccc;">Category</th>
+                <th style="padding:10px; text-align:left; border:1px solid #ccc;">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color:#f5f6fa;">
+                <td style="padding:10px; border:1px solid #ccc;">Address</td>
+                <td style="padding:10px; border:1px solid #ccc;">
+                  Technology Complex,<br>
+                  Indian Institute of Technology Guwahati,<br>
+                  Guwahati  781039, Assam, India
+                </td>
+              </tr>
+              <tr style="background-color:#ffffff;">
+                <td style="padding:10px; border:1px solid #ccc;">Phone Number</td>
+                <td style="padding:10px; border:1px solid #ccc;">
+                  +91-361-2583182 (Office)<br>
+                  +91-7086502139 (Mobile)
+                </td>
+              </tr>
+              <tr style="background-color:#f5f6fa;">
+                <td style="padding:10px; border:1px solid #ccc;">Email Address</td>
+                <td style="padding:10px; border:1px solid #ccc;">
+                  eictacad@iitg.ac.in, eictacad@gmail.com<br>
+                  <strong>For Advanced Certifications:</strong> eict.info@iitg.ac.in
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    <script src="js/slider.js"></script>
+  </body>
+</html>
