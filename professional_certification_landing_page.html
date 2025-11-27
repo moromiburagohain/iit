@@ -1,37 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Professional Certification Course — ProCert</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-    :root{
-      --brand-dark: #312c0a; /* deep olive/brown */
-      --brand-accent: #cca300; /* golden accent */
-      --muted: #6c6c6c;
-      --glass: rgba(255,255,255,0.9);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;}
-    body{font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111; background:linear-gradient(180deg,#fff 0%, #fbfaf6 100%);}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Machine Learning & Data Science | E&ICT Academy IIT Guwahati</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slider.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+ 
+  <style>
     /* ====== Header (frozen) ====== */
-    .site-header{background:var(--brand-accent); position:fixed; top:0; left:0; right:0; z-index:1050; box-shadow:0 6px 24px rgba(49,44,10,.12);}
+    .site-header{background:var(--brand-accent); position:sticky; top:0; left:0; right:0; z-index:1050; box-shadow:0 6px 24px rgba(49,44,10,.12); padding: 10px;}
     .site-header .container{display:flex;align-items:center;gap:1rem;padding:.6rem 1rem}
     .brand{display:flex;align-items:center;gap:.6rem}
     .brand .logo{width:44px;height:44px;place-items:center;color:var(--brand-accent);font-weight:700}
     /* Navigation menu pills: white background with #cca300 bold text */
-    .nav-pills .nav-link{background:#312c0a;color:var(--brand-accent);font-weight:700;border-radius:999px;margin-right:.4rem;padding:.45rem .9rem;border:0}
+    .nav-pills .nav-link{background:#001f3f;color:var(--brand-accent);font-weight:700;border-radius:999px;margin-right:.4rem;padding:.45rem .9rem;border:0}
     .nav-pills .nav-link.active{box-shadow:0 6px 18px rgba(49,44,10,.08)}
     .ms-auto .btn-enroll{background:var(--brand-dark);color:var(--brand-accent);border-radius:12px;padding:.45rem .9rem;font-weight:700}
+    .site-header .center-nav {
+  position: absolute;
+  left: 30%;
+  transform: translateX(-30%);
+}
 
-    /* give page top padding to account for fixed header */
-    main{padding-top:84px}
-
-    /* ====== Hero ====== */
-    .hero{min-height:72vh;display:grid;align-items:center;background-image:linear-gradient(180deg, rgba(49,44,10,0.06), rgba(204,163,0,0.06)), url('https://media.glassdoor.com/l/2a/d1/e1/ff/main-gate.jpg?signature=e026158e053ce68cae02b13426a9ffc32df3d76b065b3a0276c293c345178bf7');background-size:cover;background-position:center;position:relative;overflow:hidden}
+     #about, #features, #eligibility, #learning, #syllabus, #mentors, #contact, #signup {
+      padding: 50px 5% !important;
+    }
+     /* ====== Hero ====== */
+    .hero{margin-top:0;padding-left:5%; padding-right:5%;min-height:72vh;display:grid;align-items:center;background-image:linear-gradient(180deg, rgba(49,44,10,0.06), rgba(204,163,0,0.06)), url('https://media.glassdoor.com/l/2a/d1/e1/ff/main-gate.jpg?signature=e026158e053ce68cae02b13426a9ffc32df3d76b065b3a0276c293c345178bf7');background-size:cover;background-position:center;position:relative;overflow:hidden}
     .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(600px 200px at 10% 10%, rgba(204,163,0,.12), transparent 20%), radial-gradient(500px 180px at 90% 80%, rgba(49,44,10,.06), transparent 20%);pointer-events:none}
     .hero .glass{backdrop-filter:blur(6px);background:linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.35));border-radius:16px;padding:2rem;box-shadow:0 20px 60px rgba(16,24,40,.12)}
     .hero h1{color:var(--brand-dark);font-weight:800}
@@ -40,7 +39,7 @@
     .cta-group .btn{transition:transform .25s ease, box-shadow .25s ease}
     .cta-group .btn:hover{transform:translateY(-4px);box-shadow:0 18px 30px rgba(49,44,10,.12)}
 
-    /* subtle floating shapes */
+     /* subtle floating shapes */
     .shape{position:absolute;border-radius:50%;opacity:.12;pointer-events:none;filter:blur(40px);}
     .shape.s1{width:320px;height:320px;left:-60px;top:-40px;background:var(--brand-accent)}
     .shape.s2{width:260px;height:260px;right:-40px;bottom:-60px;background:var(--brand-dark)}
@@ -59,14 +58,14 @@
     .feature-3{background:linear-gradient(135deg,#f6eefb,#ffffff)}
     .feature-4{background:linear-gradient(135deg,#fff7ed,#ffffff)}
 
-    /* ====== Learning path visualization (timeline) ====== */
+     /* ====== Learning path visualization (timeline) ====== */
     .timeline{position:relative;padding:2rem 1rem}
-    .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--brand-accent),var(--brand-dark));transform:translateX(-50%);border-radius:4px}
+    .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:4px;background:linear-gradient(180deg, #cca300);transform:translateX(-50%);border-radius:4px}
     .timeline-item{width:45%;padding:1.2rem;background:#fff;border-radius:12px;box-shadow:0 18px 40px rgba(16,24,40,.06);position:relative;transition:transform .35s}
     .timeline-item:nth-child(odd){left:0}
     .timeline-item:nth-child(even){left:55%}
-    .timeline-item .dot{position:absolute;top:1.4rem;right:-34px;width:24px;height:24px;border-radius:50%;background:var(--brand-accent);box-shadow:0 8px 20px rgba(204,163,0,.12)}
-    .timeline-item:nth-child(even) .dot{left:-34px;right:auto;background:var(--brand-dark)}
+    .timeline-item .dot{position:absolute;top:1.4rem;right:-34px;width:24px;height:24px;border-radius:50%;background:#cca300;box-shadow:0 8px 20px rgba(204,163,0,.12)}
+    .timeline-item:nth-child(even) .dot{left:-34px;right:auto;background:#312c0a}
 
     /* Responsive timeline stacking */
     @media (max-width:991px){
@@ -92,30 +91,122 @@
     .contact-card{background:linear-gradient(180deg,#fff, #fffbf7);border-radius:14px;box-shadow:0 20px 50px rgba(16,24,40,.06);padding:1.4rem}
 
     /* ====== Footer ====== */
-      footer {
-          background: #312c0a;
-          color: #cca300;
-          padding: 3rem 0
-      }
+    footer{background:#0f1724;color:#e6e9ef;padding:3rem 0}
 
     /* small animations */
     @keyframes floatY{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
     .float{animation:floatY 6s ease-in-out infinite}
   </style>
-</head>
-<body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <div class="logo"><img src="images/EICT short logo.jpg"></div>
-        <div>
-          <div style="font-weight:800;color:var(--brand-dark);">E&ICT Academy IIT Guwahati</div>
-          <small style="color:rgba(49,44,10,.7)">12 Months Professional Certification Program</small>
+  </head>
+  <body>
+    <nav>
+      <!-- Dropdown 1 -->
+      <div class="dropdown">
+        <a href="index.html" class="dropbtn">Home</a>
+        <div class="dropdown-content">
+          <a href="about.html">About E&ICT</a>
+          <a href="history.html">History</a>
+          <a href="future.html">Future Plans</a>
+          <a href="professional.html">Professional Courses & Specialized Training</a>
+          <a href="other.html">Other Activities</a>
         </div>
       </div>
 
-      <ul class="nav nav-pills ms-4 d-none d-md-flex">
+      <!-- Dropdown 2 -->
+      <div class="dropdown">
+        <a href="#about-course" class="dropbtn">About Course</a>
+        <div class="dropdown-content">
+          <!-- Submenu for Courses -->
+          <div class="sub-dropdown">
+            <a href="course.html" class="sub-dropbtn">Courses</a>
+            <div class="sub-dropdown-content">
+              <a href="ai_ml.html">AI & ML</a>
+              <a href="cyber.html">Cybersecurity</a>
+              <a href="professional_certification_landing_page.html">VLSI</a>
+            </div>
+          </div>
+          <a href="fee.html">Fees</a>
+          <a href="admission.html">Admission</a>
+          <a href="why.html">Why to Enroll</a>
+          <a href="resources.html">Resources</a>
+        </div>
+      </div>
+
+      <a href="news.html">News & Events</a>
+      <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
+      <a href="address.html">Contact Us</a>
+    </nav>
+
+    
+    <main>
+
+ 
+         <!-- Hero -->
+    <section class="hero">
+      <div class="shape s1 float"></div>
+      <div class="shape s2 float" style="animation-delay:1s"></div>
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <div class="glass">
+              <small class="text-uppercase" style="letter-spacing:1px;color:var(--brand-accent);font-weight:700">E&ICT Academy IIT Guwahati Presents <br>12 Months Online Professional Certification Program on</small>
+              <h1 class="mt-2 display-5">VLSI & Semiconductor Industry Essentials</h1>
+              <p class="lead">An employer-driven professional certification with live mentorship, explicit Hands-on Training, real projects and a portfolio-grade capstone.</p>
+
+              <div class="cta-group d-flex gap-3 mt-3">
+                <a class="btn btn-lg btn-dark" href="#signup">Reserve Seat</a>
+                <a class="btn btn-lg btn-outline-dark" href="Poster.pdf">Flyer</a>
+                <a class="btn btn-sm btn-link align-self-center" href="#contact">Have questions?</a>
+              </div>
+
+              <ul class="list-unstyled d-flex gap-4 mt-4 text-muted">
+                <li><i class="bi bi-clock-fill me-2"></i>12 Months</li>
+                <li><i class="bi bi-laptop me-2"></i>Live + On-demand</li>
+                <li><i class="bi bi-award me-2"></i>Industry certificate</li>
+              </ul>
+            </div>
+          </div>
+
+         <div class="col-lg-6 mt-4 mt-lg-0">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+            <h5 class="mb-3">Book a free live webinar to know more</h5>
+            <form id="quickApply" class="row g-2" onsubmit="return handleQuickApply(event)">
+              <div class="col-12">
+                <input required class="form-control form-control-lg" placeholder="Full name" name="name">
+              </div>
+              <div class="col-12 col-md-6">
+                <input required type="email" class="form-control" placeholder="Email" name="email">
+              </div>
+              <div class="col-12 col-md-6">
+                <input class="form-control" placeholder="Phone (optional)" name="phone">
+              </div>
+              <div class="col-12">
+                <select class="form-select" name="level">
+                  <option selected>Choose experience level</option>
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+              <div class="col-12 d-grid">
+                <button class="btn btn-lg btn-dark">Apply Now</button>
+              </div>
+            </form>
+            <small class="text-muted">No payment required to apply. Scholarships available.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </section>
+
+          <!---- Header -->
+   <!-- <header class="site-header">
+    <div class="container  d-flex align-items-center justify-content-between">
+      
+
+      <ul class="nav nav-pills ms-4 d-none d-md-flex center-nav">
         <li class="nav-item"><a class="nav-link" href="#about">About the Course</a></li>
         <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
         <li class="nav-item"><a class="nav-link" href="#eligibility">Eligibility</a></li>
@@ -133,6 +224,7 @@
   </header>
 
   <!-- Mobile offcanvas -->
+   <!--
   <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title">Menu</h5>
@@ -149,627 +241,480 @@
         <li><a class="d-block py-2" href="#contact">Contact</a></li>
       </ul>
     </div>
-  </div>
+  </div> -->
+        <!-- About the course (premium) -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <div class="about-premium">
+              <h2>About the Course</h2>
+              <p class="text-muted">A premium, compact certification crafted by IIT Guwahati Professor/ Research Scholars/ Staff. You'll build portfolio-grade deliverables, receive 1:1 mentor feedback and participate in mock interviews curated to fast-track your hiring readiness. Research paper writing under the guidance of IIT Guwahati veteran.</p>
 
-  <main>
-      <!-- Hero -->
-      <section class="hero">
-          <div class="shape s1 float"></div>
-          <div class="shape s2 float" style="animation-delay:1s"></div>
-          <div class="container">
-              <div class="row align-items-center gy-4">
-                  <div class="col-lg-6">
-                      <div class="glass">
-                          <small class="text-uppercase" style="letter-spacing:1px;color:var(--brand-accent);font-weight:700">E&ICT Academy IIT Guwahati Presents <br>12 Months Online Professional Certification Program on</small>
-                          <h1 class="mt-2 display-5">VLSI & Semiconductor Industry Essentials</h1>
-                          <p class="lead">An employer-driven professional certification with live mentorship, explicit Hands-on Training, real projects and a portfolio-grade capstone.</p>
+              <ul class="mt-3">
+                <li><strong>Flexible learning</strong> — recordings + weekly live sessions.</li>
+                <li><strong>Practical projects</strong> — real company briefs, mentor reviews.</li>
+                <li><strong>Career support</strong> — portfolio & interview coaching.</li>
+                <li><strong>Research</strong> — Research paper writing assistance for further studies.</li>
+              </ul>
 
-                          <div class="cta-group d-flex gap-3 mt-3">
-                              <a class="btn btn-lg btn-dark" href="#signup">Reserve Seat</a>
-                              <a class="btn btn-lg btn-outline-dark" href="downloads/Poster.pdf">Flyer</a>
-                              <a class="btn btn-sm btn-link align-self-center" href="#contact">Have questions?</a>
-                          </div>
-
-                          <ul class="list-unstyled d-flex gap-4 mt-4 text-muted">
-                              <li><i class="bi bi-clock-fill me-2"></i>12 Months</li>
-                              <li><i class="bi bi-laptop me-2"></i>Live + On-demand</li>
-                              <li><i class="bi bi-award me-2"></i>Industry certificate</li>
-                          </ul>
-                      </div>
-                  </div>
-
-                  <div class="col-lg-6 mt-4 mt-lg-0">
-                      <div class="card shadow-sm border-0">
-                          <div class="card-body p-4">
-                              <h5 class="mb-3">Book a free live webinar to know more</h5>
-                              <form id="quickApply" class="row g-2" onsubmit="return handleQuickApply(event)">
-                                  <div class="col-12">
-                                      <input required class="form-control form-control-lg" placeholder="Full name" name="name">
-                                  </div>
-                                  <div class="col-12 col-md-6">
-                                      <input required type="email" class="form-control" placeholder="Email" name="email">
-                                  </div>
-                                  <div class="col-12 col-md-6">
-                                      <input class="form-control" placeholder="Phone (optional)" name="phone">
-                                  </div>
-                                  <div class="col-12">
-                                      <select class="form-select" name="level">
-                                          <option selected>Choose experience level</option>
-                                          <option>Beginner</option>
-                                          <option>Intermediate</option>
-                                          <option>Advanced</option>
-                                      </select>
-                                  </div>
-                                  <div class="col-12 d-grid">
-                                      <button class="btn btn-lg btn-dark">Apply Now</button>
-                                  </div>
-                              </form>
-                              <small class="text-muted">No payment required to apply. Scholarships available.</small>
-                          </div>
-                      </div>
-                  </div>
+              <div class="mt-4">
+                <a class="btn btn-lg btn-dark btn-enroll me-2" href="#signup">Apply Now</a>
+                <a class="btn btn-outline-dark" href="#features">See features</a>
               </div>
+            </div>
           </div>
-      </section>
 
-      <!-- About the course (premium) -->
-      <section id="about" class="py-5">
-          <div class="container">
-              <div class="row g-4 align-items-center">
-                  <div class="col-lg-6">
-                      <div class="about-premium">
-                          <h2>About the Course</h2>
-                          <p class="text-muted">A premium, compact certification crafted by IIT Guwahati Professor/ Research Scholars/ Staff. You'll build portfolio-grade deliverables, receive 1:1 mentor feedback and participate in mock interviews curated to fast-track your hiring readiness. Research paper writing under the guidance of IIT Guwahati veteran.</p>
-
-                          <ul class="mt-3">
-                              <li><strong>Flexible learning</strong> — recordings + weekly live sessions.</li>
-                              <li><strong>Practical projects</strong> — real company briefs, mentor reviews.</li>
-                              <li><strong>Career support</strong> — portfolio & interview coaching.</li>
-                              <li><strong>Research</strong> — Research paper writing assistance for further studies.</li>
-                          </ul>
-
-                          <div class="mt-4">
-                              <a class="btn btn-lg btn-dark btn-enroll me-2" href="#signup">Apply Now</a>
-                              <a class="btn btn-outline-dark" href="#features">See features</a>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-lg-6">
-                      <div class="row g-3">
-                          <div class="col-md-6">
-                              <div class="card p-3 feature-1">
-                                  <h6>Duration</h6>
-                                  <p class="small text-muted mb-0">7-8 hours Weekly engagement through live, querys and hands-on sessions. Total 4 semesters of three months each.</p>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="card p-3 feature-2">
-                                  <h6>Tools</h6>
-                                  <p class="small text-muted mb-0">Training on Industrial tools like MAGIC, SPICE, Xilinx Vivado, Quartus Prime, Questa Sim, Synopsys, Cadence and many more. </p>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="card p-3 feature-3">
-                                  <h6>Career Prep</h6>
-                                  <p class="small text-muted mb-0">Resume, portfolio, mock interviews and important Interview facing tips and tricks.</p>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="card p-3 feature-4">
-                                  <h6>Community</h6>
-                                  <p class="small text-muted mb-0">Active cohort groups with E&ICT Academy IIT Guwahati alumni network.</p>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="card p-3 feature-2">
-                                  <h6>Activities</h6>
-                                  <p class="small text-muted mb-0">On Campus Orientation and Immersion at the begining and completion of the program.</p>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="card p-3 feature-3">
-                                  <h6>Capstone and Research</h6>
-                                  <p class="small text-muted mb-0">Showcase-ready project reviewed by mentors and Research Paper writing guidance from IIT Guwahtai veterans.</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+          <div class="col-lg-6">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="card p-3 feature-1">
+                  <h6>Duration</h6>
+                  <p class="small text-muted mb-0">7-8 hours Weekly engagement through live, querys and hands-on sessions. Total 4 semesters of three months each.</p>
+                </div>
               </div>
+              <div class="col-md-6">
+                <div class="card p-3 feature-3">
+                  <h6>Tools</h6>
+                  <p class="small text-muted mb-0">Training on Industrial tools like MAGIC, SPICE, Xilinx Vivado, Quartus Prime, Questa Sim, Synopsys, Cadence and many more. </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card p-3 feature-3">
+                  <h6>Career Prep</h6>
+                  <p class="small text-muted mb-0">Resume, portfolio, mock interviews and important Interview facing tips and tricks.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card p-3 feature-4">
+                  <h6>Community</h6>
+                  <p class="small text-muted mb-0">Active cohort groups with E&ICT Academy IIT Guwahati alumni network.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card p-3 feature-1">
+                  <h6>Activities</h6>
+                  <p class="small text-muted mb-0">On Campus Orientation and Immersion at the begining and completion of the program.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card p-3 feature-3">
+                  <h6>Capstone and Research</h6>
+                  <p class="small text-muted mb-0">Showcase-ready project reviewed by mentors and Research Paper writing guidance from IIT Guwahtai veterans.</p>
+                </div>
+              </div>
+            </div>
           </div>
-      </section>
+        </div>
+      </div>
+    </section>
 
-      <!-- Features colored cards -->
-      <section id="features" class="py-5 bg-light">
-          <div class="container">
-              <div class="text-center mb-4">
-                  <h3 class="fw-bold">Key features</h3>
-                  <p class="text-muted">Designed to make you employer-ready and future studies.</p>
-              </div>
+    <!-- Features colored cards -->
+    <section id="features" class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h3 class="fw-bold">Key features</h3>
+          <p class="text-muted">Designed to make you employer-ready and future studies.</p>
+        </div>
 
-              <div class="row g-4 features">
-                  <div class="col-md-3">
-                      <div class="card p-4 feature-1">
-                          <i class="bi bi-tools fs-2" style="color:var(--brand-accent)"></i>
-                          <h5 class="mt-3">Hands-on</h5>
-                          <p class="small text-muted">Project-based learning with real deliverables.</p>
-                      </div>
-                  </div>
-                  <div class="col-md-3">
-                      <div class="card p-4 feature-2">
-                          <i class="bi bi-people fs-2" style="color:var(--brand-dark)"></i>
-                          <h5 class="mt-3">Mentors</h5>
-                          <p class="small text-muted">1:1 mentor reviews and query assistance just an Email away .</p>
-                      </div>
-                  </div>
-                  <div class="col-md-3">
-                      <div class="card p-4 feature-3">
-                          <i class="bi bi-laptop fs-2" style="color:var(--brand-accent)"></i>
-                          <h5 class="mt-3">Live sessions</h5>
-                          <p class="small text-muted">Weekly interactive sessions and Master Classes from eminent experts of the area.</p>
-                      </div>
-                  </div>
-                  <div class="col-md-3">
-                      <div class="card p-4 feature-4">
-                          <i class="bi bi-award fs-2" style="color:var(--brand-dark)"></i>
-                          <h5 class="mt-3">Certification</h5>
-                          <p class="small text-muted">Industry-recognized certificate on completion of every Semesters.</p>
-                      </div>
-                  </div>
-              </div>
+        <div class="row g-4 features">
+          <div class="col-md-3">
+            <div class="card p-4 feature-1">
+              <i class="bi bi-tools fs-2" style="color:var(--brand-accent)"></i>
+              <h5 class="mt-3">Hands-on</h5>
+              <p class="small text-muted">Project-based learning with real deliverables.</p>
+            </div>
           </div>
-      </section>
-
-      <!-- Eligibility banner -->
-      <section id="eligibility" class="py-5">
-          <div class="container">
-              <div class="eligibility">
-                  <div>
-                      <h5 class="mb-1">Eligibility</h5>
-                      <p class="mb-0 text-muted">Open to professionals with 0+ years experience — applicants with demonstrable project work preferred. Need-based scholarships available.</p>
-                  </div>
-                  <div class="ms-auto text-end">
-                      <strong>Next cohort:</strong>
-                      <div class="mt-1">April 12, 2026</div>
-                  </div>
-              </div>
+          <div class="col-md-3">
+            <div class="card p-4 feature-2">
+              <i class="bi bi-people fs-2" style="color:var(--brand-dark)"></i>
+              <h5 class="mt-3">Mentors</h5>
+              <p class="small text-muted">1:1 mentor reviews and query assistance just an Email away .</p>
+            </div>
           </div>
-      </section>
-
-      <!-- Learning Path Visualization -->
-      <section id="learning" class="py-5">
-          <div class="container">
-              <div class="text-center mb-4">
-                  <h3 class="fw-bold">Learning Path Visualization</h3>
-                  <p class="text-muted">Step-by-step path from fundamentals to capstone and research covering 15 detailed Modules.</p>
-              </div>
-
-              <div class="timeline">
-                  <div class="timeline-item mb-4">
-                      <h5>Foundational Digital Design</h5>
-                      <p class="small text-muted">Initial 3 Modules of 90 Hours duration forming Semester I of the course.</p>
-                      <div class="dot"></div>
-                  </div>
-
-                  <div class="timeline-item mb-4">
-                      <h5>Semiconductor Fabrication & Device Design</h5>
-                      <p class="small text-muted">Intermdiate 4 Modules of 90 Hours duration forming the Semester II of the course.</p>
-                      <div class="dot"></div>
-                  </div>
-
-                  <div class="timeline-item mb-4">
-                      <h5>Hands-on Tool for VLSI</h5>
-                      <p class="small text-muted">Advanced 3 Modules of 90 Hours duration forming Semester III of the course.</p>
-                      <div class="dot"></div>
-                  </div>
-
-                  <div class="timeline-item mb-4">
-                      <h5>VLSI and Semiconductor for Industry Essentials</h5>
-                      <p class="small text-muted">Portfolio-grade final capstone project + mock interviews + Research Paper Writing.</p>
-                      <div class="dot"></div>
-                  </div>
-              </div>
+          <div class="col-md-3">
+            <div class="card p-4 feature-3">
+              <i class="bi bi-laptop fs-2" style="color:var(--brand-accent)"></i>
+              <h5 class="mt-3">Live sessions</h5>
+              <p class="small text-muted">Weekly interactive sessions and Master Classes from eminent experts of the area.</p>
+            </div>
           </div>
-      </section>
-
-      <!-- Syllabus (Advanced dropdown layout) -->
-      <section id="syllabus" class="py-5 bg-light syllabus">
-          <div class="container">
-              <div class="text-center mb-4">
-                  <h3 class="fw-bold">Syllabus</h3>
-                  <p class="text-muted">Detailed module breakdown — expand to view topics and resources.</p>
-              </div>
-
-              <div class="accordion" id="syllabusAcc">
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="s1">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s1c" aria-expanded="false">Module 101 — Digital Logic Design</button>
-                      </h2>
-                      <div id="s1c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
-                          <div class="accordion-body">
-                              <div class="topic"><div>Logic Gates (AND, OR, NOT etc.), Boolean Algebra, Gate level combinational circuits: Multiplexer/ Demultiplexer, Encoder/ Decoder, Adder/ Subtractor  </div><div class="text-muted">5h</div></div>
-                              <hr>
-                              <div class="topic"><div>Comparator, Parity generators, Gate level sequential circuits: latches, Flip-flops (RS, JK, D, T, and Master Slave), Registers </div><div class="text-muted">6h</div></div>
-                              <hr>
-                              <div class="topic"><div>Counters: Ripple and Ring, Shift Register and Counters, Design of synchronous sequential finite state machine, Analysis of synchronous sequential finite state machine </div><div class="text-muted">5h</div></div>
-                              <hr>
-                              <div class="topic"><div><b>Hands-on: </b>Verification and interpretation of truth table for various gates, Realization of logic functions with the help of universal gates, Boolean functions using MUX, Design of MUX and DEMUX using Universal logic Gates, decoder/de-multiplexer and encoder using logic gates, BCD to 7 Segment LED display decoder, Half adder by using basic and universal gates, Half and Full Subtractor, one bit and two bit comparator using logic gates, NOR gate latch, JK Flip-Flop, truth table of RS, JK, T and D flip-flops using NAND & NOR gates, two-bit ripple counter, synchronous up down counter.</div><div class="text-muted">14h</div></div>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="s2">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s2c" aria-expanded="false">Module 102 — VLSI Design Flow and Digital Integrated Circuits</button>
-                      </h2>
-                      <div id="s2c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
-                          <div class="accordion-body">
-                              <div class="topic"><div>Key stages in design, verification, Synthesis, Physical Design  </div><div class="text-muted">5h</div></div>
-                              <hr>
-                              <div class="topic"><div>MOS Circuits, Sheet resistance and area capacitances of layers, Wiring capacitances, CMOS inverter, CMOS Gates, Delays, Logical and Electrical Efforts,Gate Sizing</div><div class="text-muted">7h</div></div>
-                              <hr>
-                              <div class="topic"><div>Buffering, Asymmetric gate, Skewed gates, Ratioed logic, Switching power dissipation, Stick Diagram  </div><div class="text-muted">5h</div></div>
-                              <hr>
-                              <div class="topic"><div>MOSFET scaling, Dynamic CMOS design  </div><div class="text-muted">4h</div></div>
-                              <hr>
-                              <div class="topic"><div><b>Hands-on:</b> Implementation and Testing of NMOS and PMOS characteristics, Inverter characteristics, Flip Flop, Latches, Logic Gates, Counter, Adder, Multiplier and Sequence Detector using MAGIC and SPICE.</div><div class="text-muted">9h</div></div>
-
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="s3">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s3c" aria-expanded="false">Module 103 — Hardware Descriptive Languages (HDLs)</button>
-                      </h2>
-                      <div id="s3c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
-                          <div class="accordion-body">
-                              <div class="topic"><div>Introduction to digital circuit design flow, Verilog Language introduction, Levels of abstraction, Module, Ports types and declarations, Registers and nets, Arrays, Identifiers, Parameters</div><div class="text-muted">5h</div></div>
-                              <hr>
-                              <div class="topic"><div>Relational, Arithmetic, Logical, Bit-wise shift Operators, Writing expressions, Behavioral Modeling, Structural Coding, Continuous Assignments, Procedural Statements, Always, Initial Blocks, begin end, fork join</div><div class="text-muted">8h</div></div>
-                              <hr>
-                              <div class="topic"><div>Blocking and Non-blocking statements, Operation Control Statements, If, case, Loops: while, for-loop, forever, repeat, Combination and sequential circuit designs, Memory modeling, state machines, CMOS gate modeling, Writing Tasks, Writing Functions </div><div class="text-muted">8h</div></div>
-                              <hr>
-                              <div class="topic"><div>Compiler directives, Conditional Compilation, System Tasks, Gate level primitives, User defined primitives, Delays, Specify block, Testbenchs, modeling, timing checks, Assertion based verification, Code for synthesis, Advanced topics, Writing reusable code     </div><div class="text-muted">9h</div></div>
-                              <hr>
-                              <div class="topic"><div><b>Hands-on:</b> Practice coding small projects like adders, multiplexers, and simple controllers during the practical sessions. Implementation of combinational circuits and sequential circuits using Verilog/VHDL. <b>Tools Required: Xilinx Vivado, Quartus Prime</b></div><div class="text-muted"></div></div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="accordion" id="syllabusAcc">
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="s4">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s4c" aria-expanded="false">Module 201 — Functional Verification</button>
-                      </h2>
-                      <div id="s4c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
-                          <div class="accordion-body">
-                              <div class="topic"><div>Functional Verification overview, System Verilog Course overview, Operators, Data types (Int,Void,String,Userdefined,Enumeration,class), Arrays(Fixed Size Array, packed array, unpacked array,Dynamic array, Associate Array, Queues), Procedural Statements and Flow Control (foreach,repeat forever,break and continue,event control,Named block), Object Oriented Programming Overview, Advanced Data types, Fork join, Inter process synchronization, Project to learn all SV language constructs  </div><div class="text-muted">12h</div></div>
-                              <hr>
-                              <div class="topic"><div>Program, Scheduling semantics, Task, Function, Constraints, Randomization, Functional and code coverage, Assertions and Assertion based verification, Direct Programming Interface(DPI), Configuration libraries, Packages, XMR, Test bench Architecture</div><div class="text-muted">13h</div></div>
-                              <hr>
-                              <div class="topic"><div><b>Hands-on Tools: </b>Questa Sim, Modelsim, NCSIM, VCS.</div><div class="text-muted"></div></div>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="s5">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s5c" aria-expanded="false">Module 202 — Universal Verification Methodology (UVM)</button>
-                      </h2>
-                      <div id="s5c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
-                          <div class="accordion-body">
-                              <div class="topic"><div>UVM Methodology, How UVM evolved?, UVM class library, UVM Class Library, Macros, Utilities, UVM TB Architecture, Command line processor, Reporting classes, Objections, UVM Factory</div><div class="text-muted">12h</div></div>
-                              <hr>
-                              <div class="topic"><div>Configuration DB, Resource DB, TLM1.0, Simulation Phases, Sequences, Sequencers, Test case development, Configuring TB Environment, Different testbench component coding, Different styles of sequence development, Sequence library, Virtual Sequencer, Virtual sequences </div><div class="text-muted">13h</div></div>
-                              <hr>
-                              <div class="topic"><div><b>Hands-on Tools: </b>Questa Sim, Modelsim, NCSIM, VCS.</div><div class="text-muted"></div></div>
-
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="s6">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s6c" aria-expanded="false">Module 203 — Scripting Languages</button>
-                      </h2>
-                      <div id="s6c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
-                          <div class="accordion-body">
-                              <div class="topic"><div>Linux Commands – Hands On, Vim Editor – Hands On </div><div class="text-muted">4h</div></div>
-                              <hr>
-                              <div class="topic"><div>TCL Programming Basics, Data Manipulation, File Handling </div><div class="text-muted">10h</div></div>
-                              <hr>
-                              <div class="topic"><div>Python: Programming Basics, Data Manipulation, File Handling, Basic Statistics, Data Visualization</div><div class="text-muted">11h</div></div>
-                              <hr>
-                              <div class="topic"><div><b>Hands-on Tools:</b> Unix/Linux Envirnment, TCL Utility, Python Utility</div><div class="text-muted"></div></div>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="s7">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s7c" aria-expanded="false">Module 204 — Advanced Digital Design</button>
-                      </h2>
-                      <div id="s7c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
-                          <div class="accordion-body">
-                              <div class="topic"><div>Clock Domain Crossing (CDC): Fundamentals of CDC, Metastability issues in CDC, Types of CDC signals: Single-bit control signals, Multi-bit data signals, Handshake-based transfers, CDC design techniques: 2-flop synchronizer, Pulse synchronizer, Handshake synchronizer, FIFO-based synchronizer, Timing constraints and STA considerations for CDC, CDC verification techniques: Simulation limitations, Formal verification methods, Static CDC tools</div><div class="text-muted">5h</div></div>
-                              <hr>
-                              <div class="topic"><div>Reset Domain Crossing (RDC): Fundamentals of RDC, Asynchronous vs synchronous resets, Metastability due to reset deassertion, Reset release synchronization methods, Safe reset design practices, Reset tree design in large SoCs, RDC verification and sign-off checks </div><div class="text-muted">5h</div></div>
-                              <hr>
-                              <div class="topic"><div>Synchronizers: Basics of metastability, Synchronizer design principles, Common synchronizer architectures, 2-flop synchronizer, Multi-flop synchronizer, Muller C-element synchronizer, Gray code synchronizer, MTBF (Mean Time Between Failure) calculation, Impact of technology scaling on synchronizers, Best practices for synchronizer placement and physical design, Case studies in synchronizer failures </div><div class="text-muted">5h</div></div>
-                              <hr>
-                              <div class="topic"><div><b>Hands-on Tools:</b> QuestaSim, VCS, or Xcelium</div><div class="text-muted"></div></div>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="accordion" id="syllabusAcc">
-                      <div class="accordion-item">
-                          <h2 class="accordion-header" id="s8">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s8c" aria-expanded="false">Module 301 — RTL Synthesis and DFT Insertion</button>
-                          </h2>
-                          <div id="s8c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
-                              <div class="accordion-body">
-                                  <div class="topic"><div>Introduction, Logical Vs Physical, Timing Models, Inputs required in Details, Steps in Synthesis: Analyse/Elaborate, Importing Constraints, Importing DEF & UPF (optional), Compile, Optimization, Scan (DFT) Insertion, Compile incremental, Debuging/Resolving the Errors, Important Commands, Qualifying netlist, Generating outputs.<br><b>Hands-on Tools:</b> Synopsys DC, FC Or Cadence Genus OR YoSys</div><div class="text-muted">7h</div></div>
-                                  <hr>
-                                  <div class="topic"><div>Logical Equivalence Check: Introduction, Need for LEC, Modes, Debuging & Resolving the mismatches in netlists, Need for testing, DFT Basics, SoC Scan architecture overview, Types of Scan, ATPG DRC Debug, ATPG Simulation Mismatch Debug, DFT Diagnosis, JTAG. <br><b>Hands-on Tools:</b> Synopsys FV Or Cadence CLP</div><div class="text-muted">10h</div></div>
-                                  <hr>
-                                  <div class="topic"><div>MemoryBIST, LogicBIST, Scan and ATPG, Test compression technigues, Hierarchical Scan Design, DFT Compiler: Overview, Flows Supported by DFT Compiler, Scan Insertion Flow, DFT Compiler Flow and supported Commands, Tetramax/Tessent Flow for ATPG, Steps involved in ATPG mode, ATPG models targeted by Tetramax/Tessent.<br><b>Hands-on Tools:</b> Tetramax/ Tessent </div><div class="text-muted">13h</div></div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="accordion-item">
-                          <h2 class="accordion-header" id="s9">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s9c" aria-expanded="false">Module 302 — PnR flow in Physical Design</button>
-                          </h2>
-                          <div id="s9c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
-                              <div class="accordion-body">
-                                  <div class="topic"><div>Floor planning: Inputs of Floorplan, Sanity Checks, Macro Placement Guidelines, Qualifying the Floorplan, Power Planning, Placement: Standard cell placement, Global routing, Congestion analysis, Timing analysis, Qualifying the placement db.</div><div class="text-muted">20h</div></div>
-                                  <hr>
-                                  <div class="topic"><div>Clock Tree Synthesis: Specification file, NDR rules, Clock tree build and Balance, CCD Concurrent Clock and Data Optimization, Clock tree optimization, Crosstalk, Timing Analysis, Routing and Optimization: Overview & goals, Constraints, Pre-route checks, Related terminologies, Types of routing and Optimization, Challenges in routing (DRC/LVS), Timing Analysis, ECO (Engineering Change Order), GDS-II Generation.</div><div class="text-muted">20h</div></div>
-                                  <hr>
-                                  <div class="topic"><div><b>Hands-on Tools: </b>Synopsys ICC, FC Or Cadence Innovus OR OpenRoad Tools.</div><div class="text-muted"></div></div>
-
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="accordion-item">
-                          <h2 class="accordion-header" id="s10">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s10c" aria-expanded="false">Module 303 — Static Timing Analysis (STA)</button>
-                          </h2>
-                          <div id="s10c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
-                              <div class="accordion-body">
-                                  <div class="topic"><div>Basic Static Timing Analysis Concept, Input to STA tool, Setup Time, Hold Time, Slack, Clock Latencies + Clock Skew, Library Overview, Recovery and Removal Time, Propagation Delay Calculations, Timing Paths, Timing Exception, Asynchronous Path, Clock Gating</div><div class="text-muted">10h</div></div>
-                                  <hr>
-                                  <div class="topic"><div>STA VS DTA, Generated Clock, Virtual Clock, Unateness + Functionality, Uncertaininty, Jitter, Design Contraints in details: Timing Constraints, Design Rule Constraints, Exceptions, Area Constraints, System Interface constraints, Multi-voltage and power optimization Constraints, Advance STA Concept: Onchip Variation (OCV), Advance Onchip variation (AOCV), Parametric On chip variation (POCV), Signal Integrity Effects</div><div class="text-muted">10h</div></div>
-                                  <hr>
-                                  <div class="topic"><div><b>Hands-on Tools:</b> OpenSTA/ PrimeTime/ Tempus</div><div class="text-muted"></div></div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="accordion" id="syllabusAcc">
-                          <div class="accordion-item">
-                              <h2 class="accordion-header" id="s11">
-                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s11c" aria-expanded="false"><b>Final Semester 4 Plan</b></button>
-                              </h2>
-                              <div id="s11c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
-                                  <div class="accordion-body">
-                                      <div class="topic"><div><b>Module 401 Capstone Project:</b> The program culminates in a capstone project where you apply all the concepts learned. This project, which could be a simple processor, a memory controller, or a communication protocol block, provides invaluable hands-on experience with industry-standard EDA (Electronic Design Automation) tools. The project should cover both the design and verification stages.</div><div class="text-muted">30h</div></div>
-                                      <hr>
-                                      <div class="topic"><div><b>Module 402 Final Project Presentation:</b> The final project presentation will be based on the capstone project developed by the participants.</div><div class="text-muted">5h</div></div>
-                                      <hr>
-                                      <div class="topic"><div><b>Module 403 Research Methodology & Research Writing:</b> The reseach paper writng will be based on the the Capstone project made by the participants</div><div class="text-muted">35h</div></div>
-                                      <hr>
-                                      <div class="topic"><div><b>Module 404 and 405:</b> Career Counselling and Interview Facing Tips & Tricks</div><div class="text-muted">20h</div></div>
-                                  </div>
-                              </div>
-                          </div>
-
-                      </div>
-
-
-                  </div>
-      </section>
-
-      <!-- Mentors -->
-      <section id="mentors" class="py-5 bg-light">
-          <div class="container">
-              <div class="text-center mb-4">
-                  <h3 class="fw-bold">Course Mentors</h3>
-                  <p class="text-muted">Experienced practitioners from IIT Guwahati in this field.</p>
-              </div>
-
-              <div class="row g-4">
-                  <div class="col-md-4">
-                      <div class="card p-3 mentor-card">
-                          <img src="images/gt.jpg" class="img-fluid rounded-3" alt="mentor">
-                          <div class="mt-3">
-                              <h6 class="mb-0">Prof. Gaurav Trivedi</h6>
-                              <small class="text-muted">Professor, EEE, IIT Guwahati</small>
-                              <p class="mt-2 text-muted small">Research Areas: Circuit Simulation (Analog, RF & Digital) and VLSI CAD, Electronics System Design, Computer Architecture, Semiconductor Devices, Hardware Security, Embedded Systems and IoT, High Performance Computing, Large Scale Optimization and Machine Learning</p>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-4">
-                      <div class="card p-3 mentor-card">
-                          <img src="images/Rafi.jpg" class="img-fluid rounded-3" alt="mentor">
-                          <div class="mt-3">
-                              <h6 class="mb-0">Prof. Shaik Rafi Ahamed</h6>
-                              <small class="text-muted">Professor, EEE, IIT Guwahati</small>
-                              <p class="mt-2 text-muted small">Key Research Areas : VLSI Architectures for Signal Processing, Machine Learning and Communication Algorithms, Digital IC Design, Adaptive Signal Processing and Biomedical Signal Processing.</p>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-4">
-                      <div class="card p-3 mentor-card">
-                          <img src="images/mahima.jpg" class="img-fluid rounded-3" alt="mentor">
-                          <div class="mt-3">
-                              <h6 class="mb-0">Dr. Mahima Arrawatia</h6>
-                              <small class="text-muted">Assistant Professor, EEE, IIT Guwahati</small>
-                              <p class="mt-2 text-muted small">Research Areas: Energy Harvesting RF Circuit Design Microstrip Antennas</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+          <div class="col-md-3">
+            <div class="card p-4 feature-4">
+              <i class="bi bi-award fs-2" style="color:var(--brand-dark)"></i>
+              <h5 class="mt-3">Certification</h5>
+              <p class="small text-muted">Industry-recognized certificate on completion of every Semesters.</p>
+            </div>
           </div>
-      </section>
+        </div>
+      </div>
+    </section>
 
-      <!-- Instructors -->
-      <section id="mentors" class="py-5 bg-light">
-          <div class="container">
-              <div class="text-center mb-4">
-                  <h3 class="fw-bold">Meet the Instructors</h3>
-                  <p class="text-muted">Instructors of this course are IIT Guwahati Research Scholars and Staff in this field.</p>
-              </div>
-
-              <div class="row g-4">
-                  <div class="col-md-4">
-                      <div class="card p-3 mentor-card">
-                          <img src="images/Shila.jpg" class="img-fluid rounded-3" alt="mentor" width="100" height="100">
-                          <div class="mt-3">
-                              <h6 class="mb-0">Dr. Sushree Sila P. Goswami</h6>
-                              <small class="text-muted">Project Manager, Daksh Gurukul</small>
-                              <p class="mt-2 text-muted small">Key Research Areas: Hardware security, Digital VLSI system design, High Performance Computing, Low-power architecture design.</p>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-4">
-                      <div class="card p-3 mentor-card">
-                          <img src="images/Amol.webp" class="img-fluid rounded-3" alt="mentor" width="200" height="200">
-                          <div class="mt-3">
-                              <h6 class="mb-0">Dr. Amol K. Boke</h6>
-                              <small class="text-muted">Principal Scientist, NiNELabs, IIT Guwahati</small>
-                              <p class="mt-2 text-muted small">Key Research Areas : </p>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-4">
-                      <div class="card p-3 mentor-card">
-                          <img src="images/NYMeitie.jpeg" class="img-fluid rounded-3" alt="mentor" width="140" height="140">
-                          <div class="mt-3">
-                              <h6 class="mb-0">Dr. Naorem Yaipharenba Meitei</h6>
-                              <small class="text-muted">Sr. Project Engineer, NiNELabs, IIT Guwahati</small>
-                              <p class="mt-2 text-muted small">Key Research Areas: Processor, Co-processor Design & Architecture development, RTL Design, FPGA Implementation, VLSI EDA.</p>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-4">
-                      <div class="card p-3 mentor-card">
-                          <img src="images/Vikash.jpeg" class="img-fluid rounded-3" alt="mentor" width="150" height="150">
-                          <div class="mt-3">
-                              <h6 class="mb-0">Dr. Vikash Prasad</h6>
-                              <small class="text-muted">Sr. Project Engineer, NiNELabs, IIT Guwahati</small>
-                              <p class="mt-2 text-muted small">Key Research Areas: Analog and Mixed signal Design</p>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-4">
-                      <div class="card p-3 mentor-card">
-                          <img src="" class="img-fluid rounded-3" alt="mentor">
-                          <div class="mt-3">
-                              <h6 class="mb-0"></h6>
-                              <small class="text-muted"></small>
-                              <p class="mt-2 text-muted small">Key Research Areas:</p>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-4">
-                      <div class="card p-3 mentor-card">
-                          <img src="images/aditi.jpg" class="img-fluid rounded-3" alt="mentor" width="150" height="150">
-                          <div class="mt-3">
-                              <h6 class="mb-0">Mrs. Aditi Biswas Das</h6>
-                              <small class="text-muted">Project Engineer, E&ICT Academy, IIT Guwahati</small>
-                              <p class="mt-2 text-muted small">Key Research Areas: Analog VLSI Design, Mixed Signal VLSI Design, 6G Communications, IoT and Embedded Systems, Emerging AI for enhancing productivity. </p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+    <!-- Eligibility banner -->
+    <section id="eligibility" class="py-5">
+      <div class="container">
+        <div class="eligibility">
+          <div>
+            <h5 class="mb-1">Eligibility</h5>
+            <p class="mb-0 text-muted">Open to professionals with 0+ years experience — applicants with demonstrable project work preferred. Need-based scholarships available.</p>
           </div>
-      </section>
+          <div class="ms-auto text-end">
+            <strong>Next cohort:</strong>
+            <div class="mt-1">Jan 12, 2026</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <!-- Contact form with validation -->
-      <section id="contact" class="py-5">
-          <div class="container">
-              <div class="row align-items-center g-4">
-                  <div class="col-lg-6">
-                      <h3 class="fw-bold">Get in touch</h3>
-                      <p class="text-muted">Questions about the course or eligibility? Drop us a message and we'll respond within 48 hours.</p>
+    <!-- Learning Path Visualization -->
+    <section id="learning" class="py-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h3 class="fw-bold">Learning Path Visualization</h3>
+          <p class="text-muted">Step-by-step path from fundamentals to capstone and research covering 15 detailed Modules.</p>
+        </div>
 
-                      <div class="contact-card">
-                          <form id="contactForm" class="contact-form needs-validation" novalidate>
-                              <div class="mb-3">
-                                  <label class="form-label">Full name</label>
-                                  <input type="text" class="form-control" id="cname" required>
-                                  <div class="invalid-feedback">Please enter your name.</div>
-                              </div>
-                              <div class="mb-3">
-                                  <label class="form-label">Email</label>
-                                  <input type="email" class="form-control" id="cemail" required>
-                                  <div class="invalid-feedback">Please enter a valid email.</div>
-                              </div>
-                              <div class="mb-3">
-                                  <label class="form-label">Message</label>
-                                  <textarea class="form-control" id="cmessage" rows="4" required></textarea>
-                                  <div class="invalid-feedback">Please enter a message.</div>
-                              </div>
-                              <div class="d-grid">
-                                  <button class="btn btn-enroll btn-dark" type="submit">Send message</button>
-                              </div>
-                          </form>
-                      </div>
-                  </div>
+        <div class="timeline">
+          <div class="timeline-item mb-4">
+            <h5>Foundational Digital Design</h5>
+            <p class="small text-muted">Initial 3 Modules of 90 Hours duration forming Semester I of the course.</p>
+            <div class="dot"></div>
+          </div>
 
-                  <div class="col-lg-6 mt-4 mt-lg-0">
-                      <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm">
-                          <!-- Placeholder for promotional video or illustration -->
-                          <video controls loop width="500">
-                              <source src="downloads/VLSI Course Presentation Video.mp4" />
-                              <source src="downloads/VLSI Course Presentation Video.WebM" />
-                              This browser does not support the video tag.
-                          </video>
-                      </div>
-                  </div>
+          <div class="timeline-item mb-4">
+            <h5>Semiconductor Fabrication & Device Design</h5>
+            <p class="small text-muted">Intermdiate 4 Modules of 90 Hours duration forming the Semester II of the course.</p>
+            <div class="dot"></div>
+          </div>
+
+          <div class="timeline-item mb-4">
+            <h5>Hands-on Tool for VLSI</h5>
+            <p class="small text-muted">Advanced 3 Modules of 90 Hours duration forming Semester III of the course.</p>
+            <div class="dot"></div>
+          </div>
+
+          <div class="timeline-item mb-4">
+            <h5>VLSI and Semiconductor for Industry Essentials</h5>
+            <p class="small text-muted">Portfolio-grade final capstone project + mock interviews + Research Paper Writing.</p>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Syllabus (Advanced dropdown layout) -->
+    <section id="syllabus" class="py-5 bg-light syllabus">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h3 class="fw-bold">Syllabus</h3>
+          <p class="text-muted">Detailed module breakdown — expand to view topics and resources.</p>
+        </div>
+
+        <div class="accordion" id="syllabusAcc">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s1c" aria-expanded="false">Module 101 — Digital Logic Design</button>
+            </h2>
+            <div id="s1c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
+              <div class="accordion-body">
+                <div class="topic"><div>Logic Gates (AND, OR, NOT etc.), Boolean Algebra, Gate level combinational circuits: Multiplexer/ Demultiplexer, Encoder/ Decoder, Adder/ Subtractor  </div><div class="text-muted">5h</div></div>
+                <hr>
+                <div class="topic"><div>Comparator, Parity generators, Gate level sequential circuits: latches, Flip-flops (RS, JK, D, T, and Master Slave), Registers </div><div class="text-muted">6h</div></div>
+                <hr>
+                <div class="topic"><div>Counters: Ripple and Ring, Shift Register and Counters, Design of synchronous sequential finite state machine, Analysis of synchronous sequential finite state machine </div><div class="text-muted">5h</div></div>
+                <hr>
+                <div class="topic"><div><b>Hands-on: </b>Verification and interpretation of truth table for various gates, Realization of logic functions with the help of universal gates, Boolean functions using MUX, Design of MUX and DEMUX using Universal logic Gates, decoder/de-multiplexer and encoder using logic gates, BCD to 7 Segment LED display decoder, Half adder by using basic and universal gates, Half and Full Subtractor, one bit and two bit comparator using logic gates, NOR gate latch, JK Flip-Flop, truth table of RS, JK, T and D flip-flops using NAND & NOR gates, two-bit ripple counter, synchronous up down counter.</div><div class="text-muted">14h</div></div>
               </div>
+            </div>
           </div>
-      </section>
 
-      <!-- Signup call-to-action -->
-      <section id="signup" class="py-5 bg-light">
-          <div class="container text-center">
-              <h3 class="fw-bold">Ready to start?</h3>
-              <p class="text-muted">Reserve your spot in the next cohort — limited seats.</p>
-              <a class="btn btn-enroll btn-lg btn-dark" href="#contact">Reserve seat</a>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s2c" aria-expanded="false">Module 102 — VLSI Design Flow and Digital Integrated Circuits</button>
+            </h2>
+            <div id="s2c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
+              <div class="accordion-body">
+                <div class="topic"><div>Key stages in design, verification, Synthesis, Physical Design  </div><div class="text-muted">5h</div></div>
+                <hr>
+                <div class="topic"><div>MOS Circuits, Sheet resistance and area capacitances of layers, Wiring capacitances, CMOS inverter, CMOS Gates, Delays, Logical and Electrical Efforts,Gate Sizing</div><div class="text-muted">7h</div></div>
+                <hr>
+                <div class="topic"><div>Buffering, Asymmetric gate, Skewed gates, Ratioed logic, Switching power dissipation, Stick Diagram  </div><div class="text-muted">5h</div></div>
+                <hr>
+                <div class="topic"><div>MOSFET scaling, Dynamic CMOS design  </div><div class="text-muted">4h</div></div>
+                <hr>
+                <div class="topic"><div><b>Hands-on:</b> Implementation and Testing of NMOS and PMOS characteristics, Inverter characteristics, Flip Flop, Latches, Logic Gates, Counter, Adder, Multiplier and Sequence Detector using MAGIC and SPICE.</div><div class="text-muted">9h</div></div>
+                
+              </div>
+            </div>
           </div>
-      </section>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s3c" aria-expanded="false">Module 103 — Hardware Descriptive Languages (HDLs)</button>
+            </h2>
+            <div id="s3c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
+              <div class="accordion-body">
+                <div class="topic"><div>Introduction to digital circuit design flow, Verilog Language introduction, Levels of abstraction, Module, Ports types and declarations, Registers and nets, Arrays, Identifiers, Parameters</div><div class="text-muted">5h</div></div>
+                <hr>
+                <div class="topic"><div>Relational, Arithmetic, Logical, Bit-wise shift Operators, Writing expressions, Behavioral Modeling, Structural Coding, Continuous Assignments, Procedural Statements, Always, Initial Blocks, begin end, fork join</div><div class="text-muted">8h</div></div>
+                <hr>
+                <div class="topic"><div>Blocking and Non-blocking statements, Operation Control Statements, If, case, Loops: while, for-loop, forever, repeat, Combination and sequential circuit designs, Memory modeling, state machines, CMOS gate modeling, Writing Tasks, Writing Functions </div><div class="text-muted">8h</div></div>
+                <hr>
+                <div class="topic"><div>Compiler directives, Conditional Compilation, System Tasks, Gate level primitives, User defined primitives, Delays, Specify block, Testbenchs, modeling, timing checks, Assertion based verification, Code for synthesis, Advanced topics, Writing reusable code     </div><div class="text-muted">9h</div></div>
+                <hr>
+                <div class="topic"><div><b>Hands-on:</b> Practice coding small projects like adders, multiplexers, and simple controllers during the practical sessions. Implementation of combinational circuits and sequential circuits using Verilog/VHDL. <b>Tools Required: Xilinx Vivado, Quartus Prime</b></div><div class="text-muted"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<div class="accordion" id="syllabusAcc">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s4c" aria-expanded="false">Module 201 — Functional Verification</button>
+            </h2>
+            <div id="s4c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
+              <div class="accordion-body">
+                <div class="topic"><div>Functional Verification overview, System Verilog Course overview, Operators, Data types (Int,Void,String,Userdefined,Enumeration,class), Arrays(Fixed Size Array, packed array, unpacked array,Dynamic array, Associate Array, Queues), Procedural Statements and Flow Control (foreach,repeat forever,break and continue,event control,Named block), Object Oriented Programming Overview, Advanced Data types, Fork join, Inter process synchronization, Project to learn all SV language constructs  </div><div class="text-muted">12h</div></div>
+                <hr>
+                <div class="topic"><div>Program, Scheduling semantics, Task, Function, Constraints, Randomization, Functional and code coverage, Assertions and Assertion based verification, Direct Programming Interface(DPI), Configuration libraries, Packages, XMR, Test bench Architecture</div><div class="text-muted">13h</div></div>
+                <hr>
+                <div class="topic"><div><b>Hands-on Tools: </b>Questa Sim, Modelsim, NCSIM, VCS.</div><div class="text-muted"></div></div>
+              </div>
+            </div>
+          </div> 
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s5c" aria-expanded="false">Module 202 — Universal Verification Methodology (UVM)</button>
+            </h2>
+            <div id="s5c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
+              <div class="accordion-body">
+                <div class="topic"><div>UVM Methodology, How UVM evolved?, UVM class library, UVM Class Library, Macros, Utilities, UVM TB Architecture, Command line processor, Reporting classes, Objections, UVM Factory</div><div class="text-muted">12h</div></div>
+                <hr>
+                <div class="topic"><div>Configuration DB, Resource DB, TLM1.0, Simulation Phases, Sequences, Sequencers, Test case development, Configuring TB Environment, Different testbench component coding, Different styles of sequence development, Sequence library, Virtual Sequencer, Virtual sequences </div><div class="text-muted">13h</div></div>
+                <hr>
+                <div class="topic"><div><b>Hands-on Tools: </b>Questa Sim, Modelsim, NCSIM, VCS.</div><div class="text-muted"></div></div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s6">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s6c" aria-expanded="false">Module 203 — Scripting Languages</button>
+            </h2>
+            <div id="s6c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
+              <div class="accordion-body">
+                <div class="topic"><div>Linux Commands – Hands On, Vim Editor – Hands On </div><div class="text-muted">4h</div></div>
+                <hr>
+                <div class="topic"><div>TCL Programming Basics, Data Manipulation, File Handling </div><div class="text-muted">10h</div></div>
+                <hr>
+                <div class="topic"><div>Python: Programming Basics, Data Manipulation, File Handling, Basic Statistics, Data Visualization</div><div class="text-muted">11h</div></div>
+                <hr>
+                <div class="topic"><div><b>Hands-on Tools:</b> Unix/Linux Envirnment, TCL Utility, Python Utility</div><div class="text-muted"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s7">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s7c" aria-expanded="false">Module 204 — Advanced Digital Design</button>
+            </h2>
+            <div id="s7c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
+              <div class="accordion-body">
+                <div class="topic"><div>Clock Domain Crossing (CDC): Fundamentals of CDC, Metastability issues in CDC, Types of CDC signals: Single-bit control signals, Multi-bit data signals, Handshake-based transfers, CDC design techniques: 2-flop synchronizer, Pulse synchronizer, Handshake synchronizer, FIFO-based synchronizer, Timing constraints and STA considerations for CDC, CDC verification techniques: Simulation limitations, Formal verification methods, Static CDC tools</div><div class="text-muted">5h</div></div>
+                <hr>
+                <div class="topic"><div>Reset Domain Crossing (RDC): Fundamentals of RDC, Asynchronous vs synchronous resets, Metastability due to reset deassertion, Reset release synchronization methods, Safe reset design practices, Reset tree design in large SoCs, RDC verification and sign-off checks </div><div class="text-muted">5h</div></div>
+                <hr>
+                <div class="topic"><div>Synchronizers: Basics of metastability, Synchronizer design principles, Common synchronizer architectures, 2-flop synchronizer, Multi-flop synchronizer, Muller C-element synchronizer, Gray code synchronizer, MTBF (Mean Time Between Failure) calculation, Impact of technology scaling on synchronizers, Best practices for synchronizer placement and physical design, Case studies in synchronizer failures </div><div class="text-muted">5h</div></div>
+                <hr>
+                <div class="topic"><div><b>Hands-on Tools:</b> QuestaSim, VCS, or Xcelium</div><div class="text-muted"></div></div>
+              </div>
+            </div>
+          </div>
+
+<div class="accordion" id="syllabusAcc">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s8">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s8c" aria-expanded="false">Module 301 — RTL Synthesis and DFT Insertion</button>
+            </h2>
+            <div id="s8c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
+              <div class="accordion-body">
+                <div class="topic"><div>Introduction, Logical Vs Physical, Timing Models, Inputs required in Details, Steps in Synthesis: Analyse/Elaborate, Importing Constraints, Importing DEF & UPF (optional), Compile, Optimization, Scan (DFT) Insertion, Compile incremental, Debuging/Resolving the Errors, Important Commands, Qualifying netlist, Generating outputs.<br><b>Hands-on Tools:</b> Synopsys DC, FC Or Cadence Genus OR YoSys</div><div class="text-muted">7h</div></div>
+                <hr>
+                <div class="topic"><div>Logical Equivalence Check: Introduction, Need for LEC, Modes, Debuging & Resolving the mismatches in netlists, Need for testing, DFT Basics, SoC Scan architecture overview, Types of Scan, ATPG DRC Debug, ATPG Simulation Mismatch Debug, DFT Diagnosis, JTAG. <br><b>Hands-on Tools:</b> Synopsys FV Or Cadence CLP</div><div class="text-muted">10h</div></div>
+                <hr>
+                <div class="topic"><div>MemoryBIST, LogicBIST, Scan and ATPG, Test compression technigues, Hierarchical Scan Design, DFT Compiler: Overview, Flows Supported by DFT Compiler, Scan Insertion Flow, DFT Compiler Flow and supported Commands, Tetramax/Tessent Flow for ATPG, Steps involved in ATPG mode, ATPG models targeted by Tetramax/Tessent.<br><b>Hands-on Tools:</b> Tetramax/ Tessent </div><div class="text-muted">13h</div></div>
+              </div>
+            </div>
+          </div> 
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s9">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s9c" aria-expanded="false">Module 302 — PnR flow in Physical Design</button>
+            </h2>
+            <div id="s9c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
+              <div class="accordion-body">
+                <div class="topic"><div>Floor planning: Inputs of Floorplan, Sanity Checks, Macro Placement Guidelines, Qualifying the Floorplan, Power Planning, Placement: Standard cell placement, Global routing, Congestion analysis, Timing analysis, Qualifying the placement db.</div><div class="text-muted">20h</div></div>
+                <hr>
+                <div class="topic"><div>Clock Tree Synthesis: Specification file, NDR rules, Clock tree build and Balance, CCD Concurrent Clock and Data Optimization, Clock tree optimization, Crosstalk, Timing Analysis, Routing and Optimization: Overview & goals, Constraints, Pre-route checks, Related terminologies, Types of routing and Optimization, Challenges in routing (DRC/LVS), Timing Analysis, ECO (Engineering Change Order), GDS-II Generation.</div><div class="text-muted">20h</div></div>
+                <hr>
+                <div class="topic"><div><b>Hands-on Tools: </b>Synopsys ICC, FC Or Cadence Innovus OR OpenRoad Tools.</div><div class="text-muted"></div></div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s10">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s10c" aria-expanded="false">Module 303 — Static Timing Analysis (STA)</button>
+            </h2>
+            <div id="s10c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
+              <div class="accordion-body">
+                <div class="topic"><div>Basic Static Timing Analysis Concept, Input to STA tool, Setup Time, Hold Time, Slack, Clock Latencies + Clock Skew, Library Overview, Recovery and Removal Time, Propagation Delay Calculations, Timing Paths, Timing Exception, Asynchronous Path, Clock Gating</div><div class="text-muted">10h</div></div>
+                <hr>
+                <div class="topic"><div>STA VS DTA, Generated Clock, Virtual Clock, Unateness + Functionality, Uncertaininty, Jitter, Design Contraints in details: Timing Constraints, Design Rule Constraints, Exceptions, Area Constraints, System Interface constraints, Multi-voltage and power optimization Constraints, Advance STA Concept: Onchip Variation (OCV), Advance Onchip variation (AOCV), Parametric On chip variation (POCV), Signal Integrity Effects</div><div class="text-muted">10h</div></div>
+                <hr>
+                <div class="topic"><div><b>Hands-on Tools:</b> OpenSTA/ PrimeTime/ Tempus</div><div class="text-muted"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion" id="syllabusAcc">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="s11">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s11c" aria-expanded="false"><b>Final Semester 4 Plan</b></button>
+            </h2>
+            <div id="s11c" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc">
+              <div class="accordion-body">
+                <div class="topic"><div><b>Module 401 Capstone Project:</b> The program culminates in a capstone project where you apply all the concepts learned. This project, which could be a simple processor, a memory controller, or a communication protocol block, provides invaluable hands-on experience with industry-standard EDA (Electronic Design Automation) tools. The project should cover both the design and verification stages.</div><div class="text-muted">30h</div></div>
+                <hr>
+                <div class="topic"><div><b>Module 402 Final Project Presentation:</b> The final project presentation will be based on the capstone project developed by the participants.</div><div class="text-muted">5h</div></div>
+                <hr>
+                <div class="topic"><div><b>Module 403 Research Methodology & Research Writing:</b> The reseach paper writng will be based on the the Capstone project made by the participants</div><div class="text-muted">35h</div></div>
+                <hr>
+                <div class="topic"><div><b>Module 404 and 405:</b> Career Counselling and Interview Facing Tips & Tricks</div><div class="text-muted">20h</div></div>
+              </div>
+            </div>
+          </div> 
+
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Mentors -->
+    <section id="mentors" class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h3 class="fw-bold">Course Mentors</h3>
+          <p class="text-muted">Experienced practitioners from IIT Guwahati in this field.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card p-3 mentor-card">
+              <img src="images/gt.jpg" class="img-fluid rounded-3" alt="mentor">
+              <div class="mt-3">
+                <h6 class="mb-0">Prof. Gaurav Trivedi</h6>
+                <small class="text-muted">Professor, EEE, IIT Guwahati</small>
+                <p class="mt-2 text-muted small">Research Areas: Circuit Simulation (Analog, RF & Digital) and VLSI CAD, Electronics System Design, Computer Architecture, Semiconductor Devices, Hardware Security, Embedded Systems and IoT, High Performance Computing, Large Scale Optimization and Machine Learning</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card p-3 mentor-card">
+              <img src="images/Rafi.jpg" class="img-fluid rounded-3" alt="mentor">
+              <div class="mt-3">
+                <h6 class="mb-0">Prof. Shaik Rafi Ahamed</h6>
+                <small class="text-muted">Professor, EEE, IIT Guwahati</small>
+                <p class="mt-2 text-muted small">Key Research Areas : VLSI Architectures for Signal Processing, Machine Learning and Communication Algorithms, Digital IC Design, Adaptive Signal Processing and Biomedical Signal Processing.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card p-3 mentor-card">
+              <img src="images/mahima.jpg" class="img-fluid rounded-3" alt="mentor">
+              <div class="mt-3">
+                <h6 class="mb-0">Dr. Mahima Arrawatia</h6>
+                <small class="text-muted">Assistant Professor, EEE, IIT Guwahati</small>
+                <p class="mt-2 text-muted small">Research Areas: Energy Harvesting RF Circuit Design Microstrip Antennas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact form with validation -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <h3 class="fw-bold">Get in touch</h3>
+            <p class="text-muted">Questions about the course or eligibility? Drop us a message and we'll respond within 48 hours.</p>
+
+            <div class="contact-card">
+              <form id="contactForm" class="contact-form needs-validation" novalidate>
+                <div class="mb-3">
+                  <label class="form-label">Full name</label>
+                  <input type="text" class="form-control" id="cname" required>
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" id="cemail" required>
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-control" id="cmessage" rows="4" required></textarea>
+                  <div class="invalid-feedback">Please enter a message.</div>
+                </div>
+                <div class="d-grid">
+                  <button class="btn btn-enroll" type="submit">Send message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="p-4 rounded-3" style="background:linear-gradient(180deg,#fff, #fffbf7);box-shadow:0 20px 50px rgba(16,24,40,.04)">
+              <h5>Quick facts</h5>
+              <ul class="text-muted">
+                <li>8 weeks • Live + on-demand</li>
+                <li>1:1 mentor reviews</li>
+                <li>Capstone & portfolio review</li>
+                <li>Scholarships available</li>
+              </ul>
+
+              <div class="mt-3">
+                <a href="#signup" class="btn btn-outline-dark">Apply now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signup call-to-action -->
+    <section id="signup" class="py-5 bg-light">
+      <div class="container text-center">
+        <h3 class="fw-bold">Ready to start?</h3>
+        <p class="text-muted">Reserve your spot in the next cohort — limited seats.</p>
+        <a class="btn btn-enroll btn-lg" href="#contact">Reserve seat</a>
+      </div>
+    </section>
   </main>
+   
 
-  <footer>
-    <div class="container d-flex justify-content-between align-items-center">
-      <div>
-        <strong style="color:var(--brand-accent)">E&ICT Academy IIT Guwahati</strong>
-        <div class="text small">© E&ICT Academy IIT Guwahati — All rights reserved</div>
-      </div>
-      <div class="d-flex gap-4">
-          <a class="text" href="https://www.facebook.com/EICTIITG"><img src="images/facebook.png" alt="" width="35" height="35" /></a>
-          <a class="text-" href="https://www.instagram.com/eict_academy_iitguwahati "><img src="images/Instagram.png" alt="" width="35" height="35" /></a>
-          <a class="text" href="https://www.linkedin.com/in/e-and-ict-academy-iit-guwahati-7ab681123"><img src="images/LinkedIN.png" alt="" width="35" height="35" /></a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+    <script>
     // Smooth scroll for anchors
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', function(ev){
@@ -797,5 +742,5 @@
       })
     })();
   </script>
-</body>
+  </body>
 </html>
