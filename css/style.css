@@ -28,15 +28,7 @@ header p {
 }
 
 /* ---------------- NAVIGATION ---------------- */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: #001f3f;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+
 
 nav a {
   color: white;
@@ -48,6 +40,33 @@ nav a {
 
 nav a:hover {
   background-color: #0078d4;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, empty div right */
+  background-color: #001f3f;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 20px;
+}
+
+/* Left logo */
+.nav-left img {
+  height: 45px;
+}
+
+/* Center menu stays centered */
+.nav-center {
+  display: flex;
+  gap: 10px;
+}
+
+/* Create empty flexible space on right to balance the center alignment */
+.nav-right {
+  width: 45px;  /* same width as logo -> perfect centering */
 }
 
 /* ---------------- DROPDOWN ---------------- */
