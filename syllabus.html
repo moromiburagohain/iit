@@ -420,10 +420,37 @@ function currentSlide(n) {
 }
 </script>
 
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  .syllabus-table th {
+    background-color: #1f2937; /* dark slate */
+    color: #ffffff;
+  }
+  .syllabus-table caption {
+    caption-side: top;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0d6efd;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  @media print {
+    .table {
+      border: 1px solid #000;
+    }
+  }
+</style>
+
 <div class="table-responsive my-4">
-  <table class="table table-bordered table-striped table-hover align-middle text-center">
-    
-    <thead class="table-dark">
+  <table class="table table-bordered table-striped table-hover align-middle text-center syllabus-table">
+
+    <caption>
+      VLSI & Semiconductor Industry Essentials – Entrance Syllabus
+    </caption>
+
+    <thead>
       <tr>
         <th>Section</th>
         <th>Topic / Module</th>
@@ -434,34 +461,36 @@ function currentSlide(n) {
 
     <tbody>
       <tr>
-        <td>I</td>
-        <td>Engineering Mathematics</td>
+        <td class="fw-bold">I</td>
+        <td class="fw-semibold">Engineering Mathematics</td>
         <td>
           Linear Algebra, Differential Equations, Probability, and basic
           Discrete Mathematics as applied to engineering concepts.
         </td>
-        <td class="fw-bold">50 Marks</td>
+        <td>
+          <span class="badge bg-success fs-6">50 Marks</span>
+        </td>
       </tr>
 
       <tr>
-        <td>II</td>
-        <td>Basic Python Programming</td>
+        <td class="fw-bold">II</td>
+        <td class="fw-semibold">Basic Python Programming</td>
         <td>
           Fundamental syntax, data types, control flow (loops, conditionals),
           functions, and basic object-oriented concepts with emphasis on
           logical problem-solving.
         </td>
-        <td>—</td>
+        <td class="text-muted">—</td>
       </tr>
 
       <tr>
-        <td>III</td>
-        <td>Basics of Electronics</td>
+        <td class="fw-bold">III</td>
+        <td class="fw-semibold">Basics of Electronics</td>
         <td>
           Semiconductor devices (diodes, transistors), Ohm’s Law, KCL, KVL,
           RLC circuits, and basic digital logic gates.
         </td>
-        <td>—</td>
+        <td class="text-muted">—</td>
       </tr>
     </tbody>
 
