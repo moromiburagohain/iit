@@ -420,24 +420,36 @@ function currentSlide(n) {
 }
 </script>
 
-</body>
-</html>
-  <style>
-  .section-color {
-    background-color: #e3f2fd; /* light blue for Section column */
-    font-weight: bold;
-  }
-  .dark-blue-head thead {
-    background-color: #0b3c5d; /* dark blue heading */
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  .syllabus-table th {
+    background-color: #1f2937; /* dark slate */
     color: #ffffff;
+  }
+  .syllabus-table caption {
+    caption-side: top;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0d6efd;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  @media print {
+    .table {
+      border: 1px solid #000;
+    }
   }
 </style>
 
-<div class="table-responsive text-center">
-  <table class="table table-bordered table-striped table-hover align-middle dark-blue-head mx-auto">
-    <caption class="fw-bold text-primary fs-5 text-center">
+<div class="table-responsive my-4">
+  <table class="table table-bordered table-striped table-hover align-middle text-center syllabus-table">
+
+    <caption>
       VLSI & Semiconductor Industry Essentials
     </caption>
+
     <thead>
       <tr>
         <th>Section</th>
@@ -446,63 +458,144 @@ function currentSlide(n) {
         <th>Weightage (Tentative)</th>
       </tr>
     </thead>
+
     <tbody>
       <tr>
-        <td class="section-color">I</td>
-        <td>Engineering Mathematics</td>
+        <td class="fw-bold">I</td>
+        <td class="fw-semibold">Engineering Mathematics</td>
         <td>
           Linear Algebra, Differential Equations, Probability, and basic
           Discrete Mathematics as applied to engineering concepts.
         </td>
-        <td><span class="badge bg-success fs-6">50 Marks</span></td>
-      </tr>
-      <tr>
-        <td class="section-color">II</td>
-        <td>Basic Python Programming</td>
         <td>
-          Fundamental syntax, data types, control flow (loops, conditionals),
-          functions, and basic object-oriented concepts with focus on
-          logical problem-solving.
+          <span class="badge bg-success fs-6">50 Marks</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="fw-bold">II</td>
+        <td class="fw-semibold">Basic Python Programming</td>
+        <td>
+          Fundamental syntax, data types, control flow (loops, conditionals), functions, and basic object-oriented concepts. Focus on logical problem-solving.
         </td>
         <td class="text-muted">—</td>
       </tr>
+
       <tr>
-        <td class="section-color">III</td>
-        <td>Basics of Electronics</td>
+        <td class="fw-bold">III</td>
+        <td class="fw-semibold">Basics of Electronics</td>
         <td>
-          Semiconductor devices (diodes, transistors), fundamental circuit
-          laws (Ohm's Law, KCL, KVL), RLC circuits, and basic digital logic gates.
+          Semiconductor devices (diodes, transistors), fundamental circuit laws (Ohm's, KCL, KVL), RLC circuits, and basic digital logic gates.
         </td>
         <td class="text-muted">—</td>
       </tr>
     </tbody>
+
   </table>
 </div>
 
 
+<div class="table-responsive my-4">
+  <table class="table table-bordered table-striped table-hover align-middle text-center syllabus-table">
+
+    <caption>
+     Cyber Security
+    </caption>
+
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Topic / Module</th>
+        <th>Sub-Topics & Scope</th>
+        <th>Weightage (Tentative)</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td class="fw-bold">I</td>
+        <td class="fw-semibold">Engineering Mathematics</td>
+        <td>
+         Linear Algebra, Probability, and Statistical methods relevant to security and data analysis (similar to the VLSI syllabus, but focus may shift to probabilistic models).
+        </td>
+        <td>
+          <span class="badge bg-success fs-6">50 Marks</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="fw-bold">II</td>
+        <td class="fw-semibold">Basic Python Programming</td>
+        <td>
+         Fundamental syntax, data types, control flow, functions, and file handling. Emphasis on scripting for automation and basic network operations.
+        </td>
+        <td class="text-muted">—</td>
+      </tr>
+
+      <tr>
+        <td class="fw-bold">III</td>
+        <td class="fw-semibold">Basics of Operating Systems(OS)</td>
+        <td>
+         OS types, process management, memory management, file systems, and fundamental OS security concepts (users, permissions, access control).
+        </td>
+        <td class="text-muted">—</td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
+
+<div class="table-responsive my-4">
+  <table class="table table-bordered table-striped table-hover align-middle text-center syllabus-table">
+
+    <caption>
+   Applied ML & DS
+    </caption>
+
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Topic / Module</th>
+        <th>Sub-Topics & Scope</th>
+        <th>Weightage (Tentative)</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td class="fw-bold">I</td>
+        <td class="fw-semibold">Engineering Mathematics</td>
+        <td>
+        Covers fundamental concepts in:<ul><li>Linear Algebra (Matrices, Determinants, Eigenvalues, Eigenvectors)</li><li>Calculus (Differential and Integral Calculus, Basic concepts of limits)</li><li>Probability and Statistics (Basic probability, Conditional probability, Mean, Median, Mode)</li><li>Discrete Mathematics (Basic Set Theory, Functions)</li></ul>
+        </td>
+        <td>
+          <span class="badge bg-success fs-6">50 Marks</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="fw-bold">II</td>
+        <td class="fw-semibold">Basic Python Programming</td>
+        <td>
+       Focus on foundational programming skills:<ul><li>Python Syntax and Data Types (Lists, Tuples, Dictionaries, Sets)</li><li>Control Structures (If-Else, Loops: For, While)</li><li>Functions and Modularity</li><li>Basic Input/Output and File Handling</li><li>Problem-solving through fundamental programming logic</li></ul>
+        </td>
+        <td class="text-muted">—</td>
+      </tr>
+
+      <tr>
+        <td class="fw-bold">III</td>
+        <td class="fw-semibold">Basics of Database Management Systems(DBMS)</td>
+        <td>
+         Covers core concepts related to data organization and management:<ul><li>Database Architecture and Models (E-R Model, Relational Model)</li><li>Structured Query Language (SQL) Fundamentals (SELECT, INSERT, UPDATE, DELETE, basic JOIN operations)</li><li>Normalization (1NF, 2NF, 3NF)</li><li>Basic Concepts of Transactions and Concurrency Control</li></ul>
+        </td>
+        <td class="text-muted">—</td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
+
  
-
-
- <footer class="py-3 bg-transparent border-top">
-      <div class="container">
-        <div class="row align-items-center">
-          
-          <div class="col-md-8">
-            <small class="text-muted">
-              © 2025 Electronics &amp; ICT Academy, IIT Guwahati — All Rights Reserved
-            </small>
-          </div>
-
-          <div class="col-md-4 text-md-end">
-            <small class="text-dark fw-semibold">
-              Indian Institute of Technology Guwahati
-            </small>
-          </div>
-
-        </div>
-      </div>
-    </footer>
     <script src="js/slider.js"></script>
-  
-</body>
+  </body>
 </html>
