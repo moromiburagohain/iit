@@ -1,152 +1,209 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applied Machine Learning & Data Science | E&ICT Academy IIT Guwahati</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/slider.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
- 
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applied Machine Learning & Data Science | E&ICT Academy IIT Guwahati</title>
   <style>
-    section {padding: 10px;}
-     /* HEADER SECTION  Professionally Bright Background */
-.custom-header {
-  background: linear-gradient(90deg, #0A1A3F 0%, #cfcfcfc9 100%);
-  color: #000000 !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
-
-.custom-header .navbar-brand,
-.custom-header .nav-link {
-  color: #000000 !important;
-  font-weight: 500;
-}
-
-.custom-header .nav-link:hover {
-  color: #004aad !important;
-}
-
-    }
-    .hero .lead{color:var(--muted); font-size:1.05rem;}
-    .btn-primary{
-      background: linear-gradient(90deg,var(--accent), #d3c2ce);
-      border: none;
-      box-shadow: 0 6px 28px rgba(13,110,253,0.08);
-      padding: .6rem 1.1rem;
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f6fa;
+      color: #222;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
-    /* Features bold block */
-    .features-block{
-      background: linear-gradient(180deg,#f0f0f0,#6a7d91);
-      border-radius:18px;
-      padding:1.25rem;
-      box-shadow: 0 8px 30px rgba(16,24,40,0.04);
-      border: 1px solid rgba(13,110,253,0.06);
+    header {
+      background: linear-gradient(135deg, #002147, #0078d4);
+      color: white;
+      text-align: center;
+      padding: 50px 20px 80px;
     }
-    .feature-item{min-height:90px;}
-
-    /* Cards */
-    /* Cards */
-.course-card {
-  background: #eaeaec; /* Deep professional bold color */
-  border-radius: 12px;
-  padding: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0);
-  box-shadow: 0 6px 16px rgba(248, 242, 242, 0.87);
-}
-
-    
-
-    /* Learning path timeline */
-    .timeline{
-      position:relative;
-      margin-left: 1rem;
-      padding-left: 1.25rem;
-      border-left: 3px dashed rgba(216, 211, 211, 0.842);
+    header h1 {
+      margin: 5px 0;
+      font-size: 2.2em;
     }
-    .timeline .step{position:relative; padding: 1rem 0;}
-    .timeline .step::before{
-      content:'';
-      position:absolute;
-      left:-1.15rem;
-      top:1rem;
-      width:18px;
-      height:18px;
-      border-radius:50%;
-      background:var(--card);
-      border: 3px solid var(--accent);
-      box-shadow: 0 4px 10px rgba(13,110,253,0.06);
+    header p {
+      font-size: 1.1em;
+      color: #e0e0e0;
     }
 
-    /* Mentors */
-    .mentor-card img{width:72px;height:72px;object-fit:cover;border-radius:12px;}
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-    /* Footer */
-    footer{padding:2.5rem 0; color:var(--muted);}
-    .muted{color:var(--muted);}
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: block;
+      font-weight: 500;
+    }
 
-    @media (max-width:767px){
-      .hero{padding:3rem 0;}
-      .features-grid .feature-item{min-height: auto;}
+    nav a:hover {
+      background-color: #0078d4;
+    }
+
+    /* Dropdown menu */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: block;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #001f3f;
+      min-width: 220px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1000;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #0078d4;
+    }
+
+    /* Submenu styling */
+    .sub-dropdown {
+      position: relative;
+    }
+
+    .sub-dropdown-content {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background-color: #001f3f;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .sub-dropdown-content a {
+      padding: 10px 16px;
+    }
+
+    .sub-dropdown:hover .sub-dropdown-content {
+      display: block;
+    }
+
+    .sub-dropbtn::after {
+      content: " �";
+      float: right;
+    }
+
+    /* Show dropdown when clicked */
+    .dropdown.active .dropdown-content {
+      display: block;
+    }
+
+    section {
+      padding: 50px 15%;
+      background: white;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #003366;
+      border-left: 6px solid #0078d4;
+      padding-left: 10px;
+    }
+
+    ul {
+      margin-top: 10px;
+      list-style: disc;
+      padding-left: 25px;
+    }
+
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
     }
   </style>
-  </head>
-  <body>
+</head>
 
-  <!-- NAVIGATION -->
+<body>
+  <header id="home">
+    <h1>Applied Machine Learning & Data Science</h1>
+    <p>Professional Certification Course by E&ICT Academy, IIT Guwahati</p>
+    <a class="btn" href="https://eict.iitg.ac.in" target="_blank">Enroll Now</a>
+  </header>
+
   <nav>
-    <div class="nav-left">
-      <a href="index.html">
-        <img src="images/EICT_Short_Logo.jpg" alt="Logo">
-      </a>
-    </div>
-
-    <div class="nav-center">
-      <!-- Your entire menu stays EXACTLY the same -->
-
-      <!-- Dropdown 1 -->
-      <div class="dropdown">
-        <a href="index.html" class="dropbtn">Home</a>
-        <div class="dropdown-content">
-          <a href="about.html">About E&ICT</a>
-          <a href="history.html">History</a>
-          <a href="future.html">Future Plans</a>
-          <a href="professional.html">Professional Courses & Specialized Training</a>
-          <a href="other.html">Other Activities</a>
-        </div>
+      <div class="nav-left">
+        <a href="index.html">
+          <img src="images/EICT_Short_Logo.jpg" alt="Logo">
+        </a>
       </div>
 
-      <!-- Dropdown 2 -->
-      <div class="dropdown">
-        <a href="#about-course" class="dropbtn">About Course</a>
-        <div class="dropdown-content">
-          <div class="sub-dropdown">
-            <a href="course.html" class="sub-dropbtn">Courses</a>
-            <div class="sub-dropdown-content">
-              <a href="ai_ml.html">AI & ML</a>
-              <a href="cyber.html">Cybersecurity</a>
-              <a href="professional_certification_landing_page.html">VLSI</a>
-            </div>
+      <div class="nav-center">
+        <!-- Your entire menu stays EXACTLY the same -->
+
+        <!-- Dropdown 1 -->
+        <div class="dropdown">
+          <a href="index.html" class="dropbtn">Home</a>
+          <div class="dropdown-content">
+            <a href="about.html">About E&ICT</a>
+            <a href="history.html">History</a>
+            <a href="future.html">Future Plans</a>
+            <a href="professional.html">Professional Courses & Specialized Training</a>
+            <a href="other.html">Other Activities</a>
           </div>
-          <a href="fee.html">Fees</a>
-          <a href="admission.html">Admission</a>
-          <a href="why.html">Why to Enroll</a>
         </div>
-      </div>
 
-      <a href="news.html">News & Events</a>
-      <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
-      <a href="address.html">Contact Us</a>
+        <!-- Dropdown 2 -->
+        <div class="dropdown">
+          <a href="#about-course" class="dropbtn">About Course</a>
+          <div class="dropdown-content">
+            <div class="sub-dropdown">
+              <a href="course.html" class="sub-dropbtn">Courses</a>
+              <div class="sub-dropdown-content">
+                <a href="ai_ml.html">AI & ML</a>
+                <a href="cyber.html">Cybersecurity</a>
+                <a href="professional_certification_landing_page.html">VLSI</a>
+              </div>
+            </div>
+            <a href="fee.html">Fees</a>
+            <a href="admission.html">Admission</a>
+            <a href="why.html">Why to Enroll</a>
+          </div>
+        </div>
+
+        <a href="news.html">News & Events</a>
+        <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
+        <a href="address.html">Contact Us</a>
         <a href="fsq.html">FAQs</a>
            <a href="syllabus.html">Entrance Syllabus </a>
-    </div>
+      </div>
 
       <div class="nav-right"></div>
     </nav>
-
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="container">
