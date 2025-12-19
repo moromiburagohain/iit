@@ -10,492 +10,961 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
  
-  <style>
-    section {padding: 10px;}
-     /* HEADER SECTION  Professionally Bright Background */
-.custom-header {
-  background: linear-gradient(90deg, #0A1A3F 0%, #cfcfcfc9 100%);
-  color: #000000 !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
-
-.custom-header .navbar-brand,
-.custom-header .nav-link {
-  color: #000000 !important;
-  font-weight: 500;
-}
-
-.custom-header .nav-link:hover {
-  color: #004aad !important;
-}
-
-    }
-    .hero .lead{color:var(--muted); font-size:1.05rem;}
-    .btn-primary{
-      background: linear-gradient(90deg,var(--accent), #d3c2ce);
-      border: none;
-      box-shadow: 0 6px 28px rgba(13,110,253,0.08);
-      padding: .6rem 1.1rem;
+    <style>
+        /* ====== Header (frozen) ====== */
+    .site-header {
+      background: var(--brand-accent);
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      box-shadow: 0 6px 24px rgba(49, 44, 10, .12);
+      padding: 10px;
     }
 
-    /* Features bold block */
-    .features-block{
-      background: linear-gradient(180deg,#f0f0f0,#6a7d91);
-      border-radius:18px;
-      padding:1.25rem;
-      box-shadow: 0 8px 30px rgba(16,24,40,0.04);
-      border: 1px solid rgba(13,110,253,0.06);
-    }
-    .feature-item{min-height:90px;}
-
-    /* Cards */
-    /* Cards */
-.course-card {
-  background: #eaeaec; /* Deep professional bold color */
-  border-radius: 12px;
-  padding: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0);
-  box-shadow: 0 6px 16px rgba(248, 242, 242, 0.87);
-}
-
-    
-
-    /* Learning path timeline */
-    .timeline{
-      position:relative;
-      margin-left: 1rem;
-      padding-left: 1.25rem;
-      border-left: 3px dashed rgba(216, 211, 211, 0.842);
-    }
-    .timeline .step{position:relative; padding: 1rem 0;}
-    .timeline .step::before{
-      content:'';
-      position:absolute;
-      left:-1.15rem;
-      top:1rem;
-      width:18px;
-      height:18px;
-      border-radius:50%;
-      background:var(--card);
-      border: 3px solid var(--accent);
-      box-shadow: 0 4px 10px rgba(13,110,253,0.06);
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .6rem 1rem;
     }
 
-    /* Mentors */
-    .mentor-card img{width:72px;height:72px;object-fit:cover;border-radius:12px;}
-
-    /* Footer */
-    footer{padding:2.5rem 0; color:var(--muted);}
-    .muted{color:var(--muted);}
-
-    @media (max-width:767px){
-      .hero{padding:3rem 0;}
-      .features-grid .feature-item{min-height: auto;}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
     }
-  </style>
+
+    .brand .logo {
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      color: var(--brand-accent);
+      font-weight: 700;
+    }
+
+    /* Navigation menu pills */
+    .nav-pills .nav-link {
+      background: #001f3f;
+      color: var(--brand-accent);
+      font-weight: 700;
+      border-radius: 999px;
+      margin-right: .4rem;
+      padding: .45rem .9rem;
+      border: 0;
+    }
+
+    .nav-pills .nav-link.active {
+      box-shadow: 0 6px 18px rgba(49, 44, 10, .08);
+    }
+
+    .ms-auto .btn-enroll {
+      background: var(--brand-dark);
+      color: var(--brand-accent);
+      border-radius: 12px;
+      padding: .45rem .9rem;
+      font-weight: 700;
+    }
+
+    .site-header .center-nav {
+      position: absolute;
+      left: 30%;
+      transform: translateX(-30%);
+    }
+
+    #about, #features, #eligibility, #learning, #syllabus, #mentors, #contact, #signup {
+      padding: 50px 5% !important;
+    }
+    /* ====== Hero ====== */
+    .hero {
+      min-height: 72vh;
+      padding-left: 5%;
+      padding-right: 5%;
+      display: grid;
+      align-items: center;
+      margin-top: 0;
+      background-image:
+        linear-gradient(180deg, rgba(49, 44, 10, 0.06), rgba(204, 163, 0, 0.06)),
+        url('https://media.glassdoor.com/l/2a/d1/e1/ff/main-gate.jpg?signature=e026158e053ce68cae02b13426a9ffc32df3d76b065b3a0276c293c345178bf7');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(600px 200px at 10% 10%, rgba(204, 163, 0, .12), transparent 20%),
+        radial-gradient(500px 180px at 90% 80%, rgba(49, 44, 10, .06), transparent 20%);
+      pointer-events: none;
+    }
+
+    .hero .glass {
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .6), rgba(255, 255, 255, .35));
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(16, 24, 40, .12);
+    }
+
+    .hero h1 {
+      color: var(--brand-dark);
+      font-weight: 800;
+    }
+
+    .hero .lead {
+      color: #333;
+    }
+
+    .hero .accent {
+      color: var(--brand-accent);
+    }
+
+    .cta-group .btn {
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .cta-group .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 30px rgba(49, 44, 10, .12);
+    }
+
+    /* subtle floating shapes */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: .12;
+      pointer-events: none;
+      filter: blur(40px);
+    }
+
+    .shape.s1 {
+      width: 320px;
+      height: 320px;
+      left: -60px;
+      top: -40px;
+      background: var(--brand-accent);
+    }
+
+    .shape.s2 {
+      width: 260px;
+      height: 260px;
+      right: -40px;
+      bottom: -60px;
+      background: var(--brand-dark);
+    }
+
+    /* ====== Premium About section ====== */
+    .about-premium {
+      background: linear-gradient(180deg, #fff 0%, #fffbf2 100%);
+      padding: 3rem;
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(16, 24, 40, .06);
+    }
+
+    .about-premium h2 {
+      color: var(--brand-dark);
+      font-weight: 800;
+    }
+
+    .mirror-card {
+      position: relative;
+    }
+
+    .mirror-card .mirror {
+      transform: scaleY(-1);
+      opacity: .18;
+      filter: blur(2px);
+      transform-origin: top;
+    }
+
+    /* ====== Features ====== */
+    .features .card {
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform .35s cubic-bezier(.2, .9, .3, 1), box-shadow .35s;
+    }
+
+    .features .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(16, 24, 40, .12);
+    }
+
+    .feature-1 {
+      background: linear-gradient(135deg, #f8f1e0, #fff);
+    }
+
+    .feature-2 {
+      background: linear-gradient(135deg, #e9f7f6, #fff);
+    }
+
+    .feature-3 {
+      background: linear-gradient(135deg, #f6eefb, #fff);
+    }
+
+    .feature-4 {
+      background: linear-gradient(135deg, #fff7ed, #fff);
+    }
+
+    /* ====== Learning path visualization (timeline) ====== */
+    .timeline {
+      position: relative;
+      padding: 2rem 1rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #cca300;
+      transform: translateX(-50%);
+      border-radius: 4px;
+    }
+
+    .timeline-item {
+      width: 45%;
+      padding: 1.2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(16, 24, 40, .06);
+      position: relative;
+      transition: transform .35s;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 55%;
+    }
+
+    .timeline-item .dot {
+      position: absolute;
+      top: 1.4rem;
+      right: -34px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #cca300;
+      box-shadow: 0 8px 20px rgba(204, 163, 0, .12);
+    }
+
+    .timeline-item:nth-child(even) .dot {
+      left: -34px;
+      right: auto;
+      background: #312c0a;
+    }
+
+    /* Responsive timeline stacking */
+    @media (max-width: 991px) {
+      .timeline::before {
+        left: 8px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0;
+        margin-left: 36px;
+      }
+
+      .timeline-item .dot {
+        left: -50px;
+      }
+    }
+
+    /* ====== Syllabus advanced dropdown ====== */
+    .syllabus .topic {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ====== Eligibility banner ====== */
+    .eligibility {
+      background: linear-gradient(90deg, rgba(204, 163, 0, .08), rgba(49, 44, 10, .02));
+      padding: 2rem;
+      border-radius: 12px;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* ====== Mentors ====== */
+    .mentor-card {
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .35s;
+    }
+
+    .mentor-card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* ====== Contact form ====== */
+    .contact-form .form-control:invalid {
+      border-color: #e55353;
+    }
+
+    .contact-form .form-control:valid {
+      border-color: var(--brand-accent);
+    }
+
+    .contact-card {
+      background: linear-gradient(180deg, #fff, #fffbf7);
+      border-radius: 14px;
+      box-shadow: 0 20px 50px rgba(16, 24, 40, .06);
+      padding: 1.4rem;
+    }
+
+  
+
+    /* small animations */
+    @keyframes floatY {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    .float {
+      animation: floatY 6s ease-in-out infinite;
+    }
+
+    </style>
   </head>
   <body>
-
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="nav-left">
-      <a href="index.html">
-        <img src="images/EICT_Short_Logo.jpg" alt="Logo">
-      </a>
-    </div>
-
-    <div class="nav-center">
-      <!-- Your entire menu stays EXACTLY the same -->
-
-      <!-- Dropdown 1 -->
-      <div class="dropdown">
-        <a href="index.html" class="dropbtn">Home</a>
-        <div class="dropdown-content">
-          <a href="about.html">About E&ICT</a>
-          <a href="history.html">History</a>
-          <a href="future.html">Future Plans</a>
-          <a href="professional.html">Professional Courses & Specialized Training</a>
-          <a href="other.html">Other Activities</a>
-        </div>
+        <nav>
+      <div class="nav-left">
+        <a href="index.html">
+          <img src="images/EICT_Short_Logo.jpg" alt="Logo">
+        </a>
       </div>
 
-      <!-- Dropdown 2 -->
-      <div class="dropdown">
-        <a href="#about-course" class="dropbtn">About Course</a>
-        <div class="dropdown-content">
-          <div class="sub-dropdown">
-            <a href="course.html" class="sub-dropbtn">Courses</a>
-            <div class="sub-dropdown-content">
-              <a href="ai_ml.html">AI & ML</a>
-              <a href="cyber.html">Cybersecurity</a>
-              <a href="professional_certification_landing_page.html">VLSI</a>
-            </div>
+      <div class="nav-center">
+        <!-- Your entire menu stays EXACTLY the same -->
+
+        <!-- Dropdown 1 -->
+        <div class="dropdown">
+          <a href="index.html" class="dropbtn">Home</a>
+          <div class="dropdown-content">
+            <a href="about.html">About E&ICT</a>
+            <a href="history.html">History</a>
+            <a href="future.html">Future Plans</a>
+            <a href="professional.html">Professional Courses & Specialized Training</a>
+            <a href="other.html">Other Activities</a>
           </div>
-          <a href="fee.html">Fees</a>
-          <a href="admission.html">Admission</a>
-          <a href="why.html">Why to Enroll</a>
         </div>
-      </div>
 
-      <a href="news.html">News & Events</a>
-      <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
-      <a href="address.html">Contact Us</a>
-        <a href="fsq.html">FAQs</a>
-           <a href="syllabus.html">Entrance Syllabus </a>
-    </div>
+        <!-- Dropdown 2 -->
+        <div class="dropdown">
+          <a href="#about-course" class="dropbtn">About Course</a>
+          <div class="dropdown-content">
+            <div class="sub-dropdown">
+              <a href="course.html" class="sub-dropbtn">Courses</a>
+              <div class="sub-dropdown-content">
+                <a href="ai_ml.html">AI & ML</a>
+                <a href="cyber.html">Cybersecurity</a>
+                <a href="professional_certification_landing_page.html">VLSI</a>
+              </div>
+            </div>
+            <a href="fee.html">Fees</a>
+            <a href="admission.html">Admission</a>
+            <a href="why.html">Why to Enroll</a>
+          </div>
+        </div>
+
+        <a href="news.html">News & Events</a>
+        <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
+        <a href="address.html">Contact Us</a>
+          <a href="fsq.html">FAQs</a>
+             <a href="syllabus.html">Entrance Syllabus </a>
+      </div>
 
       <div class="nav-right"></div>
     </nav>
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="shape s1 float"></div>
+        <div class="shape s2 float" style="animation-delay:1s"></div>
+        <div class="container">
+          <div class="row align-items-center gy-4">
+            <div class="col-lg-6">
+              <div class="glass">
+                <small class="text-uppercase" style="letter-spacing:1px;color:var(--brand-accent);font-weight:700">E&ICT Academy IIT Guwahati Presents <br>12 Months Online Professional Certification Program on</small>
+                <h1 class="mt-2 display-5">Cybersecurity</h1>
+                <p class="lead">An employer-driven professional certification with live mentorship, explicit Hands-on Training, real projects and a portfolio-grade capstone.</p>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="row align-items-center">
+                <div class="cta-group d-flex gap-3 mt-3">
+                  <a class="btn btn-lg btn-dark" href="#signup">Reserve Seat</a>
+              
+                  <a class="btn btn-sm btn-link align-self-center" href="#contact">Have questions?</a>
+                </div>
 
-        <!-- Left Column -->
-        <div class="col-lg-7">
-          <h1 class="display-6 fw-bold">Professional Certification Programme in Cybersecurity</h1>
-          <p class="lead mb-3">
-            A 12-month industry-aligned certificate with hands-on labs, capstone project, and certification prep for career-ready cybersecurity professionals.
-          </p>
-
-          <div class="d-flex gap-2">
-            <a href="https://eict.iitg.ac.in/" target="_blank" rel="noopener noreferrer"
-              class="btn btn-lg" style="background:#0A1A3F; color:#ffffff; border:none;">
-              Apply Now
-            </a>
-          </div>
-        </div>
-
-        <!-- Course Card -->
-        <div class="col-lg-5">
-          <div class="course-card" style="background:#9f9fa0; border-radius:12px; padding:1.25rem;">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <div>
-                <h5 class="mb-0">Duration</h5>
-                <p class="mb-0 muted small">12 Months</p>
-              </div>
-              <div class="text-end">
-                <h5 class="mb-0">Mode</h5>
-                <p class="mb-0 muted small">Online</p>
+                <ul class="list-unstyled d-flex gap-4 mt-4 text-muted">
+                  <li><i class="bi bi-clock-fill me-2"></i>12 Months</li>
+                  <li><i class="bi bi-laptop me-2"></i>Live + On-demand</li>
+                  <li><i class="bi bi-award me-2"></i>Industry certificate</li>
+                </ul>
               </div>
             </div>
 
-            <hr>
-
-            <ul class="list-unstyled mb-0">
-              <li><i class="bi bi-check2-circle me-2 text-success"></i>Hands-on labs & assignments</li>
-              <li><i class="bi bi-check2-circle me-2 text-success"></i>Capstone simulated attack & defense</li>
-              <li><i class="bi bi-check2-circle me-2 text-success"></i>Certification prep (CEH, Security+)</li>
-            </ul>
+          <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+              <h5 class="mb-3">Book a free live webinar to know more</h5>
+              <form id="quickApply" class="row g-2" onsubmit="return handleQuickApply(event)">
+                <div class="col-12">
+                  <input required class="form-control form-control-lg" placeholder="Full name" name="name">
+                </div>
+                <div class="col-12 col-md-6">
+                  <input required type="email" class="form-control" placeholder="Email" name="email">
+                </div>
+                <div class="col-12 col-md-6">
+                  <input class="form-control" placeholder="Phone (optional)" name="phone">
+                </div>
+                <div class="col-12">
+                  <select class="form-select" name="level">
+                    <option selected>Choose experience level</option>
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                  </select>
+                </div>
+                <div class="col-12 d-grid">
+                  <button class="btn btn-lg btn-dark">Apply Now</button>
+                </div>
+              </form>
+              <small class="text-muted">No payment required to apply. Scholarships available.</small>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
-  </section>
+      </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <div class="row g-4 align-items-center">
+          <!---- Header -->
+   <!-- <header class="site-header">
+    <div class="container  d-flex align-items-center justify-content-between">
+      
 
-        <div class="col-lg-7">
-          <h2 class="fw-bold">About the Course</h2>
-          <p class="muted">
-            This Professional Certification Programme in Cyber Security covers foundational to advanced topics such as network security, ethical hacking, cloud security, cryptography, incident response and forensics.
+      <ul class="nav nav-pills ms-4 d-none d-md-flex center-nav">
+        <li class="nav-item"><a class="nav-link" href="#about">About the Course</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#eligibility">Eligibility</a></li>
+        <li class="nav-item"><a class="nav-link" href="#learning">Learning Path</a></li>
+        <li class="nav-item"><a class="nav-link" href="#syllabus">Syllabus</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mentors">Mentors</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <button class="btn btn-sm btn-light d-md-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">Menu</button>
+        <a class="btn btn-enroll" href="#signup">Enroll</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile offcanvas -->
+   <!--
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-unstyled">
+        <li><a class="d-block py-2" href="#about">About the course</a></li>
+        <li><a class="d-block py-2" href="#features">Features</a></li>
+        <li><a class="d-block py-2" href="#eligibility">Eligibility</a></li>
+        <li><a class="d-block py-2" href="#learning">Learning Path</a></li>
+        <li><a class="d-block py-2" href="#syllabus">Syllabus</a></li>
+        <li><a class="d-block py-2" href="#mentors">Mentors</a></li>
+        <li><a class="d-block py-2" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div> -->
+
+
+      <!-- About the course (premium) -->
+      <section id="about" class="py-0">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+              <div class="about-premium">
+                <h2>About the Course</h2>
+                <p class="text-muted">This Professional Certification Programme in Cyber Security covers foundational to advanced topics such as network security, ethical hacking, cloud security, cryptography, incident response and forensics.
           </p>
 
-          <div class="row g-3 mt-3">
-            <div class="col-md-6">
-              <div class="p-3 rounded-3 border course-card">
-                <h6 class="mb-1">Who should apply?</h6>
-                <p class="mb-0 muted">Graduates, IT professionals, aspiring security engineers.</p>
+                <ul class="mt-3">
+                  <li><strong>Flexible learning</strong>  recordings + weekly live sessions.</li>
+                  <li><strong>Practical projects</strong>  real company briefs, mentor reviews.</li>
+                  <li><strong>Career support</strong>  portfolio & interview coaching.</li>
+                  <li><strong>Research</strong>  Research paper writing assistance for further studies.</li>
+                </ul>
+
+                <div class="mt-4">
+                  <a class="btn btn-lg btn-dark btn-enroll me-2" href="#signup">Apply Now</a>
+                  <a class="btn btn-outline-dark" href="#features">See features</a>
+                </div>
               </div>
             </div>
 
-            <div class="col-md-6">
-              <div class="p-3 rounded-3 border course-card">
-                <h6 class="mb-1">Outcome</h6>
-                <p class="mb-0 muted">Industry-ready skills, capstone project, career guidance.</p>
+            <div class="col-lg-6">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="card p-3 feature-1">
+                    <h6>Duration</h6>
+                    <p class="small text-muted mb-0">7-8 hours Weekly engagement through live, querys and hands-on sessions. Total 4 semesters of three months each.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card p-3 feature-3">
+                    <h6>Tools</h6>
+                    <p class="small text-muted mb-0">Kali Linux, Nmap, Metasploit Framework, Wireshark, OpenVAS, Snort, ELK Stack (Elasticsearch, Logstash, Kibana)</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card p-3 feature-3">
+                    <h6>Career Prep</h6>
+                    <p class="small text-muted mb-0">Resume, portfolio, mock interviews and important Interview facing tips and tricks.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card p-3 feature-4">
+                    <h6>Community</h6>
+                    <p class="small text-muted mb-0">Active cohort groups with E&ICT Academy IIT Guwahati alumni network.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card p-3 feature-1">
+                    <h6>Activities</h6>
+                    <p class="small text-muted mb-0">On Campus Orientation and Immersion at the begining and completion of the program.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card p-3 feature-3">
+                    <h6>Capstone and Research</h6>
+                    <p class="small text-muted mb-0">Showcase-ready project reviewed by mentors and Research Paper writing guidance from IIT Guwahtai veterans.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
+      <section id="why-choose" class="py-5 bg-light">
+        <div class="container">
 
-        <!-- Highlights -->
-        <div class="col-lg-5">
-          <div class="features-block" style="background:#b1b1b3; border-radius:12px; padding:1.25rem;">
-            <h5 class="fw-bold">Program Highlights</h5>
+          <!-- Heading -->
+          <div class="text-center mb-4">
+            <h2 class="fw-bold">Why Choose Our Cybersecurity?</h2>
+            <p class="text-muted">Our cybersecurity solutions provide comprehensive protection for your systems, networks, and sensitive data against modern cyber threats such as malware, ransomware, phishing attacks, and unauthorized access. 
+              Led by experienced professionals, we use the latest tools, AI-driven threat detection, and industry best practices to ensure proactive monitoring and rapid incident response. 
+              We help organizations reduce risks, maintain compliance with security standards, and protect business continuity in a cost-effective manner. 
+              In addition, our focus on user training and cybersecurity awareness strengthens the human layer of security, making your organization resilient against evolving cyber challenges.</p>
+          </div>
 
-            <ul class="list-unstyled mt-3">
-              <li class="mb-2"><strong>Real-world labs & capstone</strong> – simulated attack and defense.</li>
-              <li class="mb-2"><strong>Tools-focused</strong> – Kali, Metasploit, Burp, Nmap, Splunk, ELK.</li>
-              <li class="mb-2"><strong>Career support</strong> – resume, interview prep, certification guidance.</li>
-            </ul>
+          <!-- Introduction -->
+          <div class="mb-5 text-center">
+            <h4 class="fw-semibold">Introduction to the Field</h4>
+            <p>
+             Cybersecurity is a critical and rapidly evolving field focused on protecting computer systems, networks, and data from cyber threats. 
+             With the increasing use of digital technologies, cloud services, and online platforms, organizations face growing risks such as data breaches, cyberattacks, and identity theft.
+              Cybersecurity combines principles of information technology, networking, cryptography, and risk management to ensure confidentiality, integrity, and availability of information. 
+              Professionals in this field play a vital role in safeguarding digital assets, maintaining trust, and ensuring the secure operation of systems across industries such as healthcare, finance, government, and education.
+            </p>
+          </div>
 
-            <div class="mt-3 d-flex gap-2">
-              <a href="#learning" class="btn btn-sm btn-outline-dark">See Learning Path</a>
-              <a href="#enquire" class="btn btn-sm btn-outline-dark">Enquire</a>
+          <!-- Key Benefits -->
+          <h4 class="fw-semibold mb-3 text-center">Key Benefits of This Certification</h4>
+          
+          <!-- Centering the cards -->
+          <div class="row g-4 justify-content-center">
+            
+            <!-- Benefit 1 -->
+            <div class="col-md-5">
+              <div class="p-4 bg-white border rounded shadow-sm h-100">
+                <h5 class="fw-bold"><i class="bi bi-gear-wide-connected me-2"></i>Practical & Applied Focus</h5>
+                <p class="mb-0">
+                 This certification emphasizes hands-on learning by allowing participants to work with real-world tools, technologies, and cybersecurity scenarios. 
+                 Through practical labs, simulations, and case studies, learners apply theoretical concepts to solve real security challenges. 
+                 This approach builds problem-solving skills, enhances technical confidence, and ensures participants are well prepared for real industry environments.
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div class="col-md-5">
+              <div class="p-4 bg-white border rounded shadow-sm h-100">
+                <h5 class="fw-bold"><i class="bi bi-layers me-2"></i>Comprehensive Curriculum</h5>
+                <p class="mb-0">
+                  The certification offers a well-structured and in-depth curriculum that covers core and advanced cybersecurity concepts.
+                   It includes topics such as network and system security, threat analysis, vulnerability assessment, risk management, incident response, and security compliance standards. 
+                   The curriculum is designed to provide a strong theoretical foundation along with practical insights, ensuring learners gain a complete understanding of cybersecurity and are prepared for real-world challenges.
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div class="col-md-5">
+              <div class="p-4 bg-white border rounded shadow-sm h-100">
+                <h5 class="fw-bold"><i class="bi bi-person-check me-2"></i>Expert-Led Training</h5>
+                <p class="mb-0">
+                  Learn from industry practitioners and seasoned academics who bring real-world insights into the classroom.
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div class="col-md-5">
+              <div class="p-4 bg-white border rounded shadow-sm h-100">
+                <h5 class="fw-bold"><i class="bi bi-briefcase me-2"></i>Career-Centric Approach</h5>
+                <p class="mb-0">
+                  We provide career counseling, interview preparation, and a capstone project to strengthen your job readiness.
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 5 -->
+            <div class="col-md-5">
+              <div class="p-4 bg-white border rounded shadow-sm h-100">
+                <h5 class="fw-bold"><i class="bi bi-award me-2"></i>Four-Level Certification</h5>
+                <p class="mb-0">
+                  Receive individual certificates after completing each semester to track your progress and achievements.
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 6 -->
+            <div class="col-md-5">
+              <div class="p-4 bg-white border rounded shadow-sm h-100">
+                <h5 class="fw-bold"><i class="bi bi-folder-check me-2"></i>Portfolio Building</h5>
+                <p class="mb-0">
+                  Build a strong project portfolio, ending with a Capstone Project that highlights your expertise to potential employers.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- Features colored cards -->
+      <section id="features" class="py-5 bg-light">
+        <div class="container">
+          <div class="text-center mb-4">
+            <h3 class="fw-bold">Key features</h3>
+            <p class="text-muted">Designed to make you employer-ready and future studies.</p>
+          </div>
+
+          <div class="row g-4 features">
+            <div class="col-md-3">
+              <div class="card p-4 feature-1">
+                <i class="bi bi-tools fs-2" style="color:var(--brand-accent)"></i>
+                <h5 class="mt-3">Hands-on</h5>
+                <p class="small text-muted">Project-based learning with real deliverables.</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card p-4 feature-2">
+                <i class="bi bi-people fs-2" style="color:var(--brand-dark)"></i>
+                <h5 class="mt-3">Mentors</h5>
+                <p class="small text-muted">1:1 mentor reviews and query assistance just an Email away .</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card p-4 feature-3">
+                <i class="bi bi-laptop fs-2" style="color:var(--brand-accent)"></i>
+                <h5 class="mt-3">Live sessions</h5>
+                <p class="small text-muted">Weekly interactive sessions and Master Classes from eminent experts of the area.</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card p-4 feature-4">
+                <i class="bi bi-award fs-2" style="color:var(--brand-dark)"></i>
+                <h5 class="mt-3">Certification</h5>
+                <p class="small text-muted">Industry-recognized certificate on completion of every Semesters.</p>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section id="features" class="py-5 bg-transparent">
-    <div class="container">
-      <h3 class="fw-bold mb-4">Features</h3>
-      <div class="row features-grid g-3">
-
-        <div class="col-md-4">
-          <div class="p-3 course-card feature-item h-100">
-            <h6 class="fw-bold">Hands-On Labs</h6>
-            <p class="muted small mb-0">Practical exercises using real tools.</p>
+      <!-- Eligibility banner -->
+      <section id="eligibility" class="py-5">
+        <div class="container">
+          <div class="eligibility">
+            <div>
+              <h5 class="mb-1">Eligibility</h5>
+              <p class="mb-0 text-muted">Open to professionals with 0+ years experience applicants with demonstrable project work preferred. Need-based scholarships available.</p>
+            </div>
+            <div class="ms-auto text-end">
+              <strong>Next cohort:</strong>
+              <div class="mt-1">April, 2026</div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="col-md-4">
-          <div class="p-3 course-card feature-item">
-            <h6 class="fw-bold">Mentored Projects</h6>
-            <p class="muted small mb-0">Guidance from faculty and industry mentors.</p>
+      <!-- Learning Path Visualization -->
+      <section id="learning" class="py-5">
+        <div class="container">
+          <div class="text-center mb-4">
+            <h3 class="fw-bold">Learning Path Visualization</h3>
+            <p class="text-muted">Step-by-step path from fundamentals to capstone and research covering 15 detailed Modules.</p>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item mb-4">
+              <h5>IT & Cybersecurity Foundations</h5>
+              <p class="small text-muted">Initial 3 Modules of 90 Hours duration forming Semester I of the course.</p>
+              <div class="dot"></div>
+            </div>
+
+            <div class="timeline-item mb-4">
+              <h5>Core Security Concepts</h5>
+              <p class="small text-muted">Intermdiate 3 Modules of 90 Hours duration forming the Semester II of the course.</p>
+              <div class="dot"></div>
+            </div>
+
+            <div class="timeline-item mb-4">
+              <h5>Offensive & Defensive Security</h5>
+              <p class="small text-muted">Advanced 3 Modules of 90 Hours duration forming Semester III of the course.</p>
+              <div class="dot"></div>
+            </div>
+
+            <div class="timeline-item mb-4">
+              <h5> Advanced Security, Compliance & Capstone</h5>
+              <p class="small text-muted">Portfolio-grade final capstone project + mock interviews + Research Paper Writing.</p>
+              <div class="dot"></div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="col-md-4">
-          <div class="p-3 course-card feature-item">
-            <h6 class="fw-bold">Certification Prep</h6>
-            <p class="muted small mb-0">Aligned with CEH, Security+, SOC training.</p>
+      <!-- Syllabus (Advanced dropdown layout) -->
+      <section id="syllabus" class="py-5 bg-light syllabus">
+        <div class="container">
+
+          <div class="text-center mb-4">
+            <h3 class="fw-bold">Syllabus</h3>
+            <p class="text-muted">Detailed module breakdown — expand to view topics and resources.</p>
           </div>
+
+          <!-- First Semester -->
+          <div class="accordion mb-4" id="syllabusAcc1">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="sem1Head">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#sem1Body" aria-expanded="false">
+                  <b>First Semester</b>
+                </button>
+              </h2>
+
+              <div id="sem1Body" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc1">
+                <div class="accordion-body">
+
+                  <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 101 Python & Linux Foundation:</b>
+                      Python Enviornment Setup and Essentials, Python Language Basic Constructs, Introduction to Linux and File Managements
+
+                    </p>
+                  </div>
+
+                  <hr>
+
+                  <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 102 Introduction to Cyber Security & Information Security:</b>
+                     What is Cyber Security, Overview, Need and Importance, Different Verticals
+
+                  </div>
+
+                    <hr>
+
+                    <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 103 Working with Kali Linux 2021.1:</b>
+                     Introduction to Kali Linux, Services in Kali (HTTP, SSH), Wget, curl, grep, awk, tail, head, watch, find, locate, Piping and Redirection, Python and Bash Scripting, Netcat, Socat, Powercat, Powershell, Wireshark, tcpdump, Note taking
+
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Semester -->
+          <div class="accordion mb-4" id="syllabusAcc2">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="sem2Head">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#sem2Body" aria-expanded="false">
+                  <b>Second Semester</b>
+                </button>
+              </h2>
+
+              <div id="sem2Body" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc2">
+                <div class="accordion-body">
+
+                  <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 201 Network Security:</b>
+                    Security Controls, Networking Concepts, Traffic Analysis, Packet Analyzers, Sniffers, Firewalls, SIEM, VLAN, VPN
+
+                    </p>
+                  </div>
+
+                  <hr>
+
+                  <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 202 Incident Detection withSecurity Information and Event Management (SIEM):</b>
+                     "Understand the Basic Concepts of Security Information and EventManagement (SIEM)", Discuss the Different SIEM Solutions, Understand the SIEM Deployment, Learn Different Use Case Examples for Application-Level Incident Detection, Learn Different Use Case Examples for Insider Incident Detection
+                      Learn Different Use Case Examples for Network Level Incident Detection, Learn Different Use Case Examples for Host Level Incident Detection, Learn Different Use Case Examples for Compliance
+                      Understand the Concept of Handling Alert Triaging and Analysis
+
+                  </div>
+                      <hr>
+
+                  <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 203 Security Operations and Management:</b>
+                    Understand the SOC Fundamentals, Discuss the Components of SOC: People, Processes and Technology, Understand the Implementation of SOC
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Semester -->
+          <div class="accordion mb-4" id="syllabusAcc3">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="sem3Head">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#sem3Body" aria-expanded="false">
+                  <b>Third Semester</b>
+                </button>
+              </h2>
+
+              <div id="sem3Body" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc3">
+                <div class="accordion-body">
+
+                  <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 301 Identity and Access Management (IAM):</b>
+                      Logical/Physical Access to Assets Management, Authentication and Identification Management, Integrating Identity as a Third-Party Service, Mechanism of Authorization, Provisioning Life Cycle’s Identity and Access.
+
+                    </p>
+                  </div>
+
+                  <hr>
+
+                  <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 302 Web Application Penetration Testing:</b>
+                      OWASP Tools and Methodologies, Insecure Deserialization, Clickjacking, Black Box Testing, White Box Testing, Fuzzing, Cryptograph, Symmetric/Asymmetric Cryptography, Hashing, Digital Signatures
+                      API Security, Patch Management
+
+                    </p>
+                  </div>
+
+                     <hr>
+
+                  <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 303 Malware Analysis:</b>
+                     Types, Ransomware, Detection, Analysis
+
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- Fourth Semester -->
+          <div class="accordion mb-4" id="syllabusAcc4">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="sem4Head">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#sem4Body" aria-expanded="false">
+                  <b>Fourth Semester</b>
+                </button>
+              </h2>
+
+              <div id="sem4Body" class="accordion-collapse collapse" data-bs-parent="#syllabusAcc4">
+                <div class="accordion-body">
+
+                  <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 401 Ethical Hacking:</b>
+                      Introduction, Foot Printing and Reconnaissance, Scanning Networks, Enumeration, Vulnerability Analysis, System Hacking, Hacking , Sniffing, Social Engineering, Denial-of-Service, Session Hijacking
+                      Evading IDS, Firewalls and Honeypots, Hacking Web Servers, SQL Injection, Hacking – Wireless Networks, Mobile Platforms, IoT
+
+                    </p>
+                  </div>
+
+                  <hr>
+
+                  <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 402 Cloud Security:</b>
+                     "Infrastructure Security: Network level security, Host level security, Application-level security", <b>Data security and Storage:</b> Data privacy and security Issues, Jurisdictional issues raised by Data location"
+                      Access Control, Trust, Reputation, Risk, "Authentication in cloud computing, Client access in cloud, Cloud contracting Model, 
+                        Commercial and business considerations, Security Controls for The Development Environment, Life Cycle Security, Impact of Acquired Software Security, Effectiveness of Software Security
+
+                    </p>
+                  </div>
+
+                  <hr>
+
+                  <div class="topic">
+                    <p class="text-muted">
+                      <b>Module 403 Software Development Security:</b>
+                     Career Counselling, Interview Facing Tips & Tricks, Final Project Presesntation
+
+
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
         </div>
-
-        <div class="col-md-4">
-          <div class="p-3 course-card feature-item">
-            <h6 class="fw-bold">Tools & Platforms</h6>
-            <p class="muted small mb-0">Kali, Wireshark, Metasploit, ELK, cloud tools.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="p-3 course-card feature-item">
-            <h6 class="fw-bold">Community</h6>
-            <p class="muted small mb-0">Forums, study groups, SOC simulations.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="p-3 course-card feature-item">
-            <h6 class="fw-bold">Project Research</h6>
-            <p class="muted small mb-0">Research-led assignments and publications.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- LEARNING PATH -->
-<section id="learning" class="py-5">
-  <div class="container">
-    <div class="row g-4">
-
-      <div class="col-lg-6">
-        <h3 class="fw-bold">Learning Path – 12 Months</h3>
-        <p class="muted">
-          A progressive journey from foundations to advanced operations, aligned to industry needs. Summary adapted from the course brochure.
-        </p>
-
-        <div class="timeline mt-4">
-
-          <div class="step">
-            <h6 class="mb-1">Months 1–2 – Foundation</h6>
-            <p class="muted small mb-0">Intro to security, networks, OS basics, Python/scripting fundamentals.</p>
+      </section>
+      <!-- Mentors -->
+      <section id="mentors" class="py-5 bg-light">
+        <div class="container">
+          
+          <div class="text-center mb-4">
+            <h3 class="fw-bold">Course Mentors</h3>
+            <p class="text-muted">Experienced practitioners from IIT Guwahati in this field.</p>
           </div>
 
-          <div class="step">
-            <h6 class="mb-1">Months 3–4 – Core Concepts</h6>
-            <p class="muted small mb-0">Network security, cryptography, web application and secure coding basics.</p>
-          </div>
+          <!-- Row Wrapper Added -->
+          <div class="row g-4">
 
-          <div class="step">
-            <h6 class="mb-1">Months 5–6 – Offensive Security</h6>
-            <p class="muted small mb-0">Ethical hacking, penetration testing, vulnerability assessment (Nmap, Metasploit).</p>
-          </div>
-
-          <div class="step">
-            <h6 class="mb-1">Months 7–8 – Defensive Security</h6>
-            <p class="muted small mb-0">SIEM & SOC fundamentals (Splunk/ELK), malware analysis, endpoint defenses.</p>
-          </div>
-
-          <div class="step">
-            <h6 class="mb-1">Months 9–10 – Advanced Modules</h6>
-            <p class="muted small mb-0">Cloud security, governance, IAM, risk & compliance.</p>
-          </div>
-
-          <div class="step">
-            <h6 class="mb-1">Months 11–12 – Incident Response & Capstone</h6>
-            <p class="muted small mb-0">Digital forensics, incident response, capstone simulation, career prep.</p>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="col-lg-6">
-        <div class="course-card" style="background:#9f9fa0; border-radius:12px; padding:1.25rem;">
-          <h6 class="fw-bold">Hands-On & Tools</h6>
-          <p class="muted small">
-            Extensive practical exposure – Kali Linux, Burp Suite, Nmap, Metasploit, Wireshark, Splunk, ELK; 
-            plus cloud security tooling (AWS/Azure/GCP best practices).
-          </p>
-
-          <hr>
-
-          <h6 class="fw-bold">Activities</h6>
-          <ul class="muted small">
-            <li>Live red-team / blue-team exercises</li>
-            <li>Capture The Flag (CTF) events</li>
-            <li>Weekly lab assignments & code reviews</li>
-            <li>Group projects and peer code audits</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- SYLLABUS -->
-<section id="syllabus" class="py-5 bg-transparent">
-  <div class="container">
-    <h3 class="fw-bold mb-4">Syllabus – Overview</h3>
-
-    <div class="accordion" id="syllAccordion">
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-            Foundation (Months 1–2)
-          </button>
-        </h2>
-
-        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#syllAccordion">
-          <div class="accordion-body">
-            <ul>
-              <li>Introduction to Cybersecurity & Threat Landscape</li>
-              <li>Computer Networks, OS, Security Basics</li>
-              <li>Basics of Programming & Scripting (Python)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-            Core & Offensive (Months 3–6)
-          </button>
-        </h2>
-
-        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#syllAccordion">
-          <div class="accordion-body">
-            <ul>
-              <li>Network Security & Secure Design</li>
-              <li>Cryptography & Data Security</li>
-              <li>Web App Security, Secure Coding</li>
-              <li>Ethical Hacking, Vulnerability Assessment & Exploitation</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-            Defensive & Advanced (Months 7–10)
-          </button>
-        </h2>
-
-        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#syllAccordion">
-          <div class="accordion-body">
-            <ul>
-              <li>SIEM, SOC Operations (Splunk/ELK)</li>
-              <li>Malware Analysis, IDS/IPS</li>
-              <li>Cloud Security, IAM, Governance & Risk</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFour">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-            Capstone & Certification (Months 11–12)
-          </button>
-        </h2>
-
-        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#syllAccordion">
-          <div class="accordion-body">
-            <ul>
-              <li>Incident Response & Digital Forensics</li>
-              <li>Capstone: Simulated Cyber Attack & Defense</li>
-              <li>Resume & Interview Preparation; Certification Prep</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ELIGIBILITY -->
-<section id="eligibility" class="py-5">
-  <div class="container">
-    <h3 class="fw-bold">Eligibility & Pre-requisites</h3>
-
-    <div class="row g-3 mt-3">
-
-      <div class="col-md-6">
-        <div class="course-card">
-          <h6>Eligibility</h6>
-          <ul class="muted small mb-0">
-            <li>Graduate degree (any discipline; CS/IT/Engineering preferred).</li>
-            <li>Basic knowledge of computer networks and operating systems.</li>
-            <li>Familiarity with programming fundamentals (Python, C, Java – helpful but not mandatory).</li>
-            <li>Working professionals with 1–2 years experience recommended but not mandatory.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="course-card">
-          <h6>Pre-requisites</h6>
-          <p class="muted small mb-0">
-            No prior cybersecurity experience required – course starts with fundamentals and progresses to advanced topics.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- MENTORS -->
-<section id="mentors" class="py-5 bg-transparent">
-  <div class="container">
-    <h3 class="fw-bold mb-4">Mentors & Faculty</h3>
-
-    <div class="row g-4">
-         <!-- Mentor 1 -->
+            <!-- Mentor 1 -->
             <div class="col-md-4">
               <div class="card p-3 mentor-card">
                 <img src="images/gt.jpg" class="img-fluid rounded-3" alt="mentor">
@@ -504,23 +973,26 @@
                     <a href="https://iitg.ac.in/iitg_faculty_details?fac=dEFUdXJDZVB3dnc4OUFHRUZnVDh6QT09"
                       target="_blank"
                       style="text-decoration:none; color:#000;">
-                     Professor. Gaurav Trivedi
+                      Prof. Gaurav Trivedi
                     </a>
                   </h6>
                   <small class="text-muted">Professor, EEE, IIT Guwahati</small>
                   <p class="mt-2 text-muted small">
-                    Research Areas: Circuit Simulation (Analog, RF & Digital) and VLSI CAD, Electronics System Design, Computer Architecture, Semiconductor Devices, Hardware Security, Embedded Systems and IoT, High Performance Computing, Large Scale Optimization and Machine Learning.
+                    Research Areas: Circuit Simulation (Analog, RF & Digital), VLSI CAD, Electronics System Design,
+                    Computer Architecture, Semiconductor Devices, Hardware Security, Embedded Systems & IoT,
+                    High Performance Computing, Optimization & Machine Learning.
                   </p>
                 </div>
               </div>
             </div>
-             <!-- Mentor 2 -->
+
+            <!-- Mentor 2 -->
             <div class="col-md-4">
               <div class="card p-3 mentor-card">
                 <img src="images/srini.jpeg" class="img-fluid rounded-3" alt="mentor">
                 <div class="mt-3">
                   <h6 class="mb-0">
-                    <a href="https://iitg.ac.in/iitg_faculty_details?name=Srinivasan-Krishnaswamy&fac=NFFUSDI3MSs2VzZTcWdWRVd5ZllKZz09"
+                    <a href="https://iitg.ac.in/iitg_faculty_details?fac=ZWd5K0tydVNSWGtHcDFwdzZnSjY0Zz09"
                       target="_blank"
                       style="text-decoration:none; color:#000;">
                       Dr. Srinivasan Krishnaswamy
@@ -534,104 +1006,196 @@
               </div>
             </div>
 
-      
+
               <!-- Mentor 3 -->
             <div class="col-md-4">
               <div class="card p-3 mentor-card">
                 <img src="images/sahu.jpeg" class="img-fluid rounded-3" alt="mentor">
                 <div class="mt-3">
                   <h6 class="mb-0">
-                    <a href="https://iitg.ac.in/iitg_faculty_details?fac=MVpCRDN3cmVNU3QrREhJQndiM0RpUT09"
+                    <a href="https://iitg.ac.in/iitg_faculty_details?name=Hanumant-Singh%20Shekhawat&fac=c05iZUNkMVNhQ2RHQVdpMEVNVnVkQT09"
                       target="_blank"
                       style="text-decoration:none; color:#000;">
-                      Prof. Aryabartta Sahu
+                       Prof. Aryabartta Sahu
                     </a>
                   </h6>
                   <small class="text-muted">Professor, CSE, IIT Guwahati</small>
                   <p class="mt-2 text-muted small">
-                    Research Areas: Multicore (Architecture, Scheduling and Programming) and Computational Social Systems.
+                   Research Areas: Multicore (Architecture, Scheduling and Programming) and Computational Social Systems.
                   </p>
                 </div>
               </div>
             </div>
 
-    </div>
-  </div>
-</section>
 
- <!-- CONTACT / QUERIES -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <div class="row g-4 align-items-center">
-        <div class="col-lg-6">
-          <h3 class="fw-bold">Have Questions? Get In Touch</h3>
-          <p class="muted">For course-specific queries, admissions, or collaborations, fill the form or contact program coordinators listed below. Contact details adapted from the brochure. 
 
-          <div class="course-card mt-3">
-            <h6 class="fw-bold">Program Contacts</h6>
-            <p class="small muted mb-1"><strong>feroza Haque </strong><br>feroza.haque@iisi.iitg.ac.in · +91-361-258-3182</p>
-            <p class="small muted mb-0"><strong>Manash Baishya</strong><br>manashbaishya@iisi.iitg.ac.in· +91-361-258-3199</p>
-            <p class="small muted mb-0"><strong>Ershikha Das</strong><br>ershikha111@iisi.iitg.ac.in· +91-361-258-3199</p>
+          </div>
+
+        </div>
+      </section>       
           </div>
         </div>
+      </section>
+      <!-- Instructors -->
+      <section id="mentors" class="py-5 bg-light">
+        <div class="container">
 
-       <div class="col-lg-6">
-  <form id="contactForm" class="course-card" novalidate>
-    <h6 class="fw-bold mb-3">Send an enquiry</h6>
+          <div class="text-center mb-4">
+            <h3 class="fw-bold">Meet the Instructors</h3>
+            <p class="text-muted">
+              Instructors of this course are IIT Guwahati Research Scholars and Staff in this field.
+            </p>
+          </div>
 
-    <div class="mb-2">
-      <label class="form-label small">Full name</label>
-      <input required type="text" class="form-control" id="name">
-    </div>
+          <div class="row g-4">
 
-    <div class="mb-2">
-      <label class="form-label small">Email</label>
-      <input required type="email" class="form-control" id="email">
-    </div>
+            <!-- Mentor 1 -->
+            <div class="col-md-4">
+              <div class="card p-3 mentor-card text-center">
+                <img src="images/feroza.jpeg" class="img-fluid rounded-3 mx-auto d-block" 
+                    alt="Feroza Haque" width="140" height="140">
 
-    <div class="mb-2">
-      <label class="form-label small">Message</label>
-      <textarea required class="form-control" id="message" rows="3"></textarea>
-    </div>
+                <div class="mt-3">
+                  <h6 class="mb-0">Feroza Haque</h6>
+                  <small class="text-muted">
+                    Project Manager<br>
+                    E&ICT Academy, IIT Guwahati
+                  </small>
+                </div>
+              </div>
+            </div>
 
-    <div class="d-flex justify-content-end">
-      <button type="submit" class="btn btn-send">Send</button>
-    </div>
+            <!-- Mentor 2 -->
+            <div class="col-md-4">
+              <div class="card p-3 mentor-card text-center">
+                <img src="images/manash.jpg" class="img-fluid rounded-3 mx-auto d-block"
+                    alt="Manash Pratim Baishya" width="140" height="140">
 
-    <div id="formAlert" class="mt-2" style="display:none;"></div>
-  </form>
-</div>
+                <div class="mt-3">
+                  <h6 class="mb-0">Mr. Manash Pratim Baishya</h6>
+                  <small class="text-muted">
+                    Project Engineer<br>
+                    E&ICT Academy, IIT Guwahati
+                  </small>
+                </div>
+              </div>
+            </div>
 
-  </section>
+            <!-- Mentor 3 -->
+            <div class="col-md-4">
+              <div class="card p-3 mentor-card text-center">
+                <img src="images/ershika.jpeg" class="img-fluid rounded-3 mx-auto d-block"
+                    alt="Ershikha Das" width="140" height="140">
+
+                <div class="mt-3">
+                  <h6 class="mb-0">Ms. Ershikha Das</h6>
+                  <small class="text-muted">
+                    Assistant Project Engineer<br>
+                    E&ICT Academy, IIT Guwahati
+                  </small>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- row -->
+        </div><!-- container -->
+      </section>       
+      <!-- Contact form with validation -->
+      <section id="contact" class="py-5">
+        <div class="container">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+              <h3 class="fw-bold">Get in touch</h3>
+              <p class="text-muted">Questions about the course or eligibility? Drop us a message and we'll respond within 48 hours.</p>
+
+              <div class="contact-card">
+                <form id="contactForm" class="contact-form needs-validation" novalidate>
+                  <div class="mb-3">
+                    <label class="form-label">Full name</label>
+                    <input type="text" class="form-control" id="cname" required>
+                    <div class="invalid-feedback">Please enter your name.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" id="cemail" required>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" id="cmessage" rows="4" required></textarea>
+                    <div class="invalid-feedback">Please enter a message.</div>
+                  </div>
+                  <div class="d-grid">
+                    <button class="btn btn-enroll" type="submit">Send message</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="p-4 rounded-3" style="background:linear-gradient(180deg,#fff, #fffbf7);box-shadow:0 20px 50px rgba(16,24,40,.04)">
+                <h5>Quick facts</h5>
+                <ul class="text-muted">
+                  <li>8 weeks " Live + on-demand</li>
+                  <li>1:1 mentor reviews</li>
+                  <li>Capstone & portfolio review</li>
+                  <li>Scholarships available</li>
+                </ul>
+
+                <div class="mt-3">
+                  <a href="#signup" class="btn btn-outline-dark">Apply now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="py-3 bg-transparent border-top">
+      <div class="container">
+        <div class="row align-items-right">
+
+          <div class="col-md-4 text-md-end">
+           <!-- <small class="text-dark fw-semibold">
+              Indian Institute of Technology Guwahati
+            </small>-->
+          </div>
+
+        </div>
+      </div>
+    </footer>
+    </main>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  
     <script>
-    // Smooth scroll for anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(ev){
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          ev.preventDefault();
-          target.scrollIntoView({behavior:'smooth', block:'start'});
-        }
-      })
-    })
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (event) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            event.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
 
-    // Contact form validation (Bootstrap custom)
-    (function(){
-      const form = document.getElementById('contactForm');
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        if(!form.checkValidity()){
-          form.classList.add('was-validated');
-          return;
-        }
-        // Simulate submit
-        alert('Thanks! Your message has been sent.');
-        form.reset();
-        form.classList.remove('was-validated');
-      })
-    })();
-  </script>
+      // Contact form validation (Bootstrap custom)
+      (function () {
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          if (!form.checkValidity()) {
+            form.classList.add('was-validated');
+            return;
+          }
+
+          // Simulate form submission
+          alert('Thanks! Your message has been sent.');
+          form.reset();
+          form.classList.remove('was-validated');
+        });
+      })();
+    </script>
   </body>
 </html>
