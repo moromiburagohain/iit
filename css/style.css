@@ -1,0 +1,123 @@
+
+    body {
+    margin: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    }
+
+    /* Navbar theme */
+    .navbar {
+    background-color: #001f3f !important;
+    z-index: 1030;
+    }
+
+    .navbar .nav-link,
+    .navbar .dropdown-item {
+    color: white !important;
+    }
+
+    .navbar .nav-link:hover,
+    .dropdown-item:hover,
+    .navbar .nav-link:focus,
+    .dropdown-item:focus {
+    background-color: #0078d4;
+    color: white;
+    }
+
+    /* Logo */
+    .navbar-brand img {
+    height: 45px;
+    }
+
+    /* Remove dropdown caret */
+    .navbar .dropdown-toggle::after {
+    display: none;
+    }
+
+    /* Hover dropdowns */
+    .navbar .dropdown:hover > .dropdown-menu,
+    .navbar .dropdown.show > .dropdown-menu {
+    display: block;
+    }
+
+    /* Dropdown menu */
+    .dropdown-menu {
+    background-color: #001f3f;
+    margin:0;
+    }
+
+    /* Submenu */
+    .dropdown-submenu {
+    position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+    display: none;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+    }
+
+    footer {
+        background-color: #002147;
+        color: white;
+    }
+
+     .carousel-item img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .carousel-item img {
+    height: 250px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .carousel-item img {
+    height: 350px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .carousel-item img {
+    height: 450px;
+  }
+}
+
+
+
+.carousel-indicators li {
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  background-color: white;
+  opacity: 0.6; /* slightly transparent for non-active dots */
+}
+
+.carousel-indicators .active {
+  background-color: white;
+  opacity: 1; /* fully visible active dot */
+}
+
+ section {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+.custom-header-text-color {
+    color: #003366;
+}
