@@ -1446,6 +1446,29 @@
           form.classList.remove("was-validated");
         });
       })();
+
+       // Webinar Information
+        function handleQuickApply(event) {
+            event.preventDefault();
+
+            const form = document.getElementById("quickApply");
+            const data = {
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                level: form.level.value
+            };
+
+            fetch("https://script.google.com/macros/s/AKfycbwG1mzQTe1hNQACLjwBE9tdPClAu4HOmw7zhyZpJMlHGfElX6CyWwmuLqcJD_76gXgb/exec", {
+                method: "POST",
+                body: JSON.stringify(data),
+                mode: "no-cors"
+            });
+
+            alert("Application submitted successfully!");
+            form.reset();
+            return false;
+        }
     </script>
   </body>
 </html>
