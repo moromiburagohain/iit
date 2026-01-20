@@ -1,456 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronics & ICT Academy, IIT Guwahati</title>
 
-<html>
-  <head>
-  <title>Applied Machine Learning & Data Science | E&ICT Academy IIT Guwahati</title>
-<style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0;
-      background-color: #f5f6fa;
-      color: #222;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: linear-gradient(135deg, #002147, #0078d4);
-      color: white;
-      text-align: center;
-      padding: 50px 20px 80px;
-    }
-    header h1 {
-      margin: 5px 0;
-      font-size: 2.2em;
-    }
-    header p {
-      font-size: 1.1em;
-      color: #e0e0e0;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: #001f3f;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 14px 20px;
-      display: block;
-      font-weight: 500;
-    }
-    nav a:hover {
-      background-color: #0078d4;
-    }
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+    crossorigin="anonymous"
+  >
+  <link rel="stylesheet" href="css/style.css">
 
-    /* Dropdown Menu Styling */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropbtn {
-      color: white;
-      text-decoration: none;
-      padding: 14px 20px;
-      display: block;
-      font-weight: 500;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #001f3f;
-      min-width: 220px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      z-index: 1000;
-      border-radius: 0 0 8px 8px;
-    }
-    .dropdown-content a {
-      color: white;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #0078d4;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .dropdown:hover .dropbtn {
-      background-color: #0078d4;
-    }
-
-    .btn {
-      background-color: #ffb400;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .btn:hover {
-      background-color: #ffc94b;
-    }
-
-    section {
-      padding: 50px 15%;
-      background: white;
-      margin: 30px auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #003366;
-      border-left: 6px solid #0078d4;
-      padding-left: 10px;
-    }
-    ul {
-      margin-top: 10px;
-      list-style: disc;
-      padding-left: 25px;
-    }
-    footer {
-      background-color: #002147;
-      color: white;
-      text-align: center;
-      padding: 30px 10px;
-    }
-    footer a {
-      color: #ffb400;
-      text-decoration: none;
-    }
-  </style> 
-</head>
-<body>
-
-
- <nav>
-  <!-- Dropdown 1 -->
-  <div class="dropdown">
-    <a href="#home" class="dropbtn">Home </a>
-    <div class="dropdown-content">
-      <a href="about.html">About E&ICT</a>
-      <a href="history.html">History</a>
-      <a href="future.html">Future Plans</a>
-      <a href="Proffessional.html">Professional Courses & Specialized Training</a>
-      <a href="other.html">Other Activities</a>
-    </div>
-  </div>
-
-  <!-- Dropdown 2 -->
-  <div class="dropdown">
-    <a href="#about-course" class="dropbtn">About Course </a>
-    <div class="dropdown-content">
-      <!-- Submenu for Courses -->
-      <div class="sub-dropdown">
-        <a href="course.html" class="sub-dropbtn">Courses</a>
-        <div class="sub-dropdown-content">
-         <a href="AI%20&%20ML.html">AI & ML</a>
-            <a href="cyber.html">Cybersecurity</a>
-            <a href="professional_certification_landing_page(1)%20(1).html">VLSI</a>
-        </div>
-      </div>
-         <a href="fee.html">Fees</a>
-      <a href="admission.html">Admission</a>
-      <a href="why.html">Why to Enroll</a>
-      <a href="resources.html">Resources</a>
-      </div>
-    </div>
-  </div>
-
-  <a href="news.html">News & Events</a>
-  <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
-  <a href="address.html">Contact Us</a>
-    <a href="fsq.html">FAQs</a>
-       <a href="syllabus.html">Entrance Syllabus </a>
-</nav>
-
-<style>
-  /* Basic styling */
-  nav {
-    background-color: #001f3f;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    display: block;
-    font-weight: 500;
-  }
-
-  nav a:hover {
-    background-color: #0078d4;
-  }
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-  .dropbtn {
-    cursor: pointer;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #001f3f;
-    min-width: 220px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1000;
-    border-radius: 0 0 8px 8px;
-  }
-
-  .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #0078d4;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  /* Submenu styling */
-  .sub-dropdown {
-    position: relative;
-  }
-
-  .sub-dropdown-content {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    background-color: #001f3f;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  }
-
-  .sub-dropdown-content a {
-    padding: 10px 16px;
-  }
-
-  .sub-dropdown:hover .sub-dropdown-content {
-    display: block;
-  }
-
-  .sub-dropbtn::after {
-    content: " �";
-    float: right;
-  }
-</style>
-
-
-  <!-- -------------- IMAGE SLIDER START ---------------- -->
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    margin: 0;
-    padding: 20px;
-    padding-top: 0px;
-  }
-
-  /* ---------- SLIDER CONTAINER ---------- */
-  .slider-container {
-    width: 100%;
-    position: relative;
-    margin: auto;
-  }
-
-  /* ---------- SLIDES ---------- */
-  .slides {
-    display: none;
-  }
-
-  /* ---------- REDUCED IMAGE SIZE ---------- */
- .slides img {
-    width: 100%;        /* wider */
-    height: 450px;     /* taller */
-    object-fit: cover; /* keeps image looking good */
-    margin: auto;
-    display: block;
-    border-radius: 10px;
-}
-
-  /* ---------- BUTTONS ---------- */
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    padding: 16px;
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    user-select: none;
-    transition: 0.3s;
-  }
-
-  .next { right: 0; }
-
-  .prev:hover, .next:hover {
-    color: #ffb400;
-  }
-
-  /* ---------- DOTS ---------- */
-  .dot {
-    height: 14px;
-    width: 14px;
-    margin: 0 3px;
-    background-color: #bbb;
-    display: inline-block;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  .active, .dot:hover {
-    background-color: #0078d4;
-  }
-
-  /* Fade effect */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.2s;
-  }
-
-  @keyframes fade {
-    from { opacity: .4 }
-    to { opacity: 1 }
-  }
-</style>
 </head>
 
-<body>
+<body class="px-3">
 
-<!-- -------------- IMAGE SLIDER ---------------- -->
-<div class="slider-container">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/EICT_Short_Logo.jpg" height="40" alt="Logo">
+    </a>
 
-  <div class="slides fade">
-    <img src="images/slider/1.jpg">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#mainNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav mx-auto">
+
+        <!-- Home -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="index.html">Home</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="about.html">About E&ICT</a>
+            <a class="dropdown-item" href="history.html">History</a>
+            <a class="dropdown-item" href="future.html">Future Plans</a>
+            <a class="dropdown-item" href="professional.html">Professional Courses</a>
+            <a class="dropdown-item" href="other.html">Other Activities</a>
+          </div>
+        </li>
+
+        <!-- About Course -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#">About Course</a>
+          <div class="dropdown-menu">
+
+            <!-- Nested dropdown -->
+            <div class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Courses</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="ai_ml.html">AI & ML</a>
+                <a class="dropdown-item" href="cyber.html">Cybersecurity</a>
+                <a
+                  class="dropdown-item"
+                  href="professional_certification_landing_page.html"
+                >
+                  VLSI
+                </a>
+              </div>
+            </div>
+
+            <a class="dropdown-item" href="fee.html">Fees</a>
+            <a class="dropdown-item" href="admission.html">Admission</a>
+            <a class="dropdown-item" href="why.html">Why to Enroll</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News & Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="address.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="faq.html">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="syllabus.html">Entrance Syllabus</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div
+    id="mainCarousel"
+    class="carousel slide carousel-fade"
+    data-ride="carousel"
+  >
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#mainCarousel" data-slide-to="1"></li>
+      <li data-target="#mainCarousel" data-slide-to="2"></li>
+      <li data-target="#mainCarousel" data-slide-to="3"></li>
+      <li data-target="#mainCarousel" data-slide-to="4"></li>
+      <li data-target="#mainCarousel" data-slide-to="5"></li>
+      <li data-target="#mainCarousel" data-slide-to="6"></li>
+    </ol>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img
+          src="images/slider/1.jpg"
+          class="d-block w-100"
+          alt="Slide 1"
+        >
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slider/5.jpg" class="d-block w-100" alt="Slide 5">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slider/6.jpg" class="d-block w-100" alt="Slide 6">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slider/7.jpg" class="d-block w-100" alt="Slide 7">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slider/8.jpg" class="d-block w-100" alt="Slide 8">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slider/9.jpg" class="d-block w-100" alt="Slide 9">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slider/10.jpg" class="d-block w-100" alt="Slide 10">
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <a
+      class="carousel-control-prev"
+      href="#mainCarousel"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+
+    <a
+      class="carousel-control-next"
+      href="#mainCarousel"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </a>
+
   </div>
 
-  <div class="slides fade">
-    <img src="images/slider/5.jpg">
-  </div>
-
-  <div class="slides fade">
-    <img src="images/slider/6.jpg">
-  </div>
-
-  <div class="slides fade">
-    <img src="images/slider/7.jpg">
-  </div>
-
-  <div class="slides fade">
-    <img src="images/slider/8.jpg">
-  </div>
-
-  <div class="slides fade">
-    <img src="images/slider/9.jpg">
-  </div>
-
-  <div class="slides fade">
-    <img src="images/slider/10.jpg">
-  </div>
-
-  <!-- Buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-
-<!-- Dots -->
-<div style="text-align:center; margin-top: 10px;">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-  <span class="dot" onclick="currentSlide(6)"></span>
-  <span class="dot" onclick="currentSlide(7)"></span>
-  <span class="dot" onclick="currentSlide(8)"></span>
-  <span class="dot" onclick="currentSlide(9)"></span>
-</div>
-
-<!-- -------------- JAVASCRIPT ---------------- -->
-<script>
-let slideIndex = 0;
-showSlides();
-
-// AUTO-SLIDE EVERY 3 SECONDS
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("slides");
-  let dots = document.getElementsByClassName("dot");
-
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1 }
-
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-
-  setTimeout(showSlides, 3000); // CHANGE IMAGE EVERY 3 SECONDS
-}
-
-// Manual buttons
-function plusSlides(n) {
-  slideIndex += n - 1;
-  showSlides();
-}
-
-// Dots click
-function currentSlide(n) {
-  slideIndex = n - 1;
-  showSlides();
-}
-</script>
-
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-  .syllabus-table th {
-    background-color: #1f2937; /* dark slate */
-    color: #ffffff;
-  }
-  .syllabus-table caption {
-    caption-side: top;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #0d6efd;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  @media print {
-    .table {
-      border: 1px solid #000;
-    }
-  }
-</style>
-
-<div class="table-responsive my-4">
+  <section class="px-4 py-4">
+    <h4 class="font-weight-bold text-center custom-header-text-color mt-5 mb-3">
+      VLSI & Semiconductor Industry Essentials
+    </h4>
+    <div class="table-responsive my-4">
   <table class="table table-bordered table-striped table-hover align-middle text-center syllabus-table">
 
-    <caption>
-      <b>VLSI & Semiconductor Industry Essentials</b>
-    </caption>
-
-    <thead>
+    <thead class="thead-dark">
       <tr>
         <th>Section</th>
         <th>Topic / Module</th>
@@ -461,48 +187,47 @@ function currentSlide(n) {
 
     <tbody>
       <tr>
-        <td class="fw-bold">I</td>
-        <td class="fw-semibold">Engineering Mathematics</td>
-        <td>
+        <td class="font-weight-bold">I</td>
+        <td class="font-weight-bold">Engineering Mathematics</td>
+        <td class="text-left">
           Linear Algebra, Differential Equations, Probability, and basic
           Discrete Mathematics as applied to engineering concepts.
         </td>
         <td>
-          <span class="badge bg-success fs-6">50 Marks</span>
+          <span class="badge badge-success">50 Marks</span>
         </td>
       </tr>
 
       <tr>
-        <td class="fw-bold">II</td>
-        <td class="fw-semibold">Basic Python Programming</td>
-        <td>
-          Fundamental syntax, data types, control flow (loops, conditionals), functions, and basic object-oriented concepts. Focus on logical problem-solving.
+        <td class="font-weight-bold">II</td>
+        <td class="font-weight-bold">Basic Python Programming</td>
+        <td class="text-left">
+          Fundamental syntax, data types, control flow (loops, conditionals),
+          functions, and basic object-oriented concepts with focus on problem-solving.
         </td>
         <td class="text-muted">—</td>
       </tr>
 
       <tr>
-        <td class="fw-bold">III</td>
-        <td class="fw-semibold">Basics of Electronics</td>
-        <td>
-          Semiconductor devices (diodes, transistors), fundamental circuit laws (Ohm's, KCL, KVL), RLC circuits, and basic digital logic gates.
+        <td class="font-weight-bold">III</td>
+        <td class="font-weight-bold">Basics of Electronics</td>
+        <td class="text-left">
+          Semiconductor devices, circuit laws (Ohm's, KCL, KVL), RLC circuits,
+          and basic digital logic gates.
         </td>
         <td class="text-muted">—</td>
       </tr>
     </tbody>
 
   </table>
-</div>
-
-
-<div class="table-responsive my-4">
+  </div>
+  <h4 class="font-weight-bold text-center custom-header-text-color mt-5 mb-3">
+    Cyber Security
+    </h4>
+  <div class="table-responsive my-4">
   <table class="table table-bordered table-striped table-hover align-middle text-center syllabus-table">
 
-    <caption>
-     <b>Cyber Security</b>
-    </caption>
-
-    <thead>
+    <thead class="thead-dark">
       <tr>
         <th>Section</th>
         <th>Topic / Module</th>
@@ -513,30 +238,33 @@ function currentSlide(n) {
 
     <tbody>
       <tr>
-        <td class="fw-bold">I</td>
-        <td class="fw-semibold">Engineering Mathematics</td>
-        <td>
-         Linear Algebra, Probability, and Statistical methods relevant to security and data analysis (similar to the VLSI syllabus, but focus may shift to probabilistic models).
+        <td class="font-weight-bold">I</td>
+        <td class="font-weight-bold">Engineering Mathematics</td>
+        <td class="text-left">
+          Linear Algebra, Probability, and statistical methods relevant to
+          security and data analysis.
         </td>
         <td>
-          <span class="badge bg-success fs-6">50 Marks</span>
+          <span class="badge badge-success">50 Marks</span>
         </td>
       </tr>
 
       <tr>
-        <td class="fw-bold">II</td>
-        <td class="fw-semibold">Basic Python Programming</td>
-        <td>
-         Fundamental syntax, data types, control flow, functions, and file handling. Emphasis on scripting for automation and basic network operations.
+        <td class="font-weight-bold">II</td>
+        <td class="font-weight-bold">Basic Python Programming</td>
+        <td class="text-left">
+          Python syntax, control flow, functions, file handling,
+          scripting for automation and basic network operations.
         </td>
         <td class="text-muted">—</td>
       </tr>
 
       <tr>
-        <td class="fw-bold">III</td>
-        <td class="fw-semibold">Basics of Operating Systems(OS)</td>
-        <td>
-         OS types, process management, memory management, file systems, and fundamental OS security concepts (users, permissions, access control).
+        <td class="font-weight-bold">III</td>
+        <td class="font-weight-bold">Basics of Operating Systems (OS)</td>
+        <td class="text-left">
+          Process management, memory management, file systems,
+          and OS security concepts like users and permissions.
         </td>
         <td class="text-muted">—</td>
       </tr>
@@ -545,14 +273,12 @@ function currentSlide(n) {
   </table>
 </div>
 
+<h4 class="font-weight-bold text-center custom-header-text-color mt-5 mb-3">
+  Applied ML & Data Science
+</h4>
 <div class="table-responsive my-4">
   <table class="table table-bordered table-striped table-hover align-middle text-center syllabus-table">
-
-    <caption>
-   <b>Applied ML & DS</b>
-    </caption>
-
-    <thead>
+    <thead class="thead-dark">
       <tr>
         <th>Section</th>
         <th>Topic / Module</th>
@@ -563,30 +289,46 @@ function currentSlide(n) {
 
     <tbody>
       <tr>
-        <td class="fw-bold">I</td>
-        <td class="fw-semibold">Engineering Mathematics</td>
-        <td>
-        <b>Covers fundamental concepts in:</b><ul><ol>Linear Algebra (Matrices, Determinants, Eigenvalues, Eigenvectors)</ol><ol>Calculus (Differential and Integral Calculus, Basic concepts of limits)</ol><ol>Probability and Statistics (Basic probability, Conditional probability, Mean, Median, Mode)</ol><ol>Discrete Mathematics (Basic Set Theory, Functions)</ol></ul>
+        <td class="font-weight-bold">I</td>
+        <td class="font-weight-bold">Engineering Mathematics</td>
+        <td class="text-left">
+          <strong>Covers:</strong>
+          <ul class="mb-0">
+            <li>Linear Algebra (Matrices, Eigenvalues)</li>
+            <li>Calculus (Differential & Integral)</li>
+            <li>Probability & Statistics</li>
+            <li>Discrete Mathematics</li>
+          </ul>
         </td>
         <td>
-          <span class="badge bg-success fs-6">50 Marks</span>
+          <span class="badge badge-success">50 Marks</span>
         </td>
       </tr>
 
       <tr>
-        <td class="fw-bold">II</td>
-        <td class="fw-semibold">Basic Python Programming</td>
-        <td>
-       <b>Focus on foundational programming skills:</b><ul><ol>Python Syntax and Data Types (Lists, Tuples, Dictionaries, Sets)</ol><ol>Control Structures (If-Else, Loops: For, While)</ol><ol>Functions and Modularity</ol><ol>Basic Input/Output and File Handling</ol><ol>Problem-solving through fundamental programming logic</ol></ul>
+        <td class="font-weight-bold">II</td>
+        <td class="font-weight-bold">Basic Python Programming</td>
+        <td class="text-left">
+          <ul class="mb-0">
+            <li>Python Data Types</li>
+            <li>Control Structures</li>
+            <li>Functions & Modularity</li>
+            <li>File Handling</li>
+          </ul>
         </td>
         <td class="text-muted">—</td>
       </tr>
 
       <tr>
-        <td class="fw-bold">III</td>
-        <td class="fw-semibold">Basics of Database Management Systems(DBMS)</td>
-        <td>
-         <b>Covers core concepts related to data organization and management:</b><ul><ol>Database Architecture and Models (E-R Model, Relational Model)</ol><ol>Structured Query Language (SQL) Fundamentals (SELECT, INSERT, UPDATE, DELETE, basic JOIN operations)</ol><ol>Normalization (1NF, 2NF, 3NF)</ol><ol>Basic Concepts of Transactions and Concurrency Control</ol></ul>
+        <td class="font-weight-bold">III</td>
+        <td class="font-weight-bold">Basics of DBMS</td>
+        <td class="text-left">
+          <ul class="mb-0">
+            <li>ER & Relational Models</li>
+            <li>SQL Fundamentals</li>
+            <li>Normalization</li>
+            <li>Transactions & Concurrency</li>
+          </ul>
         </td>
         <td class="text-muted">—</td>
       </tr>
@@ -594,25 +336,46 @@ function currentSlide(n) {
 
   </table>
 </div>
-   <!---- <footer class="py-3 bg-transparent border-top">
-      <div class="container">
-        <div class="row align-items-center">
-          
-          <div class="col-md-8">
-            <small class="text-muted">
-              © 2025 Electronics &amp; ICT Academy, IIT Guwahati — All Rights Reserved
-            </small>
-          </div>
 
-          <div class="col-md-4 text-md-end">
-            <small class="text-dark fw-semibold">
-              Indian Institute of Technology Guwahati
-            </small>
-          </div>
 
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 border-top">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+
+        <div class="col-md-8">
+          <small>
+            © <span id="currentYear"></span>
+            Electronics &amp; ICT Academy, IIT Guwahati — All Rights Reserved
+          </small>
         </div>
+
+        <div class="col-md-4 text-md-right">
+          <small class="font-weight-bold">
+            Indian Institute of Technology Guwahati
+          </small>
+        </div>
+
       </div>
-    </footer>-->
-    <script src="js/slider.js"></script>
-  </body>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="js/main.js"></script>
+
+</body>
 </html>

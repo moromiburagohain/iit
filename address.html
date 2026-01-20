@@ -1,131 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applied Machine Learning & Data Science | E&ICT Academy IIT Guwahati</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/slider.css">
-  </head>
-  <body>
-        <nav>
-      <div class="nav-left">
-        <a href="index.html">
-          <img src="images/EICT_Short_Logo.jpg" alt="Logo">
-        </a>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronics & ICT Academy, IIT Guwahati</title>
 
-      <div class="nav-center">
-        <!-- Your entire menu stays EXACTLY the same -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+    crossorigin="anonymous"
+  >
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+     /* Table refinement */
+     th {
+      background-color: #002147 !important;
+      color: #ffffff;
+      font-weight: 600;
+    }
+  </style>
+</head>
 
-        <!-- Dropdown 1 -->
-        <div class="dropdown">
-          <a href="index.html" class="dropbtn">Home</a>
-          <div class="dropdown-content">
-            <a href="about.html">About E&ICT</a>
-            <a href="history.html">History</a>
-            <a href="future.html">Future Plans</a>
-            <a href="professional.html">Professional Courses & Specialized Training</a>
-            <a href="other.html">Other Activities</a>
+<body class="px-3">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/EICT_Short_Logo.jpg" height="40" alt="Logo">
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#mainNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav mx-auto">
+
+        <!-- Home -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="index.html">Home</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="about.html">About E&ICT</a>
+            <a class="dropdown-item" href="history.html">History</a>
+            <a class="dropdown-item" href="future.html">Future Plans</a>
+            <a class="dropdown-item" href="professional.html">Professional Courses</a>
+            <a class="dropdown-item" href="other.html">Other Activities</a>
           </div>
-        </div>
+        </li>
 
-        <!-- Dropdown 2 -->
-        <div class="dropdown">
-          <a href="#about-course" class="dropbtn">About Course</a>
-          <div class="dropdown-content">
-            <div class="sub-dropdown">
-              <a href="course.html" class="sub-dropbtn">Courses</a>
-              <div class="sub-dropdown-content">
-                <a href="ai_ml.html">AI & ML</a>
-                <a href="cyber.html">Cybersecurity</a>
-                <a href="professional_certification_landing_page.html">VLSI</a>
+        <!-- About Course -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#">About Course</a>
+          <div class="dropdown-menu">
+
+            <!-- Nested dropdown -->
+            <div class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Courses</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="ai_ml.html">AI & ML</a>
+                <a class="dropdown-item" href="cyber.html">Cybersecurity</a>
+                <a
+                  class="dropdown-item"
+                  href="professional_certification_landing_page.html"
+                >
+                  VLSI
+                </a>
               </div>
             </div>
-            <a href="fee.html">Fees</a>
-            <a href="admission.html">Admission</a>
-            <a href="why.html">Why to Enroll</a>
+
+            <a class="dropdown-item" href="fee.html">Fees</a>
+            <a class="dropdown-item" href="admission.html">Admission</a>
+            <a class="dropdown-item" href="why.html">Why to Enroll</a>
           </div>
-        </div>
+        </li>
 
-        <a href="news.html">News & Events</a>
-        <a href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
-        <a href="address.html">Contact Us</a>
-        <a href="fsq.html">FAQs</a>
-       <a href="syllabus.html">Entrance Syllabus </a>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News & Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://eict.iitg.ac.in/index_page_gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="address.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="faq.html">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="syllabus.html">Entrance Syllabus</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div
+    id="mainCarousel"
+    class="carousel slide carousel-fade"
+    data-ride="carousel"
+  >
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#mainCarousel" data-slide-to="1"></li>
+      <li data-target="#mainCarousel" data-slide-to="2"></li>
+      <li data-target="#mainCarousel" data-slide-to="3"></li>
+      <li data-target="#mainCarousel" data-slide-to="4"></li>
+      <li data-target="#mainCarousel" data-slide-to="5"></li>
+      <li data-target="#mainCarousel" data-slide-to="6"></li>
+    </ol>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img
+          src="images/slider/1.jpg"
+          class="d-block w-100"
+          alt="Slide 1"
+        >
       </div>
 
-      <div class="nav-right"></div>
-    </nav>
-
-    <div class="slider-container">
-      <div class="slide fade">
-        <img src="images/slider/1.jpg" alt="Slide 1">
-      </div>
-      <div class="slide fade">
-        <img src="images/slider/5.jpg" alt="Slide 5">
-      </div>
-      <div class="slide fade">
-        <img src="images/slider/6.jpg" alt="Slide 6">
-      </div>
-      <div class="slide fade">
-        <img src="images/slider/7.jpg" alt="Slide 7">
-      </div>
-      <div class="slide fade">
-        <img src="images/slider/8.jpg" alt="Slide 8">
-      </div>
-      <div class="slide fade">
-        <img src="images/slider/9.jpg" alt="Slide 9">
-      </div>
-      <div class="slide fade">
-        <img src="images/slider/10.jpg" alt="Slide 10">
+      <div class="carousel-item">
+        <img src="images/slider/5.jpg" class="d-block w-100" alt="Slide 5">
       </div>
 
-      <a class="prev" role="button">&#10094;</a>
-      <a class="next" role="button">&#10095;</a>
+      <div class="carousel-item">
+        <img src="images/slider/6.jpg" class="d-block w-100" alt="Slide 6">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slider/7.jpg" class="d-block w-100" alt="Slide 7">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slider/8.jpg" class="d-block w-100" alt="Slide 8">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slider/9.jpg" class="d-block w-100" alt="Slide 9">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slider/10.jpg" class="d-block w-100" alt="Slide 10">
+      </div>
+
     </div>
 
-    <div class="dots"></div>
+    <!-- Controls -->
+    <a
+      class="carousel-control-prev"
+      href="#mainCarousel"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </a>
 
-    <section id="contact">
-        <h2>Contact Information</h2>
-        <p>If you have any queries or require further information, please reach out to us using the details below.</p>
+    <a
+      class="carousel-control-next"
+      href="#mainCarousel"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </a>
 
-        <div style="overflow-x:auto;">
-          <table style="width:100%; border-collapse:collapse; margin-top:20px; border:1px solid #ccc;">
-            <thead>
-              <tr style="background-color:#002147; color:white;">
-                <th style="padding:10px; text-align:left; border:1px solid #ccc;">Category</th>
-                <th style="padding:10px; text-align:left; border:1px solid #ccc;">Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="background-color:#f5f6fa;">
-                <td style="padding:10px; border:1px solid #ccc;">Address</td>
-                <td style="padding:10px; border:1px solid #ccc;">
-                  Technology Complex,<br>
-                  Indian Institute of Technology Guwahati,<br>
-                  Guwahati  781039, Assam, India
-                </td>
-              </tr>
-              <tr style="background-color:#ffffff;">
-                <td style="padding:10px; border:1px solid #ccc;">Phone Number</td>
-                <td style="padding:10px; border:1px solid #ccc;">
-                  +91-361-2583182 (Office)<br>
-                  +91-7086502139 (Mobile)
-                </td>
-              </tr>
-              <tr style="background-color:#f5f6fa;">
-                <td style="padding:10px; border:1px solid #ccc;">Email Address</td>
-                <td style="padding:10px; border:1px solid #ccc;">
-                  eictacad@iitg.ac.in, eictacad@gmail.com<br>
-                  <strong>For Advanced Certifications:</strong> eict.info@iitg.ac.in
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  </div>
+
+  <section id="contact" class="my-5 py-0 py-sm-5">
+  <div class="container-fluid">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+
+        <div class="bg-white p-4">
+
+          <h2 class="section-title text-center mb-3 custom-header-text-color font-weight-bold">
+            Contact Information
+          </h2>
+
+          <p class="text-center text-muted mb-4">
+            If you have any queries or require further information, please reach out to us using the details below.
+          </p>
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-0">
+              <thead >
+                <tr>
+                  <th style="width: 30%;">Category</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-weight-bold">Address</td>
+                  <td>
+                    Technology Complex,<br>
+                    Indian Institute of Technology Guwahati,<br>
+                    Guwahati – 781039, Assam, India
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-weight-bold">Phone Number</td>
+                  <td>
+                    +91-361-2583182 (Office)<br>
+                    +91-7086502139 (Mobile)
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-weight-bold">Email Address</td>
+                  <td>
+                    eictacad@iitg.ac.in, eictacad@gmail.com<br>
+                    <strong>For Advanced Certifications:</strong>
+                    eict.info@iitg.ac.in
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
         </div>
-      </section>
-    <script src="js/slider.js"></script>
-  </body>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="py-4 border-top">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+
+        <div class="col-md-8">
+          <small>
+            © <span id="currentYear"></span>
+            Electronics &amp; ICT Academy, IIT Guwahati — All Rights Reserved
+          </small>
+        </div>
+
+        <div class="col-md-4 text-md-right">
+          <small class="font-weight-bold">
+            Indian Institute of Technology Guwahati
+          </small>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="js/main.js"></script>
+
+</body>
 </html>
