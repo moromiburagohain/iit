@@ -1345,9 +1345,10 @@
                 </div>
 
                 <div class="d-grid">
-                  <button class="btn btn-enroll btn-lg" type="submit">
-                    Send message
-                  </button>
+                      <div class="cta-group mt-3 d-flex gap-3">
+                <a class="btn btn-lg btn-dark">Send Message</a>
+               
+              </div>
                 </div>
               </form>
             </div>
@@ -1459,7 +1460,7 @@
                 level: form.level.value
             };
 
-            fetch("https://script.google.com/macros/s/AKfycbwG1mzQTe1hNQACLjwBE9tdPClAu4HOmw7zhyZpJMlHGfElX6CyWwmuLqcJD_76gXgb/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbweHB6EYPUtUjj6d0Txe_PMMzR66brDPm8DtE2IodbW9TQrtTEzA-eOoYYkG2gLKj0e/exec", {
                 method: "POST",
                 body: JSON.stringify(data),
                 mode: "no-cors"
